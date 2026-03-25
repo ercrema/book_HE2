@@ -1,0 +1,52 @@
+\begin{thebibliography}{xx}
+
+\harvarditem{Ajay~Agrawal \harvardand\ Gans}{2018}{agrawal_etal_book}
+Ajay~Agrawal, A.~G. \harvardand\ Gans, J.  \harvardyearleft
+  2018\harvardyearright , {\em Prediction Machines: The Simple Economics of
+  Artificial Intelligence}, Harvard Business Review Press.
+
+\harvarditem{Baltagi}{2013}{baltagi_panel_textbook}
+Baltagi, B.~H.  \harvardyearleft 2013\harvardyearright , {\em Econometrics of
+  Panel Data}, Wiley.
+
+\harvarditem{Gelman \harvardand\ Rubin}{2018}{gelman_etal_book}
+Gelman, Andrew, J. B. C. H. S. S. D. B. D. A.~V. \harvardand\ Rubin, D.~B.
+  \harvardyearleft 2018\harvardyearright , {\em Bayesian Data Analysis}, third
+  edn, CRC Press.
+\newline\harvardurl{http://www.stat.columbia.edu/~gelman/book}
+
+\harvarditem{Hennekens~CH}{1996}{hennekens_etal_1996}
+Hennekens~CH, Buring~JE, M. J. S. M. R. B. C. N. B. C. L. F. G. J. R. P. W. W.
+  P.~R.  \harvardyearleft 1996\harvardyearright , `Lack of effect of long-term
+  supplementation with beta-carotene on the incidence of malignant neoplasms
+  and cardiovascular disease.', {\em New England Journal of Medicine} {\bf
+  334}(18),~1145--1149.
+
+\harvarditem{Kuhn \harvardand\ Johnson}{2019}{kuhn_johnson_feature}
+Kuhn, M. \harvardand\ Johnson, K.  \harvardyearleft 2019\harvardyearright ,
+  {\em Feature Engineering and Selection: A Practical Approach for Predictive
+  Models}, Chapman and Hall/CRC.
+
+\harvarditem{Pafka}{2019}{pafka_benchmark}
+Pafka, S.  \harvardyearleft 2019\harvardyearright , `benchm-ml'.
+\newline\harvardurl{github.com/szilard/benchm-ml}
+
+\harvarditem{Sally \harvardand\ Anderson}{2013}{anderson_sally}
+Sally, D. \harvardand\ Anderson, C.  \harvardyearleft 2013\harvardyearright ,
+  {\em The Numbers Game: Why Everything You Know About Soccer Is Wrong},
+  Viking/Penguin, New York.
+
+\harvarditem{Salsburg}{2001}{salsburg_lady}
+Salsburg, D.  \harvardyearleft 2001\harvardyearright , {\em The Lady tasting
+  tea}, Henry Holt and Co.
+
+\harvarditem{Shen}{2017}{shen_airlines}
+Shen, Y.  \harvardyearleft 2017\harvardyearright , `{Market competition and
+  market price: Evidence from United/Continental airline merger}', {\em
+  Economics of Transportation} {\bf 10}(C),~1--7.
+
+\harvarditem{Wooldridge}{2001}{wooldridge_advanced}
+Wooldridge, J.  \harvardyearleft 2001\harvardyearright , {\em Econometric
+  Analysis of Cross Section and Panel Data}, The MIT Press.
+
+\end{thebibliography}

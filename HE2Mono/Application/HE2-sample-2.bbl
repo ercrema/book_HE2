@@ -1,0 +1,36 @@
+\begin{thebibliography}{4}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Ajay~Agrawal og Gans(2018)]{agrawal_etal_book}
+\textbf{Ajay~Agrawal og Gans}, \textbf{2018}.
+\newblock Avi~Goldfarb Ajay~Agrawal og Joshua Gans.
+\newblock \textit{Prediction Machines: The Simple Economics of Artificial
+  Intelligence}.
+\newblock Harvard Business Review Press, 2018.
+
+\bibitem[Gelman og Rubin(2018)]{gelman_etal_book}
+\textbf{Gelman og Rubin}, \textbf{2018}.
+\newblock John B. Carlin Hal S. Stern David B. Dunson Aki~Vehtari Gelman,
+  Andrew og Donald~B. Rubin.
+\newblock \textit{Bayesian Data Analysis}.
+\newblock CRC Press, third edition, 2018.
+\newblock URL \url{http://www.stat.columbia.edu/~gelman/book}.
+
+\bibitem[Sally og Anderson(2013)]{anderson_sally}
+\textbf{Sally og Anderson}, \textbf{Jun 2013}.
+\newblock David Sally og Chris Anderson.
+\newblock \textit{The Numbers Game: Why Everything You Know About Soccer Is
+  Wrong}.
+\newblock Viking/Penguin, New York, 2013.
+
+\bibitem[Wooldridge(2001)]{wooldridge_advanced}
+\textbf{Wooldridge}, \textbf{2001}.
+\newblock Jeffrey Wooldridge.
+\newblock \textit{Econometric Analysis of Cross Section and Panel Data}.
+\newblock The MIT Press, 2001.
+
+\end{thebibliography}

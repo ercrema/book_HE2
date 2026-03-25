@@ -1,0 +1,3908 @@
+%%
+%% This is file 'HE2-DESIGN.cls'
+%% EngC LaTeX2e document class
+%%
+%%
+%% \CharacterTable
+%%  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
+%%   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
+%%   Digits        \0\1\2\3\4\5\6\7\8\9
+%%   Exclamation   \!     Double quote  \"     Hash (number) \#
+%%   Dollar        \$     Percent       \%     Ampersand     \&
+%%   Acute accent  \'     Left paren    \(     Right paren   \)
+%%   Asterisk      \*     Plus          \+     Comma         \,
+%%   Minus         \-     Point         \.     Solidus       \/
+%%   Colon         \:     Semicolon     \;     Less than     \<
+%%   Equals        \=     Greater than  \>     Question mark \?
+%%   Commercial at \@     Left bracket  \[     Backslash     \\
+%%   Right bracket \]     Circumflex    \^     Underscore    \_
+%%   Grave accent  \`     Left brace    \{     Vertical bar  \|
+%%   Right brace   \}     Tilde         \~}
+%%
+
+\NeedsTeXFormat{LaTeX2e}
+
+\newcommand\version{1999/07/28, v1.00 }
+\ProvidesClass{HE2}[\version LaTeX2e document class]
+
+\newif\ifAJW@multisty
+%\newif\ifAJW@largesty
+\newif\ifAJW@indentsty % false
+\newif\ifAJW@landscape
+\newif\if@openright
+\newif\ifAJW@truesize
+\newif\ifchapterrule
+\newdimen\AJW@indent
+\newdimen\AJW@floatindent
+\AJW@indent\z@        % zero
+\newif\ifsp@nningrule
+\newif\ifprint\global\printfalse
+\newif\ifprintonline\global\printonlinefalse
+\newif\ifonline\global\onlinefalse
+\newif\ifPOD\global\PODfalse
+
+\usepackage{framed,boites}%,graphics
+
+\DeclareOption{multi}{\AJW@multistytrue}
+
+\DeclareOption{oneside}{\relax}
+\DeclareOption{twoside}{\@twosidetrue \@mparswitchtrue}
+\DeclareOption{onecolumn}{\@twocolumnfalse}
+\DeclareOption{twocolumn}{\@twocolumntrue}
+\DeclareOption{draft}{\setlength\overfullrule{5\p@}}
+\DeclareOption{final}{\setlength\overfullrule{\z@}}
+\DeclareOption{openright}{\@openrighttrue}
+\DeclareOption{openany}{\@openrightfalse}
+\DeclareOption{a4paper}
+  {\setlength\paperheight {246mm}%
+   \setlength\paperwidth  {189mm}}
+\DeclareOption{landscape}
+  {\setlength\@tempdima   {\paperheight}%
+   \setlength\paperheight {\paperwidth}%
+   \setlength\paperwidth  {\@tempdima}%
+   \AJW@landscapetrue}
+\DeclareOption{truesize}{\AJW@truesizetrue}
+\DeclareOption{spanningrule}{\sp@nningruletrue}
+\DeclareOption{print}{\global\printtrue\global\onlinefalse}
+\DeclareOption{online}{\global\onlinetrue\global\printfalse}
+\DeclareOption{printonline}{\global\printonlinetrue\global\printtrue}
+\DeclareOption{POD}{\global\PODtrue}
+
+
+\newif\ifprodtf
+\DeclareOption{prodtf}{\prodtftrue}
+
+\ExecuteOptions{a4paper,twoside,onecolumn,final,openright,multi} %% multi option added by sushant
+\ProcessOptions\relax
+
+%%with trim-mark
+\RequirePackage[info,a4,center,cam]{crop}
+
+% to stop html.sty (via harvard.sty) creating havoc
+\let\htmlstyloaded\relax
+
+\usepackage{xcolor,colortbl}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\AtEndOfPackage{\AtBeginDocument{%
+
+\lefthyphenmin=3
+\righthyphenmin=3
+\frenchspacing
+
+% 1. to bring amsthm.sty    into line with cambridge style
+% 2. to bring multind.sty   into line with cambridge style
+% 3. to bring index.sty     into line with cambridge style
+% 4. to bring harvard.sty   into line with cambridge style
+% 5. to bring rotating.sty  into line with cambridge style
+% 6. to bring sidecap.sty   into line with cambridge style
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% 1. to bring amsthm.sty into line with cambridge style
+%
+% replace period after heading with \enskip
+%
+\@ifpackageloaded{amsthm}{%
+\providecommand\proof{}
+\renewenvironment{proof}[1][\proofname]{\par
+  \pushQED{\qed}%
+  \topsep0.5\AJW@theskip \@plus 2\p@ \@minus 1\p@\relax
+  \trivlist
+  \item[\hskip\labelsep
+        \itshape
+   #1\@addpunct{.\enskip}]\ignorespaces
+}{%
+  \popQED\endtrivlist\@endpefalse
+}
+%
+%
+% headings to be small caps and letterspaced (using soul.sty)
+%%%%%  \thm@headfont{\scshape}
+  \sodef\spacedheader{}{.06em}{1em plus1em}{2em plus.1em minus.1em}
+%
+% replace period after heading with \enskip
+%
+\def\@thm#1#2#3{%
+  \ifhmode\unskip\unskip\par\fi
+  %\normalfont
+  \trivlist
+  \let\thmheadnl\relax
+  \let\thm@swap\@gobble
+  \thm@notefont{\fontseries\mddefault\upshape}%
+  \thm@headpunct{\enskip}% add space after heading
+  \thm@headsep 5\p@ plus\p@ minus\p@\relax
+  \thm@space@setup
+  #1% style overrides
+  \@topsep \thm@preskip               % used by thm head
+  \@topsepadd \thm@postskip           % used by \@endparenv
+  \def\@tempa{#2}\ifx\@empty\@tempa
+\def\@tempa{\@oparg{\@begintheorem{\noindent\fontsize{12}{14}\selectfont\fontspec{FrutigerLTStd-BoldCn.otf}{#3}}{}}[]}%
+  \else
+    \refstepcounter{#2}%
+    \def\@tempa{\@oparg{\@begintheorem{\noindent\fontsize{12}{14}\selectfont\fontspec{FrutigerLTStd-BoldCn.otf}{#3}}{\csname the#2\endcsname}}[]}%
+  \fi
+  \@tempa
+}}{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% 2. to bring multind.sty into line with cambridge style
+%      note that an error in multind.sty will stop verbatim environment
+%      working; also everything will come out \indexsize
+%      to correct this, we've added an extra set of parens
+%
+% change chapter opening
+%
+\@ifpackageloaded{multind}{%
+  \def\printindex#1#2{{\@restonecoltrue
+    \if@twocolumn\@restonecolfalse\fi
+    \columnseprule\z@
+    \columnsep 1pc%
+    \twocolumn[\vspace*{10\p@}\mbox{}\par\@makeschapterhead{#2}]%
+    \@mkboth{#2}{#2}%\markright{\uppercase{#2}}
+    \typeout{#2}%
+    \addcontentsline{toc}{schapter}{#2}%
+    \thispagestyle{plain}
+    \indexsize\raggedright
+    \parindent\z@
+    \parskip\z@ \@plus.3\p@\relax
+    \let\item=\@idxitem
+    \@input{#1.ind}}}
+%
+  \def\@idxitem{\par\hangindent 4mm}
+  \def\subitem{\par\hangindent 4mm \hspace*{1em}}
+  \def\subsubitem{\par\hangindent 4mm \hspace*{2em}}
+\renewcommand\indexspace{\par \vskip 11\p@ \@plus 1\p@ \@minus 1\p@\relax}
+  }{}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% 3. to bring index.sty into line with cambridge style
+%
+\@ifpackageloaded{index}{%
+  \renewenvironment{theindex}{%
+    \edef\indexname{\the\@nameuse{idxtitle@\@indextype}}%
+    \if@twocolumn
+      \@restonecolfalse
+    \else
+      \@restonecoltrue
+    \fi
+    \columnseprule \z@
+    \columnsep 1pc
+    \twocolumn[\vspace*{10\p@}\mbox{}\par\@makeschapterhead{\indexname}
+    \ifx\index@prologue\@empty\else
+      \index@prologue
+      \bigskip
+    \fi
+  ]%
+  \@mkboth{\indexname}%
+  {\indexname}%
+      \addcontentsline{toc}{schapter}{\indexname}
+  \thispagestyle{plain}%
+  \indexsize\raggedright
+  \parindent\z@
+  \parskip\z@ \@plus .3\p@\relax
+  \let\item\@idxitem
+  }{%
+  \if@restonecol
+    \onecolumn
+  \else
+    \clearpage
+  \fi
+  }}%
+{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% 4. to bring harvard.sty into line with cambridge style
+%    and make 'References' the default
+%
+\@ifpackageloaded{harvard}{%
+%
+\renewcommand{\harvardurl}[1]{\textbf{URL:}\textit{##1}}
+%
+\renewenvironment{thebibliography}[1]
+     {%
+     \ifAJW@multisty
+       \section*{\refname}%
+       \addcontentsline{toc}{section}{\textit{\refname}}
+     \else
+       \chapter*{\refname}%
+     \fi
+\markright{\refname}
+     \list{\@biblabel{\@arabic\c@enumiv}}%
+          {\bibliosize%\settowidth\labelwidth{\@biblabel{#1}}%
+           \itemindent -1em\leftmargin 1em\labelwidth \z@ \labelsep \z@%
+           \@openbib@code
+           \usecounter{enumiv}%
+           \let\p@enumiv\@empty
+            \renewcommand\theenumiv{\@arabic\c@enumiv}}%
+     \sloppy
+     \clubpenalty4000
+     \@clubpenalty \clubpenalty
+     \widowpenalty4000%
+     \sfcode`\.\@m}
+    {\def\@noitemerr
+      {\@latex@warning{Empty `thebibliography' environment}}%
+     \endlist}
+}{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% 5. to bring rotating.sty into line with cambridge style
+%
+%
+% \rotFPtop        \rotFPbot          Effect
+% 0pt plus 1fil    0pt plus 1fil      figure/table appears in middle (default value)
+% 0pt              0pt plus 1fil      figure/table appears with its top nearest the edge of the page
+% 0pt plus 1fil    0pt plus 2fil      figure/table’s bottom appears twice as far from the edge as the top does
+
+\usepackage{graphicx}
+
+\usepackage[figuresleft,left]{rotating}
+\rotfloatpagestyle{empty}
+
+\def\rot@LR{-1}
+\newskip\rotFPtop
+\newskip\rotFPbot
+
+\@ifpackageloaded{rotating}{%
+  \def\sidewaysfigure{\@rotfloat{figure}%
+  \let\@makecaption=\make@rotatedfigure@caption}
+%
+  %\let\@makecaption=\make@figure@caption
+  \def\sidewaystable{\@rotfloat{table}\smallish
+    \let\@makecaption=\make@table@caption}%
+  \renewenvironment{sidewaystable*}%
+    {\@rotdblfloat{table}\smallish}%
+    {\end@rotdblfloat}%
+  \rotFPtop 0pt plus 1fil%
+  \rotFPbot 0pt plus 1fil%
+  }%
+  {}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% 6. to bring sidecap.sty into line with cambridge style
+%
+
+\usepackage[outercaption]{sidecap}
+\sidecaptionvpos{figure}{t}
+
+\@ifpackageloaded{sidecap}{%
+  \renewcommand\sidecaptionsep{1pc}%
+%  \newlength\abovecaptionskip%\setlength\abovecaptionskip{40pt}%
+%  \newlength\belowcaptionskip%\setlength\belowcaptionskip{10pt}%
+  \renewenvironment{SCtable}{\tablesize\SC@float[\SC@table@vpos]{table}}{\endSC@float}%
+  \renewenvironment{SCtable*}{\tablesize\SC@dblfloat[\SC@table@vpos]{table}}{\endSC@dblfloat}%
+  \renewenvironment{SCfigure}{\tablesize\SC@float[\SC@figure@vpos]{figure}\let\@makecaption=\@SCmakecaption}{\endSC@float}%
+  \renewenvironment{SCfigure*}{\tablesize\SC@dblfloat[\SC@figure@vpos]{figure}}{\endSC@dblfloat}}
+  {}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+}}% end of \AtEndOfPackage section
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newif\if@mainmatter \@mainmattertrue
+\newcommand\frontmatter{\clearpage
+\def\@chaptext{\rightmark}
+\def\thetable   {\thechapter.\@arabic\c@table}
+            \@mainmatterfalse\pagenumbering{roman}}
+\newcommand\mainmatter{\clearpage
+       \@mainmattertrue\pagenumbering{arabic}}
+\newcommand\backmatter{\clearpage\AJW@appendixfalse
+      \@mainmatterfalse\pagestyle{headings}}
+
+
+%  ****************************************
+%  *               FONTS-size                  *
+%  ****************************************
+%
+\setlength\lineskip{1\p@}
+\setlength\normallineskip{1\p@}
+\renewcommand\baselinestretch{}
+\newskip\AJW@baseskip
+\newskip\AJW@theskip
+\def\AJW@setskips#1{\AJW@theskip #1\relax%
+  \abovedisplayskip      0.50\AJW@theskip \@plus 0.25\AJW@theskip \@minus 1\p@%
+  \belowdisplayskip      \abovedisplayskip
+  \abovedisplayshortskip 0.50\AJW@theskip \@plus 0.25\AJW@theskip
+  \belowdisplayshortskip 0.50\AJW@theskip \@plus 0.25\AJW@theskip \@minus 1\p@%
+}
+\def\AJW@setlists#1{\AJW@theskip #1\relax%
+ \def\@listi{\leftmargin\leftmargini
+  \topsep  0.5\AJW@theskip \@plus 2\p@ \@minus 1\p@%
+  \parsep  \z@%
+  \itemsep \z@}}
+%
+%
+% common Sizes
+\newcommand{\@ixptvpt}{9.5}%                  9.5pt size
+  \DeclareMathSizes{\@ixptvpt}{\@ixptvpt}{\@viipt}{\@vipt}
+\newcommand{\@xvipt}{16}%                     16pt size
+  \DeclareMathSizes{\@xvipt}{\@xvipt}{\@xiipt}{\@xpt}
+\newcommand{\@xviiipt}{18}%                   18pt size
+  \DeclareMathSizes{\@xviiipt}{\@xviiipt}{\@xiipt}{\@xpt}
+\newcommand{\@xxivpt}{24}%                    24pt size
+  \DeclareMathSizes{\@xxivpt}{\@xxivpt}{\@xxpt}{\@xvipt}
+\newcommand{\@xxvipt}{26}%                    26pt size
+  \DeclareMathSizes{\@xxvipt}{\@xxvipt}{\@xxpt}{\@xvipt}
+
+\newcommand\tiny{\@setfontsize\tiny\@vpt{6}\AJW@setskips\AJW@setlists}
+\newcommand\footnotesize{\AJW@baseskip 11pt%
+  \@setfontsize\footnotesize\@viiipt{11}\AJW@setskips\AJW@setlists}
+\newcommand\indexsize{\AJW@baseskip 11pt%
+  \@setfontsize\indexsize\@viiipt{11}\AJW@setskips\AJW@setlists}
+\newcommand\bibliosize{\AJW@baseskip 12pt%
+  \@setfontsize\bibliosize\@ixpt{12}\AJW@setskips\AJW@setlists}
+\newcommand\runningheadsize{\AJW@baseskip 11pt%
+  \@setfontsize\runningheadsize\@ixptvpt{11}\AJW@setskips\AJW@setlists}
+\newcommand\Bheadsize{\@setfontsize\Bheadsize\@xipt{13.5}\AJW@setskips\AJW@setlists}
+\newcommand\large{\@setfontsize\large\@xipt{14}\AJW@setskips\AJW@setlists}
+\newcommand\Aheadsize{\@setfontsize\Aheadsize\@xiipt{13.5}\AJW@setskips\AJW@setlists}
+\newcommand\authorsize{\@setfontsize\authorsize\@xiipt{14}\AJW@setskips\AJW@setlists}
+\newcommand\Large{\@setfontsize\Large\@xiipt{17}\AJW@setskips\AJW@setlists}
+\newcommand\mainheadingsize{\@setfontsize\mainheadingsize\@xviiipt{20}\AJW@setskips\AJW@setlists}
+\newcommand\subtitlesize{\@setfontsize\subtitlesize\@xviiipt{22}\AJW@setskips\AJW@setlists}
+\newcommand\huge{\@setfontsize\huge\@xxivpt{26}\AJW@setskips\AJW@setlists}
+\newcommand\parttitlesize{\@setfontsize\parttitlesize\@xxvipt{29}\AJW@setskips\AJW@setlists}
+
+\newcommand\scriptsize{%
+  \@setfontsize\scriptsize\@viipt{8}\AJW@setskips\AJW@setlists}
+\newcommand\small{\AJW@baseskip 10pt%
+  \@setfontsize\small\@ixpt{10}\AJW@setskips\AJW@setlists}
+\let\enotesize\small
+\newcommand\smallish{\AJW@baseskip 11pt%
+  \@setfontsize\smallish\@ixpt{11}\AJW@setskips\AJW@setlists}
+\let\tablesize\smallish
+\newcommand\normalsmall{\AJW@baseskip 12pt%
+  \@setfontsize\normalsmall\@xpt{12}\AJW@setskips\AJW@setlists}
+\renewcommand\normalsize{\AJW@baseskip 13.5pt%
+  \@setfontsize\normalsize{10.25}{13.55}\AJW@setskips{\AJW@baseskip}%
+  \let\@listi\@listI}
+\let\listsize\normalsize
+
+\normalsize
+
+\DeclareOldFontCommand{\rm}{\normalfont\rmfamily}{\mathrm}
+\DeclareOldFontCommand{\sf}{\normalfont\sffamily}{\mathsf}
+\DeclareOldFontCommand{\tt}{\normalfont\ttfamily}{\mathtt}
+\DeclareOldFontCommand{\bf}{\normalfont\bfseries}{\mathbf}
+\DeclareOldFontCommand{\it}{\normalfont\itshape}{\mathit}
+\DeclareOldFontCommand{\sl}{\normalfont\slshape}{\@nomath\sl}
+\DeclareOldFontCommand{\sc}{\normalfont\scshape}{\@nomath\sc}
+\DeclareRobustCommand*\cal{\@fontswitch{\relax}{\mathcal}}
+\DeclareRobustCommand*\mit{\@fontswitch{\relax}{\mathnormal}}
+
+% define a smallverbatim 8/10
+
+\begingroup \catcode `|=0 \catcode `[= 1
+\catcode`]=2 \catcode `\{=12 \catcode `\}=12
+\catcode`\\=12 |gdef|@xsmallverbatim#1\end{smallverbatim}[#1|end[smallverbatim]]
+|gdef|@sxsmallverbatim#1\end{smallverbatim*}[#1|end[smallverbatim*]]
+|endgroup
+
+\def\@smallverbatim{\trivlist \item\relax
+  \if@minipage\else\vskip\parskip\fi
+  \leftskip\@totalleftmargin\rightskip\z@skip
+  \parindent\z@\parfillskip\@flushglue\parskip\z@skip
+  \@@par
+  \@tempswafalse
+  \def\par{%
+    \if@tempswa
+      \leavevmode \null \@@par\penalty\interlinepenalty
+    \else
+      \@tempswatrue
+      \ifhmode\@@par\penalty\interlinepenalty\fi
+    \fi}%
+  \let\do\@makeother \dospecials
+  \obeylines \smallverbatim@font \@noligs
+  \hyphenchar\font\m@ne
+  \everypar \expandafter{\the\everypar \unpenalty}%
+}
+\def\smallverbatim{\@smallverbatim \frenchspacing\@vobeyspaces \@xsmallverbatim}
+\def\endsmallverbatim{\if@newlist \leavevmode\fi\endtrivlist}
+
+\def\smallverbatim@font{\normalfont\indexsize\ttfamily}
+
+
+%  ****************************************
+%  *            PAGE LAYOUT               *
+%  ****************************************
+%
+% All margin dimensions measured from a point one inch from top and side
+% of page.
+%
+% SIDE MARGINS:
+%
+  \setlength\oddsidemargin{90pt}%{48pt}
+  \setlength\evensidemargin{87.5pt}
+  \setlength\marginparwidth{91pt}%evenside minus 6pt
+  \setlength\marginparsep{6pt}
+  \setlength\topmargin{26\p@}
+  \setlength\headheight{9.5\p@}
+  \setlength\footskip{28\p@}
+  \setlength\topskip{10.25\p@}
+  \setlength\headsep{26.5\p@}
+%
+% DIMENSION OF TEXT:
+%
+
+\newdimen\AJW@measure
+\setlength\textheight{41\baselineskip}
+\addtolength\textheight{\topskip}
+
+%%%textwidth
+\AJW@measure 33pc
+
+\textwidth\AJW@measure
+%
+\ifAJW@landscape
+  \textwidth\textheight
+  \textheight\AJW@measure
+\fi
+\setlength\columnsep{1pc}
+\setlength\columnseprule{0\p@}
+%
+% FOOTNOTES
+%
+\setlength\footnotesep{6.5\p@}
+\setlength{\skip\footins}{18.5\p@ \@plus 1\p@ \@minus .5\p@}% top of first footnote.
+%
+% FLOATS
+%
+\setlength\floatsep{13\p@ \@plus 2\p@ \@minus 2\p@}
+\setlength\textfloatsep{20\p@ \@plus 2\p@ \@minus 4\p@}
+\setlength\intextsep{13\p@ \@plus 2\p@ \@minus 2\p@}
+\setlength\dblfloatsep{13\p@ \@plus 2\p@ \@minus 2\p@}
+\setlength\dbltextfloatsep{20\p@ \@plus 2\p@ \@minus 4\p@}
+%
+% for floats on a separate float page
+\setlength\@fptop{0\p@ \@plus 1fil}
+\setlength\@fpsep{13\p@ \@plus 2fil}
+\setlength\@fpbot{0\p@ \@plus 1fil}
+
+%
+%   wide floats
+\setlength\@dblfptop{0\p@ \@plus 0fil}
+\setlength\@dblfpsep{13\p@ \@plus 0fil}
+\setlength\@dblfpbot{0\p@ \@plus 3fil}
+%
+%
+% MARGINAL NOTES:
+%
+\setlength\marginparpush{5\p@}
+
+%  ****************************************
+%  *           PARAGRAPHING               *
+%  ****************************************
+%
+\setlength\parskip{0\p@}
+\setlength\parindent{4mm}
+\listparindent\parindent
+\setlength\partopsep{0\p@}
+%
+% The following page-breaking penalties are defined
+%
+\@lowpenalty   51
+\@medpenalty  151
+\@highpenalty 301
+\@beginparpenalty -\@lowpenalty
+\@endparpenalty   -\@lowpenalty
+\@itempenalty     -\@lowpenalty
+%
+  \clubpenalty=0       % 'Club line'  at bottom of page.
+  \widowpenalty=10000  % 'Widow line' at top of page.
+
+%    ****************************************
+%    *        CHAPTERS AND SECTIONS         *
+%    ****************************************
+%
+% Heading for the \chapter command -- fixed depth chapter headings...
+%
+\newdimen\AJW@headwidth
+\AJW@headwidth \textwidth
+\addtolength{\AJW@headwidth}{-\AJW@indent}
+
+\newif\ifAJW@appendix
+\newif\ifAJW@oneappendix
+
+\newcommand\chapterauthor[1]{%
+  \ifAJW@multisty
+    \def\@chapterauthor{\hspace*{3pc}#1}%
+  \else
+    \def\@chapterauthor{\hspace*{3pc}#1}%
+  \fi
+}
+
+\edef\@chapterauthor{\relax}
+
+\newcommand\ch@pterauthor[1]{%
+  \gdef\@ch@pterauthor{#1}}
+
+\gdef\@ch@pterauthor{%
+  \vbox to0pt{%
+  \vspace*{-20pt}%
+  \parbox[t]{\textwidth}{\hspace*{3pc}\authorsize\@chapterauthor
+  }%
+  \vss}%
+}
+
+\newcommand\affil[1]{\\{\indexsize #1}}
+
+% chapter rule
+\newlength\threepica
+\setlength\threepica{3pc}
+
+\newcommand\greychapterrule{%
+\setlength\fboxsep{2\p@}%
+  \def\FrameCommand{\hspace*{-3pc}\colorbox{scolor}}%
+  \parindent0pt%
+% frame needs to be \hsize + 3pc - 2x \fboxsep
+  \MakeFramed{%
+    \advance\hsize-\width
+    \advance\hsize\threepica
+    \advance\hsize-2\fboxsep
+    \FrameRestore}%
+  \endMakeFramed
+}
+
+\def\chaprule{\hbox{\hskip-3pc\special{color push cmyk 0,0,0,.3}\vrule height4pt width36pc depth0pt\special{color pop}}}
+
+\def\@makechapterhead#1{%
+\def\@chaptext{#1}
+  {\normalsize
+  \parindent 0\p@
+  \vspace*{21pt}
+  \ifnum \c@secnumdepth >\m@ne
+   \raisebox{0.5\baselineskip}[0\p@][0\p@]{\mbox{\hspace*{\AJW@indent}}%
+    \begin{minipage}[t]{\AJW@headwidth}
+     \raggedright
+     \ifAJW@oneappendix
+     {\CTfont\@chaptext\vphantom{g}\nobreak\par}%%%
+     \vspace*{2pt}%
+
+     \else
+       \ifAJW@appendix
+     {\CNfont{\fontsize{14}{16}\selectfont \trackten{APPENDIX}~\thechapter}\vskip7pt\par}%
+     {\CTfont\@chaptext\vphantom{g}\nobreak\par}%%%
+     \vspace*{2pt}%
+       \else
+       \@hangfrom{\hspace*{-3pc}\hbox to 6pc{\CNfont{\thechapter}\hfill}}%
+     {\CTfont\@chaptext\vphantom{g}\nobreak\par}%%%
+     \vspace*{2pt}%
+     \color{scolor}\chaprule%
+       \fi
+     \fi
+
+     \ifAJW@multisty
+      \vskip 8\p@
+        \hskip3pc\@author
+        \ifx\@affiliation\empty\else\par\vskip4pt\hskip3pc{\affilfont\@affiliation\par}\vskip10pc\fi%
+      \par
+     \fi
+     \@hangfrom{\hbox to 3pc{\ }}\@ch@pterauthor
+    \end{minipage}%
+    }
+  \else
+   \raisebox{0.5\baselineskip}[0\p@][0\p@]{\mbox{\hspace*{\AJW@indent}}%
+    \begin{minipage}[t]{\AJW@headwidth}
+     \raggedright
+     {\huge\mbox{}}
+     \par
+     \vskip 7\p@
+      \huge \@chaptext%%#1%
+     \nobreak
+     \par
+    \@hangfrom{\hbox to 3pc{\ }}\hskip3pc{\@ch@pterauthor}
+    \end{minipage}}
+  \fi
+  \par\nobreak
+  \vskip 4.75\baselineskip% 2.5 less than the first line of text
+  }
+}
+
+\def\@makeschapterhead#1{{\normalsize
+\def\@chaptext{#1}
+  \parindent 0\p@
+  \vspace*{5pt}%
+  \raisebox{0.5\baselineskip}[0\p@][0\p@]{\mbox{\hspace*{\AJW@indent}}%
+   \begin{minipage}[t]{\AJW@headwidth}
+    \raggedright
+    {\mainheadingsize\fontspec{FrutigerLTStd-BoldCn.otf}\mbox{}}
+    \par
+    {\UCTfont#1}%
+    \nobreak
+    \par
+    \@ch@pterauthor
+   \end{minipage}}
+  \par \nobreak
+  \vskip 3.9\baselineskip % 10.5 plus 1.85
+  \thispagestyle{empty}}\chapterauthor{\relax}%
+\markboth{#1}{#1}}
+%
+% \secdef{UNSTARCMDS}{STARCMDS} :
+%
+
+\newcount\apptmp
+\def\chapter{%
+   \clearpage
+   \thispagestyle{plain}
+   \global\@topnum\z@
+   \@afterindentfalse
+   \secdef\@chapter\@schapter}
+\def\@chapter[#1]#2{%
+  \ifnum \c@secnumdepth >\m@ne
+    \refstepcounter{chapter}
+    \typeout{\@chapapp\space\thechapter.}
+    \ifAJW@multisty
+              \ifAJW@oneappendix
+                \addtocontents{toc}{\protect\setcounter{tocdepth}{1}}
+              \else
+                \ifAJW@appendix
+                  \addtocontents{toc}{\protect\setcounter{tocdepth}{1}}
+                \else
+                  \addcontentsline{toc}{chapter}{\protect\numberline{{\thechapter}}#1}
+                \fi
+              \fi
+    \else
+      \ifAJW@oneappendix
+        \addcontentsline{toc}{chapter}{\protect\AJW@nonumberline{}#1}
+      \else
+        \ifAJW@appendix
+          \addcontentsline{toc}{chapter}{\protect\AJW@numberline{{\thechapter}}#1}
+        \else
+          \addcontentsline{toc}{chapter}{\protect\numberline{{\thechapter}}#1}
+        \fi
+      \fi
+    \fi
+  \else
+   \addcontentsline{toc}{chapter}{#1}
+  \fi
+    \ifx\@shortauthor\@empty%
+    \else%
+      \xdef\@currentHref{section*.\the\Hy@linkcounter}%
+      \addcontentsline{toc}{author}{{\@shortauthor}}%
+    \fi%
+  \ifAJW@multisty
+   \markboth{\@shortauthor}{#1}
+   \gdef\AJW@endnotehead{\relax}
+  \else
+   \chaptermark{#1}
+   \gdef\AJW@endnotehead{\@chapapp\ \thechapter}
+  \fi
+  \if@twocolumn
+    \@topnewpage[\@makechapterhead{#2}]
+   \else
+    \@makechapterhead{#2}
+    \@afterheading
+  \fi
+  \ifAJW@multisty
+   \gdef\@author{}
+   \gdef\@shortauthor{}
+  \fi
+}
+
+\def\@schapter#1{%
+\thispagestyle{plain}
+ \ifAJW@addtoc
+  \ifAJW@indentsty
+   \ifdim\AJW@indent>\z@
+     \addcontentsline{toc}{schapter}{\protect\numberline{\mbox{}}#1}
+   \else
+     \addcontentsline{toc}{schapter}{#1}
+   \fi
+  \else
+    \if@mainmatter
+      \addcontentsline{toc}{sschapter}{#1}
+    \else
+      \addcontentsline{toc}{schapter}{#1}
+    \fi
+  \fi
+ \fi
+ \ifAJW@multisty
+  \markboth{#1}{#1}
+  \gdef\AJW@endnotehead{\relax}
+ \else
+  \chaptermark{#1}
+  \gdef\AJW@endnotehead{#1}
+ \fi
+ \if@twocolumn
+  \@topnewpage[\@makeschapterhead{#1}]
+ \else
+  \@makeschapterhead{#1}
+  \@afterheading
+ \fi
+ \normalsize
+}
+
+%
+% \@startsection {NAME}{LEVEL}{INDENT}{BEFORESKIP}{AFTERSKIP}{STYLE}
+%            optional * [ALTHEADING]{HEADING}
+%
+ \def\section{\@startsection {section}{1}{\z@}
+  {-24\p@ \@plus-7\p@ \@minus-3.5\p@}{13.5\p@}{\sectionfont\AJW@hangraggedright}}
+ \def\subsection{\@startsection{subsection}{2}{\z@}
+  {-20\p@ \@plus-7\p@ \@minus-3.5\p@}{6.5\p@}{\subsectionfont\AJW@hangraggedright}}
+ \def\subsubsection{\@startsection{subsubsection}{3}{\z@}
+  {-13\p@ \@plus-7\p@ \@minus-3.5\p@}{6.5\p@}{\subsubsectionfont\AJW@hangraggedright}}
+ \def\paragraph{\@startsection{paragraph}{4}{\z@}
+  {-13\p@ \@plus-7\p@ \@minus-3.5\p@}{-1em}{\paragraphfont\AJW@raggedright}}
+% \def\subparagraph{\@startsection{subparagraph}{5}{\z@}
+%  {13\p@ \@plus7\p@ \@minus3.5\p@}{-0.5em}{\normalsize\itshape\AJW@raggedright}}
+ \def\Asection{\@startsection {section}{1}{\z@}
+  {-24\p@ \@plus-7\p@ \@minus-3.5\p@}{13.5\p@}{\sectionfont\MakeUppercase\AJW@hangraggedright}}
+%
+\newcommand\problemhead{\@startsection{problemhead}{5}{-3pc}%
+   {-24\p@ \@plus-7\p@ \@minus-3.5\p@}{6.5\p@}%
+   {\sectionfont\AJW@hangraggedright
+   }}
+
+\newcounter{problemhead}
+ \newcommand\problemheadmark[1]{}
+
+
+\def\AJW@hangraggedright{\rightskip\@flushglue \let\\=\newline}
+\def\AJW@raggedright{\rightskip\@flushglue \let\\=\@centercr
+ \parindent=\AJW@indent}
+%
+% Default initializations of \...mark commands
+%
+\newcommand*\chaptermark[1]{}
+\setcounter{secnumdepth}{2}
+
+%
+% APPENDIX
+%
+\ifAJW@multisty
+%
+  \def\appendix{%
+   \gdef\@author{}
+   \gdef\@affiliation{}
+    \apptmp=\c@chapter %save chapter number
+    \par
+%    \addtocontents{toc}{\protect\setcounter{tocdepth}{0}}
+    \AJW@appendixtrue
+    \setcounter{chapter}{0}
+    \setcounter{section}{0}
+    \@addtoreset{figure}{subsection}
+    \setcounter{figure}{0}
+    \setcounter{table}{0}
+% set tocdepth to chapter heads only whether multi-author or single-author
+    \def\@chapapp{\appendixname}
+    \def\thechapter {\Alph{chapter}}
+    \def\thesection {\thechapter.\arabic{section}}
+    \def\thesubsection {\thesection.\arabic{subsection}}
+    \def\thetable   {\Alph{section}.\@arabic\c@table}
+    \def\thefigure  {\Alph{section}.\@arabic\c@figure}
+    \def\thetable   {\thechapter.\@arabic\c@table}
+    \def\thefigure  {\thechapter.\@arabic\c@figure}
+    \def\theequation{\Alph{section}.\arabic{equation}}
+    \def\theequation{\thechapter.\arabic{equation}}
+}
+
+% and only one appendix
+  \def\oneappendix{\AJW@oneappendixtrue\appendix
+    \def\thesection {}% remove the 'A' from Appendix heading
+  }
+\else
+%
+% single version
+\def\appendix{\par\clearpage
+ \AJW@appendixtrue
+ \setcounter{chapter}{0}
+ \setcounter{section}{0}
+% set tocdepth to chapter heads only whether multi-author or single-author
+ \addtocontents{toc}{\protect\setcounter{tocdepth}{0}}
+ \def\@chapapp{\appendixname}
+ \def\thechapter {\Alph{chapter}}
+ \def\thesection {\thechapter.\arabic{section}}
+  \def\thesubsection {\thesection.\arabic{section}}
+ \def\thetable   {\thechapter.\@arabic\c@table}
+ \def\thefigure  {\thechapter.\@arabic\c@figure}
+ \def\theequation{\thechapter.\arabic{equation}}
+}
+%
+% and only one appendix
+    \def\oneappendix{\AJW@oneappendixtrue\appendix}
+\fi
+
+
+%%%%%%%%%%%%%%%%%%%%%%
+\ifAJW@multisty
+  \def\endappendix{\AJW@appendixtrue%\AJW@appendixfalse
+  \def\section{\@startsection {section}{1}{\z@}
+    {-26\p@ \@plus-7\p@ \@minus-3.5\p@}{13\p@}{\Aheadsize\boldseriffont\AJW@hangraggedright}}
+ \def\@chapapp{\appendixname}
+ \def\thechapter {\Alph{chapter}}
+%%     \def\thechapter {\arabic{chapter}}
+    \def\thesection {\thechapter.\arabic{section}}
+    \def\thesubsection {\thesection.\arabic{subsection}}
+    \def\thetable{\thechapter.\@arabic\c@table}
+    \def\thefigure{\thechapter.\@arabic\c@figure}
+    \def\theequation{\arabic{chapter}.\arabic{equation}}%
+  }
+\else
+  \def\endappendix{\relax}
+\fi
+
+%    ****************************************
+%    *                LISTS                 *
+%    ****************************************
+%
+\ifAJW@indentsty
+ \ifdim
+ \AJW@indent=\z@
+ \setlength\leftmargini{1em}
+  \else
+  \setlength\leftmargini{\AJW@indent}
+ \fi
+ \else
+ \setlength\leftmargini{.5em}
+\fi
+\setlength\leftmarginii{.5em}
+\setlength\leftmarginiii{.5em}
+\setlength\leftmarginiv{1em}
+\setlength\leftmarginv{1em}
+\setlength\leftmarginvi{1em}
+\leftmargin\leftmargini
+\setlength\labelsep{0.5em}
+\labelwidth\leftmargini
+\advance\labelwidth-\labelsep
+\def\@listI{\leftmargin\leftmargini
+ \parsep    \z@
+ \partopsep \z@
+ \topsep  6.5\p@ \@plus 3.25\p@ \@minus 1\p@%
+ \itemsep   \z@
+ \listparindent
+ \parindent
+}
+\let\@listi\@listI
+\@listi
+\def\@listii{\leftmargin\leftmarginii
+ \labelwidth\leftmarginii
+ \advance\labelwidth-\labelsep
+ \parsep    \z@
+ \partopsep \z@
+ \topsep \z@
+ \itemsep   \z@
+}
+\def\@listiii{\leftmargin\leftmarginiii
+ \labelwidth\leftmarginiii \advance\labelwidth-\labelsep
+ \parsep    \z@
+ \partopsep \z@
+ \topsep 0\p@
+ \itemsep   \z@ %
+}
+\def\@listiv{\leftmargin\leftmarginiv
+ \labelwidth\leftmarginiv \advance\labelwidth-\labelsep}
+\def\@listv{\leftmargin\leftmarginv
+ \labelwidth\leftmarginv  \advance\labelwidth-\labelsep}
+\def\@listvi{\leftmargin\leftmarginvi
+ \labelwidth\leftmarginvi \advance\labelwidth-\labelsep}
+
+%    ****************************************
+%    *           LIST ENVIRONMENTS          *
+%    ****************************************
+%
+%
+% ENUMERATE -- with optional argument to set left margin
+% DEFAULT is arabic numbering with full point
+
+\def\makeRRlabel#1{\hss\llap{#1}}
+\def\makeRRlabeldot#1{\hss\llap{#1}}
+
+\def\listfont{\reset@font\fontsize{10.25}{13.5}\selectfont\raggedright\mathversion{normal}}
+
+\newbox\@dotbox
+\setbox\@dotbox\hbox{.}%
+\def\enumerate{\ifnum \@enumdepth >3 \@toodeep \else
+  \advance\@enumdepth \@ne
+  \edef\@enumctr{enum\romannumeral\the\@enumdepth}%
+ \fi
+ \@ifnextchar [{\@enumeratetwo}{\@enumerateone}%
+}
+\def\@enumeratetwo[#1]{%
+ \list{\csname label\@enumctr\endcsname}%
+  {\settowidth\labelwidth{#1}%
+   \leftmargin\labelwidth \advance\leftmargin\labelsep
+   \listfont
+   \usecounter{\@enumctr}%
+   \let\makelabel\makeRRlabel}%
+}
+\def\@enumerateone{%\listsize
+ \list{\csname label\@enumctr\endcsname}%
+  {\usecounter{\@enumctr}%
+   \ifAJW@indentsty
+    \ifdim \AJW@indent=\z@ \leftmargin 1em % overrides \leftmargini,ii,iii...
+                 \fi \else
+                           \leftmargin 0.5em% width of a digit
+                           \advance\leftmargin\labelsep
+                           \raggedright
+                           \advance\leftmargin\wd\@dotbox
+   \fi
+   \let\makelabel\makeRRlabeldot}}
+\def\endenumerate{\endlist\normalsize}%
+
+\newcommand\labelenumi{\theenumi}
+\newcommand\labelenumii{\theenumii}
+\newcommand\labelenumiii{\theenumiii}
+\newcommand\labelenumiv{\theenumiv}
+
+\renewcommand\p@enumii{\theenumi}
+\renewcommand\p@enumiii{\theenumi(\theenumii)}
+\renewcommand\p@enumiv{\p@enumiii\theenumiii}
+%
+% ITEMIZE
+%
+\def\itemize{\ifnum \@itemdepth >3 \@toodeep \else
+  \advance\@itemdepth \@ne
+  \edef\@itemitem{labelitem\romannumeral\the\@itemdepth}%
+  \list{\csname\@itemitem\endcsname}%
+   {\def\makelabel##1{\hss\llap{##1}}}
+ \fi
+}
+\newcommand\labelitemi{$\bullet$}
+\newcommand\labelitemii{\bfseries --}
+\newcommand\labelitemiii{$\circ$}
+\newcommand\labelitemiv{$\diamond$}
+%
+% DESCRIPTION
+%
+\newcommand*\descriptionlabel[1]{\hspace\labelsep\bfseries #1}
+\def\description{%\listsize
+ \list{}{\labelwidth\z@
+ \labelsep0pt
+  \leftmargin 1pc
+  \itemindent-\leftmargin
+  \let\makelabel\descriptionlabel
+ }}
+\let\enddescription\endlist
+
+
+%    ****************************************
+%    *         OTHER ENVIRONMENTS           *
+%    ****************************************
+%
+% VERSE
+%
+\def\verse{\let\\=\@centercr
+  \list{}{\itemsep\z@ \itemindent -1em\listparindent \itemindent
+          \rightmargin\z@
+          \leftmargin\AJW@indent\advance\leftmargin 1em}\item[]\smallish}
+\let\endverse=\endlist
+%
+% QUOTATION
+%
+\def\quotation{\list{}{\leftmargin\AJW@indent\rightmargin\z@}\item[]\smallish}
+\let\endquotation=\endlist
+%
+% QUOTE
+%
+\newenvironment{quote}{\par\addvspace{8.5pt plus1pt}\parindent0pt\smallish}
+{\par\addvspace{6.5pt plus1pt}}
+%
+% INDENTED (for use in title pages)
+%
+\def\indented{\list{}{\leftmargin\AJW@indent
+ \listparindent\z@\rightmargin\z@}\raggedright\item[]}
+\let\endindented=\endlist
+%
+% ARRAY AND TABULAR
+%
+\setlength\arraycolsep{5\p@}
+\setlength\tabcolsep{6\p@}
+\setlength\arrayrulewidth{.5\p@}
+\setlength\doublerulesep{2\p@}
+%
+% TABBING
+%
+\tabbingsep\labelsep
+%
+% FRAMEBOX
+%
+\setlength\fboxsep{3\p@}
+\setlength\fboxrule{.5\p@}
+
+
+% THEOREM
+%
+% let theorems be handled by amsthm.sty
+% PROOFs
+%
+% let proofs be handled by amsthm.sty
+
+\newenvironment{proof*}[1][\proofname]{\par
+  \pushQED{}%{\qed}%
+  %\normalfont
+  \topsep6\p@\@plus6\p@\relax
+  \trivlist
+  \item[\hskip\labelsep
+        \itshape
+    #1\@addpunct{.\enskip}]\ignorespaces
+}{%
+  \popQED\endtrivlist\@endpefalse
+}
+
+
+%    ****************************************
+%    *        CHAPTERS AND SECTIONS         *
+%    ****************************************
+%
+% DEFINE COUNTERS:
+%
+\newcounter {part}
+\newcounter {chapter}
+\newcounter {section}[chapter]
+\newcounter {subsection}[section]
+\newcounter {subsubsection}[subsection]
+\newcounter {paragraph}[subsubsection]
+\newcounter {subparagraph}[paragraph]
+
+\def\thepart          {\Roman{part}}
+\def\thechapter       {\arabic{chapter}}
+\def\thesection       {\thechapter.\arabic{section}}
+\def\thesubsection    {\thesection.\arabic{subsection}}
+\def\thesubsubsection {\thesubsection .\arabic{subsubsection}}
+\def\theparagraph     {\thesubsubsection.\arabic{paragraph}}
+\def\thesubparagraph  {\theparagraph.\arabic{subparagraph}}
+\def\@chapapp{\chaptername}
+
+%    ****************************************
+%    *                 PARTS                *
+%    ****************************************
+%
+
+\newcommand\ls{\kern.1em} % for letterspacing; .15em is a hair less than thinspace
+\newcommand\ns{\kern.4em} % for name-spacing
+
+\def\part{\cleardoublepage
+ \thispagestyle{empty}
+ \if@twocolumn
+   \onecolumn
+   \@tempswatrue
+  \else \@tempswafalse
+ \fi
+ \secdef\@part\@spart
+}
+
+% rule appears in Part title whether [multi] option is used or not
+\def\@part[#1]#2{%
+\vspace*{11pt}
+\ifnum \c@secnumdepth >-2\relax
+  \refstepcounter{part}%
+   \ifAJW@indentsty
+     \ifdim\AJW@indent>\z@
+       \ifAJW@multisty
+        \addcontentsline{toc}{part}{{\partname\ \thepart\enspace #1}}%
+       \else
+        \addcontentsline{toc}{part}{{\partname\ \thepart\enspace #1}}%
+       \fi
+     \else
+       \addcontentsline{toc}{part}{{\partname\ \thepart\enspace #1}}%
+     \fi
+   \else
+     \addcontentsline{toc}{part}{{\partname\ \thepart\enspace #1}}%
+   \fi
+\else
+    \addcontentsline{toc}{part}{#1}%
+\fi
+  \@mkboth{}{}%
+     \ifnum \c@secnumdepth >-2\relax
+       \hbox{{{\PNfont Part\hspace*{9.7\p@}\thepart}\par}}%\noindent{\PNfont\thepart\par}%
+       \vskip3.5\p@
+       \hbox{\color{scolor}\hskip-3pc\special{color push cmyk 0,0,0,.3}\vrule height5pt width36pc depth0pt\special{color pop}}\par
+     \fi
+     \vskip15.5\p@
+     \noindent{\PTfont #2\vphantom{pq}\par}%
+  \@endpart\cleardoublepage
+}
+
+% sPart titles not covered
+\def\@spart#1{{\ifAJW@indentsty \raggedright \else \centering \fi
+  \vspace*{-\baselineskip}
+  \par
+  \vskip 13\p@
+         \vskip 0\p@
+         \rule{\textwidth}{0.4pt}\par
+         \vskip 7pt
+  \huge \rm \MakeUppercase{#1}\par}
+\@endpart}
+
+%%% \@endpart finishes the part page
+
+\def\@endpart{\cleardoublepage}
+
+
+%    ****************************************
+%    *                EXAMPLES              *
+%    ****************************************
+
+
+% Examples numbered by chapter
+\newcounter{example@bean}[chapter]
+\def\p@example@bean{\thechapter.}% add section number to cross-references
+
+\newcount\tmp
+\def\examplelist{\@ifnextchar [{\@examplelisttwo}{\@examplelistone}}
+
+\newcommand\solution{\vspace{6.5pt}\par\noindent{\fontsize{12}{14}\selectfont{\fontspec{FrutigerLTStd-BoldCn.otf} Solution}}\\*\parskip3pt}
+
+\def\enumlistfont{\reset@font\fontsize{10.25}{13.5}\selectfont\raggedright\mathversion{normal}}
+
+\def\@examplelistone{\ifnum \@enumdepth >3 \@toodeep \else
+  \advance\@enumdepth \@ne
+\def\examplelabel##1{\boldseriffont Example \thechapter.##1\hss}
+\let\listfont\enumlistfont
+    \vspace{\baselineskip}%
+    \par\noindent\rule{\textwidth}{1pt}%
+    \par\nobreak
+    \@afterheading
+    \pushQED{\qed}
+    \def\@listii{\leftmargin\leftmarginii
+     \labelwidth\leftmarginii
+     \advance\labelwidth-\labelsep
+     \parsep    \z@
+     \partopsep \z@
+     \topsep 6.5\p@ \@plus .5\p@ \@minus 1\p@%
+     \itemsep   \z@
+     }
+     \list{%
+       \arabic{example@bean}}%
+       {\tmp=\c@example@bean
+        \usecounter{example@bean}%
+        \c@example@bean=\tmp
+        \leftmargin 0pc%
+        \labelwidth \leftmargin
+        \labelsep .5em%ajw
+        \raggedright
+        \addtolength{\labelwidth}{-\labelsep}%
+        \itemsep\baselineskip
+        \partopsep=0pt plus0pt minus0pt%
+        \let\makelabel\examplelabel}%
+  \fi}
+
+%%
+\def\endexamplelist{\noindent\rule{\textwidth}{1pt}\endlist\addvspace{17pt}}
+%%
+\def\@examplelisttwo[#1]{\ifnum \@enumdepth >3 \@toodeep \else
+  \advance\@enumdepth \@ne
+  \def\examplelabel##1{\bf #1 ##1\hss}
+  \pushQED{\qed}
+  \list{\arabic{example@bean}}%
+       {\tmp=\c@example@bean%new line
+        \usecounter{example@bean}%
+        \c@example@bean=\tmp%new line
+        \leftmargin 2pc
+        \labelwidth \leftmargin
+        \labelsep .5em%ajw
+        \addtolength{\labelwidth}{-\labelsep}
+  \let\makelabel\examplelabel}%
+\fi}
+
+\let\endexamplelist=\endlist
+\def\endexamplelist{\noindent\rule{\textwidth}{1pt}\endlist\addvspace{17pt}}
+
+
+% Examples numbered by chapter
+\newcounter{example@beanbychapter}[chapter]
+\def\p@example@beanbychapter{\thechapter.}% add chapter number to cross-references
+
+\def\examplelistbychapter{\@ifnextchar [{\@examplelisttwobychapter}{\@examplelistonebychapter}}
+\def\@examplelistonebychapter{\ifnum \@enumdepth >3 \@toodeep \else
+  \advance\@enumdepth \@ne
+  \def\examplelabel##1{##1\hss}
+  \pushQED{\qed}
+  \list{\arabic{example@beanbychapter}}%
+       {\usecounter{example@beanbychapter}%
+        \leftmargin 2pc
+        \labelwidth \leftmargin
+        \addtolength{\labelwidth}{-\labelsep}
+  \let\makelabel\examplelabel}%
+\fi}
+\def\@examplelisttwobychapter[#1]{\ifnum \@enumdepth >3 \@toodeep \else
+  \advance\@enumdepth \@ne
+  \def\examplelabel##1{\bf #1 ##1\hss}
+  \pushQED{\qed}
+  \list{\arabic{example@beanbychapter}}%
+      {\tmp=\c@example@beanbychapter%new line
+       \usecounter{example@beanbychapter}%
+        \c@example@beanbychapter=\tmp%new line
+        \leftmargin 2pc
+        \labelwidth \leftmargin
+        \addtolength{\labelwidth}{-\labelsep}
+  \let\makelabel\examplelabel}%
+\fi}
+
+\let\endexamplelistbychapter=\endlist
+
+\def\examples{\section{Examples}%
+  \addcontentsline{toc}{section}{Examples}
+  \ifAJW@multisty\else\markright{Examples}\fi
+  \examplelistbychapter
+}
+\let\endexamples=\endexamplelistbychapter
+
+
+\definecolor{scolor}{cmyk}{0,0,0,0.3}    %
+\definecolor{grey}{cmyk}{0,0,0,.5}    %
+
+
+%    ****************************************
+%    *         TABLE OF CONTENTS, ETC.      *
+%    ****************************************
+%
+\newdimen\AJW@tocindent
+  \AJW@tocindent=60\p@ % used for Appendix entries
+  \def\numberline#1{\hbox to\@tempdima{#1\hfil}}
+
+\def\AJW@numberline#1{\hbox to 1.15\AJW@tocindent {{\appendixname\ #1\hfil}}}%1.15
+\def\AJW@nonumberline#1{\hbox to 56pt{{\appendixname\hfil}}}%56pt matches section heads
+
+\newif\ifAJW@addtoc        \AJW@addtocfalse
+\newif\ifAJW@firstTOCentry \AJW@firstTOCentrytrue
+\newdimen\AJW@toclmarg
+\ifAJW@multisty
+  \setcounter{tocdepth}{1}
+  \AJW@toclmarg 3pc
+\else
+  \setcounter{tocdepth}{1}
+  \AJW@toclmarg 3pc%
+\fi
+
+\ifAJW@indentsty %and
+  \ifdim\AJW@indent>\z@
+    \AJW@toclmarg \AJW@indent
+  \fi
+\fi
+\def\@pnumwidth{2.55em}
+\def\@tocrmarg {3.55em}
+\def\@dotsep{4.5}
+%
+% TABLEOFCONTENTS
+%
+%
+
+\newcommand*\l@section      {\@dottedtocline{1}{0pt}{28pt}}
+\newcommand*\l@subsection   {\@dottedtocline{2}{28pt}{35pt}}
+\newcommand*\l@problemhead  {\@dottedtocline{6}{0pt}{28pt}}
+
+% these are not used
+\newcommand*\l@subsubsection{\@dottedtocline{3}{\z@}{\AJW@toclmarg}}
+\newcommand*\l@paragraph    {\@dottedtocline{4}{\z@}{\AJW@toclmarg}}
+\newcommand*\l@subparagraph {\@dottedtocline{5}{\z@}{\AJW@toclmarg}}
+\newcommand*\l@xhead        {\@dottedtocline{6}{1.5em}{2.3em}}
+\newcommand*\l@yhead        {\@dottedtocline{7}{1.5em}{2.3em}}
+\newcommand*\l@zhead        {\@dottedtocline{8}{1.5em}{2.3em}}
+ %
+% LIST OF FIGURES
+%
+\newcommand\listoffigures{\@restonecolfalse
+ \if@twocolumn\@restonecoltrue\onecolumn\fi
+ \bgroup
+ \AJW@addtocfalse% different chapter title and toc entries
+   \chapter*{\listfigurename}
+   \addcontentsline{toc}{schapter}{{List of Figures}}
+   \AJW@firstLOFentrytrue
+ \normalsmall
+ \@starttoc{lof}
+ \egroup
+ \if@restonecol\twocolumn\fi
+}
+
+%
+% LIST OF TABLES
+%
+%
+\newcommand\listoftables{\@restonecolfalse
+ \if@twocolumn\@restonecoltrue\onecolumn\fi
+ \bgroup
+ \AJW@addtocfalse% different chapter title and toc entries
+   \chapter*{\listtablename}
+   \addcontentsline{toc}{schapter}{List of tables}
+  \AJW@firstLOTentrytrue
+ \normalsmall
+ \@starttoc{lot}
+ \egroup
+ \if@restonecol\twocolumn\fi
+}
+
+
+% LIST OF FLOATINGBOXES
+%
+\newcommand\listoffloatingboxes{\@restonecolfalse
+ \if@twocolumn\@restonecoltrue\onecolumn\fi
+ \bgroup
+ \AJW@addtocfalse% different chapter title and toc entries
+   \chapter*{\listfloatingboxes}
+   \addcontentsline{toc}{schapter}{List of boxes}
+ \normalsize
+% \setcounter{tocdepth}{0}
+ \@starttoc{lofb}
+ \egroup
+ \if@restonecol\twocolumn\fi
+}
+
+\let\l@floatingbox\l@figure
+
+% LIST OF CONTRIBUTORS
+\newcommand\contributor[1]{%
+  \addcontentsline{loc}{contrib}{#1}%
+  \addtocontents{loc}{\vspace{\baselineskip}}%
+}
+
+\newcommand\listofcontributors{\@restonecolfalse
+ \if@twocolumn\@restonecoltrue\onecolumn\fi
+ \bgroup
+ \AJW@addtocfalse% different chapter title and toc entries
+   \chapter*{\listcontribname}
+   \addcontentsline{toc}{schapter}{List of contributors}
+ \normalsize
+ \@starttoc{loc}
+ \egroup
+ \if@restonecol\twocolumn\fi
+}
+
+\newcommand\editedlistofcontributors{\@restonecolfalse
+ \if@twocolumn\@restonecoltrue\onecolumn\fi
+ \bgroup
+ \AJW@addtocfalse% different chapter title and toc entries
+   \chapter*{\listcontribname}
+   \addcontentsline{toc}{schapter}{List of contributors}
+ \normalsize
+ \input{editedloc}
+ \egroup
+ \if@restonecol\twocolumn\fi
+}
+
+%
+% \@dottedtocline{LEVEL}{INDENT}{NUMWIDTH}{TITLE}{PAGE} without the dots
+%
+
+\def\@dottedtocline#1#2#3#4#5{% For toc alone, all designs assume \AJW@indent=0pc
+ \ifnum #1>\c@tocdepth
+ \else
+  \vskip \z@ \@plus .2\p@
+  {\leftskip #2\relax
+   \rightskip \@tocrmarg \@plus2em % for ragged right entries
+   \parfillskip -\rightskip
+   \parindent #2\relax
+   \@afterindenttrue
+   \interlinepenalty\@M
+   \leavevmode
+   \@tempdima #3\relax \advance\leftskip \@tempdima \hbox{}\hskip -\leftskip
+   #4\nobreak
+   \hfill \nobreak
+   \ifAJW@firstTOCentry
+    \hbox to\@pnumwidth{\hfil\rm {\itshape page\/} #5}\par
+    \global\AJW@firstTOCentryfalse
+   \else
+    \hbox to\@pnumwidth{\hfil\rm #5}\par
+   \fi}%
+ \fi
+}
+
+%    ****************************************
+%    *             BIBLIOGRAPHY             *
+%    ****************************************
+%
+
+% default bibliography styles (use of harvard.sty will overwrite this coding)
+
+\newenvironment{thebibliography}[1]
+     {%
+     \ifAJW@multisty
+       \section*{\refname}%
+       \addcontentsline{toc}{section}{\textit{\refname}}
+     \else
+       \chapter*{\refname}%
+     \fi
+     \list{\@biblabel{\@arabic\c@enumiv}}%
+          {\bibliosize
+           \settowidth\labelwidth{\@biblabel{#1}}%
+           \leftmargin\labelwidth
+           \advance\leftmargin\labelsep
+           \@openbib@code
+           \usecounter{enumiv}%
+           \let\p@enumiv\@empty
+            \renewcommand\theenumiv{\@arabic\c@enumiv}}%
+     \sloppy
+     \clubpenalty4000
+     \@clubpenalty \clubpenalty
+     \widowpenalty4000%
+     \sfcode`\.\@m}
+    {\def\@noitemerr
+      {\@latex@warning{Empty `thebibliography' environment}}%
+     \endlist}
+
+\newcommand\newblock{\hskip .11em\@plus.33em\@minus.07em}
+\let\@openbib@code\@empty
+
+% HARVARD OUTPUT
+%
+\newcommand*\harvardoutputlabel[1]{}
+\def\harvardoutput{\bibliosize
+ \list{}{\labelwidth\z@
+  \leftmargin 1em%
+  \itemindent-\leftmargin
+  \let\makelabel\harvardoutputlabel
+ }}
+\let\endharvardoutput\endlist
+
+% VANCOUVER OUTPUT
+
+% to remove square braces around references, i.e. 1 not [1]
+\newcommand\removesquarebraces{%
+  \renewcommand\@biblabel[1]{##1}%
+}
+
+\newenvironment{vancouveroutput}[1]
+  {\bibliofont%\bibliosize
+   %\chapter*{\refname
+   %\@mkboth{\refname}{\refname}}%
+      \list{\@biblabel{\@arabic\c@enumiv}}%
+           {\settowidth\labelwidth{\@biblabel{#1}}%
+            \leftmargin\labelwidth
+            \advance\leftmargin\labelsep
+            \@openbib@code
+            \usecounter{enumiv}%
+            \let\p@enumiv\@empty
+            \renewcommand\theenumiv{\@arabic\c@enumiv}}%
+      \sloppy
+      \clubpenalty10000
+      \@clubpenalty \clubpenalty
+      \widowpenalty10000%
+      \sfcode`\.\@m}
+     {\def\@noitemerr
+       {\@latex@warning{Empty `thebibliography' environment}}%
+      \endlist}
+
+% IEEEtranoutput exactly the same as vancouveroutput
+\newenvironment{IEEEtranoutput}[1]
+  {\bibliofont%\bibliosize
+   %\chapter*{\refname
+   %\@mkboth{\refname}{\refname}}%
+      \list{\@biblabel{\@arabic\c@enumiv}}%
+           {\settowidth\labelwidth{\@biblabel{#1}}%
+            \leftmargin\labelwidth
+            \advance\leftmargin\labelsep
+            \@openbib@code
+            \usecounter{enumiv}%
+            \let\p@enumiv\@empty
+            \renewcommand\theenumiv{\@arabic\c@enumiv}}%
+      \sloppy
+      \clubpenalty10000
+      \@clubpenalty \clubpenalty
+      \widowpenalty10000%
+      \sfcode`\.\@m}
+     {\def\@noitemerr
+       {\@latex@warning{Empty `thebibliography' environment}}%
+      \endlist}
+
+
+%    ****************************************
+%    *              THE INDEX               *
+%    ****************************************
+%
+% THE THEINDEX ENVIRONMENT
+%
+\usepackage{multicol}
+
+\def\index@prologue{}
+\def\@indextype{}
+
+\newif\if@restonecol
+\newenvironment{theindex}{\the@index{\indexname}}{\par\endthe@index}
+%\newenvironment{theauthorindex}{\the@index{Author index}}{\par\endthe@index}
+%\newenvironment{thesubjectindex}{\the@index{Subject index}}{\par\endthe@index}
+
+\newcommand\the@index[1]{\@restonecoltrue
+ \columnseprule \z@
+ \columnsep 1pc
+ \chapter*{#1}%
+ \markboth{Index}{Index}
+ \addcontentsline{toc}{schapter}{Index}
+\LRH{Index}
+\def\@chaptext{#1}
+\markright{Index}
+ \@mkboth{#1}{#1}
+ \typeout{#1.}
+ \thispagestyle{plain}
+\begin{multicols}{3}
+ \indexsize\raggedright
+ \parindent\z@
+ \parskip\z@
+ \let\item=\@idxitem
+}
+\def\endthe@index{\end{multicols}%
+\clearpage}
+
+\newcommand\@idxitem{\par\hangindent 4mm}
+\newcommand\subitem{\par\hangindent 4mm \hspace*{1em}}
+\newcommand\subsubitem{\par\hangindent 4mm \hspace*{2em}}
+\newcommand\indexspace{\par \vskip 11\p@ \@plus 1\p@ \@minus 1\p@\relax}
+
+%    ****************************************
+%    *          NUMBERED FOOTNOTES          *
+%    ****************************************
+%
+
+\newskip\@footindent
+\@footindent=1em
+
+\renewcommand\footnoterule{\kern-3\p@ \hrule width 0\columnwidth \kern 2.6\p@}
+
+% reset on chapters
+\@addtoreset{footnote}{chapter}
+
+\long\def\@makefntext#1{\raggedright%
+ \noindent \@hangfrom{\hss$^{\@thefnmark}$\hskip3pt}#1}
+
+\renewcommand\thefootnote{\mbox{$^{\arabic{footnote}}$}}
+\def\@makefnmark{\mbox{$^{\arabic{footnote}}$}}
+
+% numbers preferred
+\def\fnsymbol#1{\expandafter\@fnsymbol\csname c@#1\endcsname}
+
+% redfine footnotemark and footnotetext to work on chapter openings
+\newcommand\alphafootnotes{%
+ \def\@fnsymbol##1{{{\scriptstyle\@alph{##1}}\relax}}%
+ \def\@xfootnotenext[##1]{%
+  \begingroup
+     \csname c@\@mpfn\endcsname ##1\relax
+     \unrestored@protected@xdef\@thefnmark{$^{\thempfn}$}%
+  \endgroup
+  \@footnotetext}%
+}
+
+\newcommand\arabicfootnotes{%
+  \setcounter{footnote}{0}%
+  \def\@fnsymbol##1{{{^{\scriptstyle\@arabic{##1}}}\relax}}%
+}
+
+%
+% MINIPAGE
+%
+\skip\@mpfootins = 4\p@ \@plus 1\p@ \@minus .1\p@  % top of first minipage footnote.
+\def\thempfootnote{\alph{mpfootnote}}
+\def\@makempfnmark{\hbox{$^{\@thefnmark}$}}
+%
+\long\def\@makempfntext#1{\@setpar{\@@par\@tempdima \hsize
+ \advance\@tempdima-\@footindent
+ \parshape \@ne \@footindent \@tempdima}\par
+ \noindent \hbox to \z@{\hss$^{\@thefnmark}$\enskip}#1}
+%
+% redefine minipage to reset footnotemark as well as text and counters...
+%
+\def\@iiiminipage#1#2[#3]#4{% from latex.ltx
+  \leavevmode
+  \@pboxswfalse
+  \setlength\@tempdima{#4}%
+  \def\@mpargs{{#1}{#2}[#3]{#4}}%
+  \setbox\@tempboxa\vbox\bgroup
+    \color@begingroup
+      \hsize\@tempdima
+      \textwidth\hsize \columnwidth\hsize
+      \@parboxrestore
+      \def\@mpfn{mpfootnote}\def\thempfn{\thempfootnote}\c@mpfootnote\z@
+      \let\@makefnmark\@makempfnmark % from v1.2 ajw
+      \let\@footnotetext\@mpfootnotetext
+      \let\@listdepth\@mplistdepth \@mplistdepth\z@
+      \@minipagerestore\global\@minipagetrue %% \global added 24 May 89
+      \everypar{\global\@minipagefalse\everypar{}}}
+
+\long\def\@mpfootnotetext#1{\global\setbox\@mpfootins
+ \vbox{\unvbox\@mpfootins
+  \footnotesize
+  \hsize\columnwidth \@parboxrestore
+  \edef\@currentlabel{\csname p@mpfootnote\endcsname\@thefnmark}
+  \@makempfntext{\rule{\z@}{\footnotesep}\ignorespaces #1\strut}}}
+
+%       ****************************************
+%       *               ENDNOTES               *
+%       ****************************************
+%
+\newcounter{endnote}[chapter]
+\def\theendnote{\arabic{endnote}}
+\newdimen\endnotesep
+\newwrite\@enotes
+\newif\if@enotesopen
+\global\@enotesopenfalse
+\newif\ifAJW@firstendnote
+\global\AJW@firstendnotefalse
+
+\def\@makeenmark{\hbox{$^{\@theenmark}$}}
+
+\def\endnote{%
+ \ifAJW@multisty \AJW@firstendnotefalse
+        \else \ifnum \c@endnote = \z@ \AJW@firstendnotetrue
+                                \else \AJW@firstendnotefalse \fi
+ \fi
+ \@ifnextchar[{\@xendnote
+  }{\stepcounter{endnote}%
+    \xdef\@theenmark{\theendnote}%
+   }%
+ \@endnotemark
+ \@endnotetext
+}
+\def\@xendnote[#1]{\begingroup \c@endnote=#1\relax
+  \xdef\@theenmark{\theendnote}\endgroup
+}
+\let\@doanenote=0
+\let\@endanenote=0
+\def\@openenotes{\immediate\openout\@enotes=\jobname.ent\relax
+ \global\@enotesopentrue
+}
+\gdef\AJW@endnotehead{\relax}
+\long\def\@endnotetext#1{%
+ \if@enotesopen \else \@openenotes \fi
+ \ifAJW@firstendnote
+  \addtoendnotes{\protect\endnoteheading*{\AJW@endnotehead}}%
+ \fi
+ \ifAJW@multisty\else
+  \addtoendnotes{\protect\mark{\thepage}}%
+ \fi
+ \immediate\write\@enotes{\@doanenote{\@theenmark}}%
+ \begingroup
+  \def\next{#1}%
+  \newlinechar='40
+  \immediate\write\@enotes{\meaning\next}%
+ \endgroup
+ \immediate\write\@enotes{\@endanenote}%
+ \edef\@currentlabel{\csname p@endnote\endcsname\@theenmark}%
+}
+\long\def\addtoendnotes#1{%
+ \if@enotesopen \else \@openenotes \fi
+ \begingroup
+  \newlinechar='40
+  \let\protect\string
+  \immediate\write\@enotes{#1}%
+ \endgroup
+}
+\def\endnotemark{\@ifnextchar [{\@xendnotemark
+ }{\stepcounter{endnote}%
+   \xdef\@theenmark{\theendnote}}%
+ \@endnotemark
+}
+\def\@xendnotemark[#1]{\begingroup
+  \c@endnote #1\relax
+  \xdef\@theenmark{\theendnote}\endgroup
+}
+\def\@endnotemark{\leavevmode
+ \ifhmode \edef\@x@sf{\the\spacefactor}\fi
+ \@makeenmark
+ \ifhmode\spacefactor\@x@sf\fi\relax
+}
+\def\endnotetext{\@ifnextchar [{\@xendnotenext
+  }{\xdef\@theenmark{\theendnote}}%
+ \@endnotetext
+}
+\def\@xendnotenext[#1]{\begingroup
+  \c@endnote=#1\relax \xdef\@theenmark{\theendnote}\endgroup
+}
+
+\ifAJW@multisty
+ \def\enoteheading{\endnoteheading*{Notes}}
+\else
+ \def\enoteheading{\chapter*{Notes}\leavevmode\par\vskip-\baselineskip}
+\fi
+
+\def\enoteformat{\raggedright\noindent
+  \@tempdima = 1.5em
+ \leftskip \@tempdima \parindent=0em%
+ \leavevmode
+ \hskip-\@tempdima
+ \hskip-\parindent
+ \hbox to \@tempdima {\hfil\@theenmark\hspace*{0.5em}}%
+}
+\ifAJW@multisty\else
+ \def\AJW@enoteheadline{Notes to pp. \firstmark--\botmark}
+\fi
+\def\theendnotes{\immediate\closeout\@enotes
+ \global\@enotesopenfalse
+ \begingroup
+  \makeatletter
+  \def\@doanenote##1##2>{\def\@theenmark{##1}%\par removed
+    \begingroup\enoteformat}%
+  \def\@endanenote{\par\endgroup}%
+  \def\ETC.{\@warning{[CUPBOOK] Some long endnotes will be truncated}
+   \def\ETC.{\relax}}
+  \enoteheading
+  \ifAJW@multisty\else % redefine marking for running heads
+   \def\chaptermark##1{}
+   \def\leftmark{\AJW@enoteheadline}
+   \def\rightmark{\AJW@enoteheadline}
+  \fi
+  \enotesize
+  \@input{\jobname.ent}%
+  \ifAJW@multisty\else\clearpage\fi
+ \endgroup
+}
+
+% endnote heads same as section heads
+ \def\endnoteheading{\@startsection{endnoteheading}{2}{\z@}
+  {-19.5\p@ \@plus-7\p@ \@minus-3.5\p@}{6.5\p@}{\Bheadsize\AJW@hangraggedright}}
+
+%    ****************************************
+%    * FIGURES, TABLES, AND FLOATING BOXES  *
+%    ****************************************
+%
+%
+\setcounter{topnumber}{2}
+\renewcommand\topfraction{0.9}
+\setcounter{bottomnumber}{2}
+\renewcommand\bottomfraction{0.5}
+\setcounter{totalnumber}{3}
+\renewcommand\textfraction{0.05}
+\renewcommand\floatpagefraction{0.95}
+\setcounter{dbltopnumber}{2}
+\renewcommand\dbltopfraction{0.9}
+\renewcommand\dblfloatpagefraction{0.8}
+%
+% \@makecaption{NUMBER}{TEXT} : Macro to make a figure or table caption.
+%
+\newif\iflongwidth
+\global\longwidthfalse
+
+\long\def\make@table@caption#1#2{\vspace{7\p@}%
+  \setbox\@tempboxa\hbox%{{{\rm #1}\enskip\itshape #2}}%
+    {\raggedright{{\tablecaptionnumfont#1}}\enskip
+    {\tablecaptionfont#2\par}}
+  \ifdim \wd\@tempboxa >\hsize
+    {%\ifAJW@indentsty
+        \raggedright
+     %\else \centering\fi
+     {\raggedright{{\tablecaptionnumfont#1}}\enskip
+    {\tablecaptionfont#2\par}\par}
+     }%
+  \else
+     \iflongwidth
+      \hbox to\hsize{\hskip-3pc\box\@tempboxa\hfill}\par
+      \else
+       \hbox to\hsize{\box\@tempboxa\hfill}\par
+     \fi
+  \fi
+  \vspace*{3\p@}\par
+}
+
+
+
+\long\def\@unnumtablecaption#1#2{%
+\begingroup
+\tablefont%
+  \vspace*{-14pt}
+  \endgroup}
+
+\newbox\@figbox
+\long\def\make@figure@caption#1#2{\vskip 8\p@
+  \setbox\@tempboxa\hbox{\raggedright{{\figcaptionnumfont #1}}\enskip{\figcaptionfont#2\par}}%
+  \ifdim \wd\@tempboxa >\hsize
+    {{\figcaptionnumfont#1}\enskip{\figcaptionfont#2\par}}%
+  \else
+    {{\figcaptionnumfont#1}\enskip{\figcaptionfont#2\par}}%
+  \fi
+}
+
+\long\def\make@floatingbox@caption#1#2{%
+  \setbox\@tempboxa\hbox%
+    {\raggedright{\Bheadsize #1}\enskip
+    {\Bheadsize #2\par}}
+  \ifdim \wd\@tempboxa >\hsize
+    {\raggedright
+     \else
+     \centering\fi
+     {\raggedright{\Bheadsize #1}\enskip
+    {\Bheadsize #2\par}}
+     }%
+  \else
+       \hbox to\hsize{\box\@tempboxa\hfil}\par
+  \fi
+  \vspace*{0.5\baselineskip}\par
+}
+
+%
+% Float control
+%
+\newdimen\AJW@floatwidth
+
+\def\AJW@float{\AJW@floatwidth \textwidth
+ \addtolength{\AJW@floatwidth}{-\AJW@floatindent}
+ \hspace*{\AJW@floatindent}\minipage{\AJW@floatwidth}%
+ \raggedright
+ \smallish}
+\def\endAJW@float{\endminipage}
+
+% for floating boxes, we require \normalsize
+\def\AJW@floatfb{\AJW@floatwidth \textwidth
+ \addtolength{\AJW@floatwidth}{-\AJW@floatindent}
+ \hspace*{\AJW@floatindent}\minipage{\AJW@floatwidth}%
+ \raggedright
+ \normalsize}
+\def\endAJW@floatfb{\endminipage}
+
+\def\AJW@widefloat{\minipage{\textwidth}\raggedright\smallish}
+\let\endAJW@widefloat=\endAJW@float
+%
+% FIGURE
+%
+
+\usepackage{caption}
+
+\newcounter{figure}[chapter]
+\def\thefigure{\thechapter.\@arabic\c@figure}
+\def\fps@figure{tbp}
+\def\ftype@figure{1}
+\def\ext@figure{lof}
+\def\fnum@figure{\figurename\ \thefigure}
+
+\def\figure{\let\@makecaption=\make@figure@caption
+\AJW@floatindent=\AJW@indent
+ \@ifnextchar[{\AJW@figone}{\AJW@figzero}}
+\def\AJW@figone[#1]{\@xfloat{figure}[#1]\AJW@float}
+\edef\AJW@figzero{\noexpand\@xfloat{figure}[\fps@figure]\noexpand\AJW@float}
+\def\endfigure{\endAJW@float\end@float}
+
+\newenvironment{boxfigure}{\let\@makecaption=\make@figure@caption\begin{center}}{\end{center}}
+
+
+\@namedef{figure*}{\let\@makecaption=\make@figure@caption
+ \@ifnextchar[{\AJW@widefigone}{\AJW@widefigzero}}
+\def\AJW@widefigone[#1]{\@xfloat{figure}[#1]\AJW@widefloat}
+%\edef\AJW@widefigzero{\noexpand\@xfloat{figure}[p]\noexpand\AJW@widefloat}
+\edef\AJW@widefigzero{\noexpand\@xfloat{figure}[\fps@figure]\noexpand
+  \AJW@widefloat}
+\@namedef{endfigure*}{\endAJW@widefloat\end@float}
+
+
+\def\sidewaysfigure{\@rotfloat{figure}%
+  \let\@makecaption=\make@rotatedfigure@caption}
+\def\endsidewaysfigure{}
+
+
+\long\def\make@rotatedfigure@caption#1#2{\vskip 5\p@
+  \setbox\@tempboxa\hbox{\raggedright{{\figcaptionnumfont #1}}\enskip{\figcaptionfont#2\par}}%
+  \ifdim \wd\@tempboxa >\hsize
+    {{\figcaptionnumfont#1}\enskip{\figcaptionfont#2\par}}%
+  \else
+    {{\figcaptionnumfont#1}\enskip{\figcaptionfont#2\par}}%
+  \fi
+}
+%%%%
+\usepackage{subcaption,wrapfig}
+\def\dummyfigure1{\hspace*{-3pc}\fcolorbox{grey}{grey}{\vbox to 10pc{\hbox to 33pc{\ }}}\par}
+\def\dummyfigure2{\fcolorbox{grey}{grey}{\vbox to 10pc{\hbox to 10pc{\ }}}}
+
+
+%
+% TABLE
+%
+\newcounter{table}[chapter]
+\def\thetable{\thechapter.\@arabic\c@table}
+\def\fps@table{tbp}
+\def\ftype@table{2}
+\def\ext@table{lot}
+\def\fnum@table{\tablename\ \thetable}
+
+\newenvironment{table}{%
+  \let\@makecaption=\make@table@caption
+  \ifAJW@indentsty
+    \ifdim\AJW@indent>\z@
+        \AJW@floatindent=\z@
+    \fi
+  \fi
+  \@ifnextchar[{\AJW@tabone}{\AJW@tabzero}%
+  }%
+  {\endAJW@float\end@float}
+
+
+\newenvironment{boxtable}[2]{%
+  \let\@makecaption=\make@table@caption
+  \captionof{table}{#1}
+\begin{center}
+\tablefont #2
+  }%
+  {\end{center}}
+
+
+\newenvironment{nboxtable}[3]{\setlength\tempdime{#1}\let\@makecaption=\make@table@caption\begin{center}\captionof{table}{#2}{\tablefont #3}}{\end{center}}
+
+
+
+\def\AJW@tabone[#1]{\@xfloat{table}[#1]\AJW@float}
+\edef\AJW@tabzero{%
+  \noexpand\@xfloat{table}[\fps@table]\noexpand\AJW@float}
+
+\newenvironment{table*}{%
+  \let\@makecaption=\make@table@caption
+  \let\AJW@currenthline=\AJW@fullhline
+  \@ifnextchar[{\AJW@widetabone}{\AJW@widetabzero}%
+  }%
+  {\endAJW@widefloat\end@float}
+
+\def\AJW@widetabone[#1]{\@xfloat{table}[#1]\AJW@widefloat}
+\edef\AJW@widetabzero{\noexpand\@xfloat{table}[\fps@table]\noexpand\AJW@widefloat}
+
+\def\unnumtbl{\fontsize{9}{11}\selectfont}
+\newenvironment{unnumtable}
+               {\let\@makecaption\@unnumtablecaption\@float{table}}
+               {\vspace*{-6.5pt}\end@float}
+
+%
+% FLOATINGBOXES
+%
+% setting for frame
+  \FrameRule=0.5pt
+  \FrameSep=6pt
+
+\newcounter{floatingbox}[chapter]
+\def\thefloatingbox{\thechapter.\@arabic\c@floatingbox}
+\def\fps@floatingbox{tbp}
+\def\ftype@floatingbox{2}
+\def\ext@floatingbox{lofb}
+\def\fnum@floatingbox{\floatingboxname\ \thefloatingbox}
+
+\newenvironment{floatingbox}{%
+  \let\@makecaption=\make@floatingbox@caption
+  \ifAJW@indentsty
+    \ifdim\AJW@indent>\z@
+        \AJW@floatindent=\z@
+    \fi
+  \fi
+  \@ifnextchar[{\AJW@fbone}{\AJW@fbzero}%
+  }%
+  {\end{framed}\endAJW@floatfb\end@float}
+
+\def\AJW@fbone[#1]{\@xfloat{floatingbox}[#1]\AJW@floatfb\begin{framed}}
+
+\edef\AJW@fbzero{%
+  \noexpand\@xfloat{floatingbox}[\fps@floatingbox]\noexpand\AJW@floatfb\noexpand\begin{framed}}
+
+
+%    ****************************************
+%    *                TITLE                 *
+%    ****************************************
+%
+% TITLEPAGE
+%
+\newif\ifAJW@titlepage
+\def\titlepage{\@restonecolfalse
+ \if@twocolumn\@restonecoltrue\onecolumn
+  \else \newpage
+ \fi
+ \AJW@titlepagetrue
+ \thispagestyle{empty}%
+}
+\def\endtitlepage{\if@restonecol\twocolumn \else \newpage \fi
+  \AJW@titlepagefalse}
+%
+\def\maketitle{\openin1 \jobname.ttl
+ \ifeof1
+  \typeout{No file \jobname.ttl.}
+  \begin{titlepage}
+     \begin{indented}
+   \vspace*{2\p@}
+   \parttitlesize\@title \par
+   \if\@subtitle\empty\else \vskip 14\p@ \subtitlesize\@subtitle \par \fi
+   \vspace{34\p@}
+   {\authorsize
+     \ifAJW@multisty {\itshape Edited by} \\ \fi
+% four lines above re-written to avoid clash with array.sty
+     \@author
+     \par}
+   \vfill
+     \end{indented}
+  \end{titlepage}
+  \cleardoublepage
+ \else
+  \closein1 \relax\@@input \jobname.ttl
+ \fi
+ \setcounter{footnote}{0} % Reset definitions
+ \let\thanks\relax
+ \gdef\@thanks{}
+ \gdef\@author{}
+ \gdef\@shortauthor{}
+ \gdef\@title{}
+ \let\maketitle\relax
+}
+\gdef\@title{\mbox{}}
+\def\title{\@ifnextchar[ {\@titletwo}{\@titleone}}
+\def\@titletwo[#1]#2{\gdef\@title{#2}\gdef\@subtitle{#1}}
+\def\@titleone#1{\gdef\@title{#1}\gdef\@subtitle{}}
+\def\subtitle#1{\gdef\@subtitle{#1}}
+\gdef\@subtitle{}
+\def\halftitle#1{\gdef\@halftitle{#1}}
+\gdef\@halftitle{\@title}
+%
+\gdef\@author{\mbox{}}
+\gdef\@shortauthor{}
+\def\author{
+  \@ifnextchar[{\@authortwo}{\@authorone}%
+}
+\def\@authortwo[#1]#2{\gdef\@author{\authorfont#2}\gdef\@shortauthor{#1}}
+\def\@authorone#1{\gdef\@author{\authorfont#1}\gdef\@shortauthor{}}
+
+\def\author@tabular{\def\@halignto{}\@authortable}
+
+\let\endauthor@tabular=\endtabular
+
+\def\@authortable{\leavevmode \hbox \bgroup $\let\@acol=\@tabacol
+ \let\@classz=\@tabclassz \let\@classiv=\@tabclassiv
+ \ifAJW@titlepage \let\\=\AJWauthor@tabcrone
+            \else \let\\=\author@tabcrone
+ \fi
+ \ignorespaces \@tabarray}
+\def\author@tabcrone{{\ifnum0=`}\fi\@xtabularcr[1\p@]\affilfont%\indexsize
+ \ifAJW@titlepage \let\\=\AJWauthor@tabcrtwo
+            \else \let\\=\author@tabcrtwo
+ \fi
+ \ignorespaces}
+\def\author@tabcrtwo{{\ifnum0=`}\fi\@xtabularcr[-3\p@]\affilfont%\indexsize
+ \ifAJW@titlepage \let\\=\AJWauthor@tabcrtwo
+            \else \let\\=\author@tabcrtwo
+ \fi
+ \ignorespaces}
+\def\AJWauthor@tabcrone{{\ifnum0=`}\fi\@xtabularcr[-2\p@]\affilfont%\indexsize
+ \let\\=\AJWauthor@tabcrtwo\ignorespaces}
+\def\AJWauthor@tabcrtwo{{\ifnum0=`}\fi\@xtabularcr[-5\p@]\affilfont%\indexsize
+ \let\\=\AJWauthor@tabcrtwo\ignorespaces}
+\def\and{\end{author@tabular}\vskip 6\p@\par
+ \begin{author@tabular}[t]{@{}l@{}}
+   \begin{author@tabular}[t]{c}
+ }
+
+%    ****************************************
+%    *            PAGE STYLES               *
+%    ****************************************
+%
+
+\newcommand\copyrightline[1]{%
+  \def\@copyrightline{#1}}
+
+\edef\@copyrightline{\relax}
+
+\newcommand\c@pyrightline[1]{%
+  \gdef\@c@pyrightline{#1}}
+
+\gdef\@c@pyrightline{%
+  \vbox to 5.5\p@{\noindent
+  \parbox[t]{\textwidth}{\normalfont\footnotesize\baselineskip 9\p@
+  \@copyrightline
+  }%
+  \vss}%
+}
+
+
+% Initializes TeX's marks
+%
+\mark{{}{}}
+%
+% centred \ps@plain and \ps@empty defined in LATEX.TEX
+%
+\ifAJW@indentsty
+  \def\ps@plain{\let\@mkboth=\@gobbletwo
+    \def\@oddfoot {\fontsize{9.5}{9.5}\selectfont\fontspec{FrutigerLTStd-Bold.otf}\hfill{\thepage}}
+    \def\@evenfoot{\fontsize{9.5}{9.5}\selectfont\fontspec{FrutigerLTStd-Bold.otf}{\thepage}\hfill}
+    \def\@oddhead {}
+    \def\@evenhead{}}
+\else
+  \def\ps@plain{\leftskip\z@\let\@mkboth\@gobbletwo\vfuzz=5\p@
+    \def\@oddhead{}%
+    \def\@evenhead{}%
+    \def\@oddfoot {\fontsize{9.5}{9.5}\selectfont\fontspec{FrutigerLTStd-Bold.otf}\hfill{\thepage}}
+    \def\@evenfoot{\fontsize{9.5}{9.5}\selectfont\fontspec{FrutigerLTStd-Bold.otf}{\thepage}\hfill}
+    \def\sectionmark##1{}%
+    \def\subsectionmark##1{}%
+ }
+\fi
+
+
+
+%
+% Definition of 'headings' page style
+%
+\newlength\textwidthplus
+\setlength\textwidthplus{\textwidth}
+  \advance\textwidthplus\threepica
+%
+\newcommand\@greyrunningheadrule{%
+\setlength\fboxsep{1\p@}%
+  \def\FrameCommand{\hspace*{-3pc}\colorbox{scolor}}%
+  \parindent0pt%
+% frame needs to be \hsize + 3pc - 2x \fboxsep
+  \MakeFramed{%
+    \advance\hsize-\width
+    \advance\hsize\threepica
+    \advance\hsize-2\fboxsep
+    \@parboxrestore
+    }%
+  \endMakeFramed
+}
+
+\newcommand\@insertgreyrunningheadrule{%
+  {\parindent0pt\par\vbox to .5pt{%
+    \hbox to\textwidthplus{%
+      \vbox{\@greyrunningheadrule}%
+    }\par
+  }}%
+}
+
+
+\def\oddfolio{{\foliofont\thepage}}
+\def\evenfolio{{\foliofont\thepage}}
+
+
+\def\LRH#1{\gdef\@LRH{#1}}\LRH{\leftmark}
+\def\RRH#1{\gdef\@RRH{#1}}\RRH{\rightmark}
+
+\def\ps@headings{%
+ \let\@mkboth=\markboth
+    \let\@oddfoot\@empty
+    \let\@evenfoot\@empty
+    \def\@evenhead{%
+       \vbox{\hbox to \textwidth{\hbox{\rlap{\hskip-3pc\evenfolio}{\hskip-.2\p@\rhfont
+\if@mainmatter
+\leftmark
+\else
+\ifAJW@appendix
+Appendix \thechapter: \leftmark\fi
+\@chaptext \fi\vphantom{gpq}} \hfill}}}}%
+    \def\@oddhead{%
+       \vbox{%
+	 \hbox to
+\textwidth{\hfill\lower.5\p@\hbox{\rhfont\rightmark\vphantom{gpq}}\hbox to 3pc{\hfill{\oddfolio}}}}}%
+  \def\chaptermark##1{\markboth{##1}{##1}}
+  \def\sectionmark##1{\markright{\ifnum \c@secnumdepth >\z@
+   \thesection\hspace{0.5em}\fi ##1}}%
+}%
+
+%%
+\def\ps@empty{
+    \def\@oddfoot {}
+    \def\@evenfoot{}
+    \def\@oddhead {}
+    \def\@evenhead{}}
+%%%
+\def\ps@appheadings{%
+ \let\@mkboth=\markboth
+    \let\@oddfoot\@empty
+    \let\@evenfoot\@empty
+    \def\@evenhead{%
+       \vbox{%
+	 \hbox to
+\textwidth{\hbox{\rlap{\hskip-3pc\evenfolio}{\hskip-.2\p@\rhfont
+\if@mainmatter
+\@chaptext
+\else \ifAJW@appendix
+Appendix \thechapter: \@chaptext\fi
+\@chaptext \fi\vphantom{gpq}} \hfill}}\vskip4.5\p@
+	 \hbox{\hskip-3pc\special{color push cmyk 0,0,0,.3}\vrule
+height2pt width36pc depth0pt\special{color pop}}
+       }}%
+    \def\@oddhead{%
+       \vbox{%
+	 \hbox to
+\textwidth{\hfill\lower.5\p@\hbox{\rhfont\rightmark\vphantom{gpq}}\hbox
+to 3pc{\hfill{\oddfolio}}}\vskip4.5\p@
+	 \hbox{\hskip-3pc\special{color push cmyk 0,0,0,.3}\vrule
+height2pt width36pc depth0pt\special{color pop}}
+       }}%
+ \ifAJW@multisty
+  \def\chaptermark##1{\markboth{##1}{##1}}
+  \def\sectionmark##1{\markright{\ifnum \c@secnumdepth >\z@
+   \thesection\hspace{0.5em}\fi ##1}}%
+}%
+
+%
+% Definition of 'myheadings' page style.
+%
+\def\ps@myheadings{\let\@mkboth=\@gobbletwo
+ \def\@oddfoot {}
+ \def\@evenfoot{}
+ \def\@oddhead{%
+   \hbox to \textwidth{\hfil{\rightmark}\hspace*{3pc}%
+     \llap{\runningheadsize\lightseriffont\thepage}}%
+   \hspace*{-\textwidth}{\@insertgreyrunningheadrule}%
+ }%
+ \def\@evenhead{\hspace*{-3pc}\hbox to 3pc{%
+   \runningheadsize\lightseriffont\thepage\hfil}%
+   \hbox to \textwidthplus{%
+     {
+       {\leftmark}\hfil}}%
+     \hspace*{-\textwidthplus}{\@insertgreyrunningheadrule}%
+ }%
+ \def\chaptermark##1{}
+ \def\sectionmark##1{}
+ \def\subsectionmark##1{}}
+
+
+\newcommand\contentsname{Contents}
+\newcommand\listfigurename{Figures}
+\newcommand\listtablename{Tables}
+\newcommand\listfloatingboxes{Boxes}
+\newcommand\listcontribname{List of contributors}
+\newcommand\bibname{Bibliography}
+\newcommand\refname{References}
+\newcommand\indexname{Index}
+\newcommand\figurename{{\fontsize{9}{12}\selectfont Figure}}
+\newcommand\tablename{Table}
+\newcommand\floatingboxname{Box}
+\newcommand\partname{Part}
+\newcommand\chaptername{Chapter}
+\newcommand\appendixname{Appendix}
+
+%    ****************************************
+%    *            MISCELLANEOUS             *
+%    ****************************************
+%
+% DATE
+%
+\def\today{\ifcase\month\or
+  January\or February\or March\or April\or May\or June\or
+  July\or August\or September\or October\or November\or December\fi
+  \space\number\day, \number\year}
+%
+% EQUATION and EQNARRAY -- put here because it must follow \chapter definition
+%
+\@addtoreset{equation}{chapter}
+\def\theequation{\thechapter.\arabic{equation}}
+% \jot = 3\p@ % Extra space added between lines of an eqnarray environment
+%
+% Flush left / indented equations
+%
+% FLEQN DOCUMENT-STYLE OPTION - released 9 March 1987
+%    for LaTeX version 2.09
+% Copyright (C) 1987 by Leslie Lamport
+%
+\ifAJW@indentsty
+ \def\[{\relax\ifmmode\@badmath\else\begin{trivlist}\item[]\leavevmode
+  \hbox to\linewidth\bgroup$ \displaystyle \hskip\AJW@indent\bgroup\fi}
+ \def\]{\relax\ifmmode \egroup $\hfil \egroup \end{trivlist}%
+  \else \@badmath \fi}
+ \def\equation{\refstepcounter{equation}\trivlist \item[]\leavevmode
+  \hbox to\linewidth\bgroup $ \displaystyle \hskip\AJW@indent}
+ \def\endequation{$\hfil \displaywidth\linewidth\@eqnnum\egroup \endtrivlist}
+ \def\eqnarray{\stepcounter{equation}\let\@currentlabel=\theequation
+  \global\@eqnswtrue
+  \global\@eqcnt\z@\tabskip\AJW@indent\let\\=\@eqncr
+  \abovedisplayskip\topsep\ifvmode\advance\abovedisplayskip\partopsep\fi
+  \belowdisplayskip\abovedisplayskip
+  \belowdisplayshortskip\abovedisplayskip
+  \abovedisplayshortskip\abovedisplayskip
+  $$\halign
+   to \linewidth\bgroup\@eqnsel\hskip\@centering$\displaystyle\tabskip\z@
+   {##}$&\global\@eqcnt\@ne \hskip 2\arraycolsep \hfil${##}$\hfil
+   &\global\@eqcnt\tw@ \hskip 2\arraycolsep $\displaystyle{##}$\hfil
+    \tabskip\@centering&\llap{##}\tabskip\z@\cr}
+ \def\endeqnarray{\@@eqncr\egroup
+  \global\advance\c@equation\m@ne$$\global\@ignoretrue}%
+\else
+ \renewenvironment{eqnarray} % remove exta space around alignment marks
+  {\stepcounter{equation}%
+   \let\@currentlabel=\theequation
+   \global\@eqnswtrue
+   \m@th
+   \global\@eqcnt\z@
+   \tabskip\@centering
+   \let\\\@eqncr
+   $$\everycr{}\halign to \displaywidth\bgroup
+     \hskip\@centering$\displaystyle\tabskip\z@skip{##}$\@eqnsel
+   &\global\@eqcnt\@ne \hfil${\;##\;}$\hfil
+   &\global\@eqcnt\tw@
+     $\displaystyle\tabskip\z@skip{##}$\hfil \tabskip\@centering
+   &\hb@xt@\z@\bgroup\hss##\egroup
+     \tabskip\z@skip \cr}
+  {\@@eqncr\egroup\global\advance\c@equation\m@ne
+   $$\global\@ignoretrue}
+\fi
+
+% this allows proof boxes to be right-aligned in eqnarrays
+\newcommand\arrayqed{\arrayqedtrue}
+\newcommand\arrayqedhere{\arrayqedfalse}
+\newif\ifarrayqed
+
+\def\@@eqncr{\let\reserved@a\relax
+    \ifcase\@eqcnt \def\reserved@a{& & &}\or \def\reserved@a{& &}%
+     \or \def\reserved@a{&}\else
+       \let\reserved@a\@empty
+       \@latex@error{Too many columns in eqnarray environment}\@ehc\fi
+     \reserved@a
+     \if@eqnsw
+       \ifarrayqed
+         \qedsymbol%
+       \else
+         \@eqnnum\stepcounter{equation}%
+       \fi
+    \fi
+     \global\@eqnswtrue\global\@eqcnt\z@\cr}
+
+
+%    ****************************************
+%    *            CUP SPECIALS              *
+%    ****************************************
+%
+% redefinition of \cleardoublepage to get blank empty pages
+%
+\def\clearemptypage{\clearpage
+ \if@twoside
+  \ifodd\c@page
+   \else
+    \thispagestyle{empty}
+    \mbox{}\newpage
+    \if@twocolumn
+      \hbox{}\newpage
+    \fi
+  \fi
+ \fi
+}
+\let\cleardoublepage=\clearemptypage
+%
+% redefinition of sections to move section numbers into a 3pc margin
+%
+\def\@sect#1#2#3#4#5#6[#7]#8{%
+ \ifnum #2>\c@secnumdepth % LEVEL -- is heading to be numbered?
+  \def\@svsec{}%
+ \else
+  \refstepcounter{#1}
+   \edef\@svsec{\hskip-3pc\hbox to 0pt{\csname the#1\endcsname}\hskip 3pc}
+ \fi
+ \@tempskipa #5\relax % AFTERSKIP (-ve indicates a run-in heading)
+ \ifdim \@tempskipa>\z@
+  \begingroup #6\relax
+   \@hangfrom{{\hskip #3\relax\@svsec}}{\interlinepenalty \@M {#8}\par}
+  \endgroup
+  \csname #1mark\endcsname{#7}%
+    \ifAJW@appendix%
+      \addcontentsline{toc}{#1}{\ifnum #2>\c@secnumdepth \else%
+      \protect\numberline{\csname the#1\endcsname}\fi #7}%
+    \else%
+      \addcontentsline{toc}{#1}{\ifnum #2>\c@secnumdepth \else%
+      \protect\numberline{\csname the#1\endcsname}\fi #7}%
+    \fi%
+ \else
+  \def\@svsechd{#6\hskip #3\@svsec #8%
+   \csname #1mark\endcsname{#7}%
+    \ifAJW@appendix%
+      \addcontentsline{toc}{#1}{\ifnum #2>\c@secnumdepth \else
+      \protect\numberline{\csname the#1\endcsname}\fi#7}
+    \else%
+      \addcontentsline{toc}{#1}{\ifnum #2>\c@secnumdepth \else
+      \protect\numberline{\csname the#1\endcsname}\fi#7}
+    \fi
+      }%
+ \fi
+ \@xsect{#5}}
+ 
+ 
+\def\@ssect#1#2#3#4#5{%
+  \@tempskipa #3\relax
+  \ifdim \@tempskipa>\z@
+    \begingroup
+      #4{%
+        \@hangfrom{\hskip #1}%
+          \interlinepenalty \@M {#5}\@@par}%
+    \endgroup
+  \else
+    \def\@svsechd{#4{\hskip #1\relax {#5}}}%
+  \fi
+  \@xsect{#3}}
+\newif\if@afterindent \@afterindenttrue
+\def\@afterheading{%
+  \@nobreaktrue
+  \everypar{%
+    \if@nobreak
+      \@nobreakfalse
+      \clubpenalty \@M
+      \if@afterindent \else
+        {\setbox\z@\lastbox}%
+      \fi
+    \else
+      \clubpenalty \@clubpenalty
+      \everypar{}%
+    \fi}}
+
+
+% remove the vertical rules in tables, by default
+\def\AJW@fullhline{\noalign{\ifnum0=`}\fi \vskip 3\p@
+  \hrule \@height\arrayrulewidth width\textwidth
+  \vskip 3\p@
+  \futurelet \@tempa\@xhline}
+\def\AJW@hline{\noalign{\ifnum0=`}\fi
+  \vskip 3\p@
+  \hrule \@height \arrayrulewidth
+  \vskip 3\p@
+  \futurelet \@tempa\@xhline}
+\let\AJW@currenthline=\AJW@hline
+%
+\def\tabular{\def\@halignto{}%
+  \let\hline=\AJW@currenthline
+  \def\@xhline{\ifx\@tempa\hline
+    \vskip -6\p@
+    \vskip \doublerulesep
+  \fi
+  \ifnum0=`{\fi}}%
+  \def\@arrayrule{\@addtopreamble{\hskip -.5\arrayrulewidth
+%   \vrule \@width \arrayrulewidth
+    \hskip .5\arrayrulewidth}}%
+  \@tabular}
+
+
+% If authors really need to re-instate the rules,
+
+\newcommand\reinstaterules{%
+  \def\tabular{\let\@halignto\@empty\@tabular}%
+}
+
+
+% ABSTRACT
+%
+\newenvironment{abstract}{\section*{Abstract}\trivlist\item[]%
+ }{\endtrivlist\addvspace{13\p@}}
+
+
+%    ****************************************
+%    *           INITIALIZATION             *
+%    ****************************************
+%
+% Default initializations
+%
+\ifAJW@landscape
+\pagestyle{empty}\else \pagestyle{headings}\fi
+\pagenumbering{arabic}
+\onecolumn
+\flushbottom
+\frenchspacing
+
+
+\renewcommand*\CROP@@info{{%
+    \global\advance\CROP@index\@ne
+    \def\x{\discretionary{}{}{\hbox{\kern.5em---\kern.5em}}}%
+    \advance\paperwidth-20\p@
+    \dimen@4pt
+    \ifx\CROP@pagecolor\@empty
+    \else
+        \advance\dimen@\CROP@overlap
+    \fi
+    \hb@xt@\z@{%
+        \hss
+        \vbox to\z@{%
+            % \centering
+            \hsize\paperwidth
+            \vss
+            \normalfont
+            \normalsize
+            \expandafter\csname\CROP@font\endcsname{%
+                               \hfil\jobname\qquad CUP/HE2-design\qquad \today\quad \CROP@time \quad\qquad Page-{\bf \thepage}
+                \strut
+            \hfil}%
+            \vskip\dimen@
+        }%
+        \hss
+    }%
+}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%% Standard Macro Updation Starts %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+
+%
+\clubpenalty 10000
+\widowpenalty 10000
+
+\displaywidowpenalty 100
+\predisplaypenalty   10000
+\postdisplaypenalty  0
+\doublehyphendemerits=10000
+\doublehyphendemerits=1000000
+\finalhyphendemerits=1000000
+\hbadness=10000
+\vbadness=10000
+%%\vbadness=9999
+\tolerance=9999
+\interlinepenalty 0
+\brokenpenalty 10000
+\lefthyphenmin=3
+\righthyphenmin=3
+%%
+
+
+
+\usepackage{tikz}
+\usepackage{tikz-cd}
+%%
+\usetikzlibrary{arrows.meta,tikzmark, shapes.arrows}
+\definecolor{voilet}{cmyk}{.75,.30,0,0}%%arrow in equation changed to blue
+
+\tikzset{
+  red arrow/.style={single arrow,shape border rotate=0,
+                            thick,draw=red,fill=red,
+                            minimum height=10mm}
+}
+
+\newcommand\myarrow{\tikz[baseline={([yshift=-1ex]current bounding box.center)}]{\node at(0,)[red arrow]{};}}
+
+\definecolor{ared}{cmyk}{0,.99,1,0}
+
+\usepackage[most,breakable]{tcolorbox}
+
+\usepackage{amsmath,amsfonts}
+
+\usepackage[no-math]{fontspec}
+\usepackage{xltxtra,xunicode}
+\usepackage{mathspec}
+
+\defaultfontfeatures{Mapping=tex-text}
+\defaultfontfeatures{Mapping=tex-text}
+
+\setmainfont[Ligatures=Common,Mapping=tex-text,ItalicFont=TimesLTStd-Italic.otf,BoldFont=TimesLTStd-Bold.otf,BoldItalicFont=TimesLTStd-BoldItalic.otf]{TimesLTStd-Roman.otf}%
+
+\setmathrm[ItalicFont=TimesLTStd-Italic.otf,BoldFont=TimesLTStd-Bold.otf,BoldItalicFont=TimesLTStd-BoldItalic.otf]{TimesLTStd-Roman.otf}
+\setmathsfont(Latin){TimesLTStd-Italic.otf}
+\setmathsfont(Digits){TimesLTStd-Roman.otf}
+\setmathsfont(Greek){TimesLTStd-Roman.otf}
+
+
+\setsansfont[Ligatures=TeX,Mapping=tex-text,ItalicFont=FrutigerLTStd-Italic.otf,BoldFont=FrutigerLTStd-Bold.otf,BoldItalicFont=FrutigerLTStd-BoldItalic.otf]{FrutigerLTStd-Cn.otf}%%change
+
+
+\DeclareFontEncoding{EU1}{}{}
+%
+\DeclareFontFamily{EU1}{dgs}{}
+\DeclareFontShape{EU1}{dgs}{m}{n}{<->"[TimesLTStd-Roman]:mapping=tex-text"}{}
+\DeclareFontShape{EU1}{dgs}{m}{it}{<->"[TimesLTStd-Italic]:mapping=tex-text"}{}
+\DeclareFontShape{EU1}{dgs}{b}{n}{<->"[TimesLTStd-Bold]:mapping=tex-text"}{}
+\DeclareFontShape{EU1}{dgs}{b}{it}{<->"[TimesLTStd-BoldItalic]:mapping=tex-text"}{}
+\DeclareFontShape{EU1}{dgs}{bx}{n}{<->"[TimesLTStd-Bold]:mapping=tex-text"}{}
+\DeclareFontShape{EU1}{dgs}{bx}{it}{<->"[TimesLTStd-BoldItalic]:mapping=tex-text"}{}
+
+\SetSymbolFont{Latin:m:it}{bold}{EU1}{dgs}{bx}{it}
+\SetSymbolFont{Digits:m:n}{bold}{EU1}{dgs}{bx}{n}
+\SetSymbolFont{Greek:m:n}{bold}{EU1}{dgs}{bx}{it}
+\SetSymbolFont{Greek:m:it}{bold}{EU1}{dgs}{bx}{it}
+\SetSymbolFont{Operators:m:n}{bold}{EU1}{dgs}{bx}{n} %%
+\SetSymbolFont{Latin:m:it}{normal}{EU1}{dgs}{m}{it}
+\SetSymbolFont{Digits:m:n}{normal}{EU1}{dgs}{m}{n}
+\SetSymbolFont{Greek:m:n}{normal}{EU1}{dgs}{m}{it}
+\SetSymbolFont{Greek:m:it}{normal}{EU1}{dgs}{m}{it}
+\SetSymbolFont{Operators:m:n}{normal}{EU1}{dgs}{m}{n}
+%
+%
+\DeclareMathVersion{sfsans}
+\DeclareFontFamily{EU1}{\sfdefault}{}
+\DeclareFontShape{EU1}{\sfdefault}{m}{n}{<->"[FrutigerLTStd-Cn.otf]:mapping=tex-text"}{}
+\SetSymbolFont{Latin:m:it}{sfsans}{EU1}{\sfdefault}{m}{n}
+\SetSymbolFont{Digits:m:n}{sfsans}{EU1}{\sfdefault}{m}{n}
+\SetSymbolFont{Greek:m:it}{sfsans}{EU1}{dgs}{m}{it}
+%
+\usepackage[authoryear]{natbib}
+\usepackage{booktabs}
+\usepackage{makeidx}
+\makeindex
+
+%%%table-decimal alignment%%%
+\usepackage{dcolumn}
+\newcolumntype{d}[1]{D{.}{.}{#1}} %% For dotalignment
+%%%
+
+\usepackage{soul}
+
+\def\spreadoutfactor{1}
+
+\def\spreadout#1{%
+  \gdef\temp{#1}\dimen0 = \spreadoutfactor pt
+  \expandafter\dospreadout\temp\endmark}
+
+\def\dospreadout{%
+  \afterassignment\findospreadout
+  \let\next= }
+
+\def\findospreadout{%
+   \ifx\next\endmark
+      \let\nextaction = \relax
+   \else
+      \let\nextaction = \dospreadout
+      \next
+      \kern\dimen0
+\fi
+   \nextaction}
+\def\endmark{endmark}
+
+\sodef\trackten{}{.1em}{.45em}{1em}
+\sodef\trackfive{}{.05em}{.5em}{1em}
+\sodef\tracktwenty{}{.1em}{.45em}{2em}
+
+%%%%%%%%
+\begingroup
+\catcode`\Q=3
+\long\gdef\@ifmtarg#1{\@xifmtarg#1QQ\@secondoftwo\@firstoftwo\@nil}
+\long\gdef\@xifmtarg#1#2Q#3#4#5\@nil{#4}
+\long\gdef\@ifnotmtarg#1{\@xifmtarg#1QQ\@firstofone\@gobble\@nil}
+\endgroup
+%
+\newlength{\tabbelowcaptionskip}
+\setlength{\tabbelowcaptionskip}{-8.5\p@}
+\newlength{\tababovefootskip}
+\setlength{\tababovefootskip}{4\p@}
+%
+\newdimen\tempdime
+\newbox\temptbox
+\newenvironment{processtable}[3]{\setbox\temptbox=\hbox{{\raggedright\fontsize{9}{12}\selectfont#2}}%
+\tempdime\wd\temptbox%
+\@processtable{#1}{#2}{\fontsize{9}{12}\selectfont\raggedright#3}{\tempdime}}
+{\relax}
+
+% Macro to be used to set table caption and footnotes to the size of the table.
+% TODO: Remove this and integrate threeparttable.sty
+\newcommand{\@processtable}[4]{%
+  \hbox to \hsize{\hfil\begin{minipage}[t]{#4}%
+  \color{black}
+  \caption{#1}%
+  {\fontsize{9}{12}\selectfont#2}\par%
+  \@ifmtarg{#3}{}{\ifx\empty\vspace*{-13.5pt}\else\vspace{\tababovefootskip}
+  \fontsize{9}{12}\selectfont#3\vspace*{-12.5pt}\strut\par\fi}%
+\end{minipage}\hfil}}
+
+\def\TABLE{\processtable}
+%%%end-of-table
+
+
+%%%%%%%%%%%%%%%% Prelims part starts %%%%%%%%%%%%%%%%%
+%
+\def\affiliation#1{\gdef\@affiliation{#1}}\affiliation{}
+\def\halftitle#1{\gdef\@halftitle{#1}}\halftitle{}
+\def\halfsubtitle#1{\gdef\@halfsubtitle{#1}}\halfsubtitle{}
+\def\fulltitle#1{\gdef\@fulltitle{#1}}\fulltitle{}
+\def\fullsubtitle#1{\gdef\@fullsubtitle{#1}}\fullsubtitle{}
+\def\FTauthor#1{\gdef\@FTauthor{\protect{#1}}}\FTauthor{}
+\def\FTaffiliation#1{\gdef\@FTaffiliation{#1}}\FTaffiliation{}
+
+%%%%Half-title%
+\def\makehalftitle{\thispagestyle{empty}%
+\pagenumbering{roman}%
+\ifx\@halftitle\empty\else\vspace*{12pt}\noindent{\HTfont\@halftitle\par\vspace*{7.5pt}}\fi%
+\ifx\@halfsubtitle\empty\else\noindent{\HTsubfont\@halfsubtitle\vskip5pt\par}\fi%
+\vspace*{20pt}%
+\@afterheading\@afterindentfalse}%%
+
+\def\authorname#1{\par\vspace*{13pt}\noindent{\fontspec{FrutigerLTStd-BoldCn.otf} #1}}
+
+%%%%Title-page%
+
+\def\edition#1{\gdef\@edition{\uppercase{\trackten{#1}}}}\edition{}
+\def\titleeditionfont{\fontspec{FrutigerLTStd-Cn.otf}\fontsize{14}{16}\selectfont\selectfont}
+\def\edition#1{\gdef\@edition{\uppercase{\trackten{#1}}}}\edition{}
+\def\subtitle#1{\gdef\@fullsubtitle{#1}}\subtitle{}
+\def\FTauthor#1{\gdef\@FTauthor{#1}}\FTauthor{}
+\def\FTaffiliation#1{\gdef\@FTaffiliation{#1}}\FTaffiliation{}
+
+
+\def\booktitle#1{\gdef\@fulltitle{#1}}\booktitle{}
+\def\booksubtitle#1{\gdef\@fullsubtitle{#1}}\booksubtitle{}
+\def\bookauthor#1{\gdef\@FTauthor{#1}}\bookauthor{}
+\def\bookaffiliation#1{\gdef\@FTaffiliation{#1}}\bookaffiliation{}
+
+\newcount\authorcount \authorcount0%
+\newcount\tempauthorcount\tempauthorcount0%
+\newcount\affilcount \affilcount0%
+\newcount\tempcount%
+%
+\def\bookauthor#1{%
+   \gdef\au@data{yes}%
+   \expandafter\protected@xdef\csname author\the\authorcount\endcsname{\titleauthorfont#1}%
+   \global\advance\authorcount1%
+}
+%
+\def\bookaffiliation#1{%
+   \expandafter\protected@xdef\csname affil\the\affilcount\endcsname{#1}%
+   \global\advance\affilcount1%
+}
+\def\bookauthor#1{%
+   \gdef\au@data{yes}%
+   \expandafter\protected@xdef\csname author\the\authorcount\endcsname{\FTauthorfont#1}%
+   \global\advance\authorcount2%
+}
+%
+\def\bookaffiliation#1{%
+   \expandafter\protected@xdef\csname affil\the\affilcount\endcsname{#1}%
+   \global\advance\affilcount2%
+}
+\def\bookauthor#1{%
+   \gdef\au@data{yes}%
+   \expandafter\protected@xdef\csname author\the\authorcount\endcsname{\FTauthorfont#1}%
+   \global\advance\authorcount3%
+}
+%
+\def\bookaffiliation#1{%
+   \expandafter\protected@xdef\csname affil\the\affilcount\endcsname{#1}%
+   \global\advance\affilcount3%
+}
+
+%
+\def\printauthor{%
+   \global\tempauthorcount\authorcount%
+   \global\advance\tempauthorcount-1%
+   \ifnum\authorcount>0%
+      \@whilenum\tempcount<\tempauthorcount%
+        \do{%\vskip8pt
+     		 \noindent{\FTauthorfont\csname author\the\tempcount\endcsname\par}\vskip0pt%
+     		 \noindent{\FTaffilfont\csname affil\the\tempcount\endcsname}\vskip1.5pt%
+            \global\advance\tempcount1}%
+  		 \noindent{\FTauthorfont\csname author\the\tempcount\endcsname\par}\vskip0pt%
+  		 \noindent{\FTaffilfont\csname affil\the\tempcount\endcsname\par}\vskip-12pt%
+   \fi%
+}
+
+
+\def\makefulltitle{\thispagestyle{empty}%
+\ifx\@fulltitle\empty\else\vspace*{-3pt}\noindent{\FTfont\@fulltitle\par}\vskip4pt\fi%
+\ifx\@fullsubtitle\empty\else\vspace*{2.5pt}\noindent{\FTsubfont\@fullsubtitle\par}\fi%
+\ifx\@edition\vspace*{-16pt}\empty\else\vspace*{17pt}\noindent{\titleeditionfont\@edition\par}\vskip4pt\fi%
+{\color{scolor}\chaprule}\par
+\ifx\printauthor\undefined\else\vskip30pt\noindent{\printauthor\par\vskip-4pt}\fi%
+\vfill%
+%
+\titlepagelogo}
+%
+\newenvironment{copyrightpage}{\parindent0pt\vspace*{-15pt}%
+\fontsize{8}{10}\selectfont}{\par}
+
+\def\pauthor#1{{\textsf{\textbf{{#1}}}}}
+
+\def\titlepagelogo{\noindent{\includegraphics{fig/CUP-Logo}}\vspace*{13.5pt}}
+
+
+%%%%%%%%%copyright-page%%%
+\def\podline#1{\ifPOD
+\else #1 \fi}
+%%%%
+\newenvironment{imprintpage}[5]{\begin{flushleft}
+\vspace*{10pt}
+\thispagestyle{empty}
+{\fontsize{8.5}{10}\selectfont\parskip5pt%\textsc{\spreadout{cambridge university press}\vspace*{-10pt}}
+\includegraphics{fig/7mmheight}\vspace{5pt}
+
+University Printing House, Cambridge CB2 8BS, United Kingdom
+
+One Liberty Plaza, 20th Floor, New York, NY 10006, USA
+
+477 Williamstown Road, Port Melbourne, VIC 3207, Australia
+
+314--321, 3rd Floor, Plot 3, Splendor Forum, Jasola District
+Centre, New Delhi -- 110025, India
+
+79 Anson Road, {\#}06--04/06, Singapore 079906\vspace*{5pt}
+
+Cambridge University Press is part of the University of
+Cambridge.
+
+It furthers the University's mission by disseminating knowledge in the pursuit of\\
+education, learning, and research at the highest international
+levels of excellence.\vspace*{5pt}
+
+\href{http://www.cambridge.org}{www.cambridge.org}\\
+Information on this title: \href{http://www.cambridge.org/#1}{www.cambridge.org/#1}\\
+DOI: \href{http://dx.doi.org/10.1017/#2}{10.1017/#2}
+
+{\copyright} Author name #3
+
+This publication is in copyright. Subject to statutory exception\\
+and to the provisions of relevant collective licensing agreements,\\
+no reproduction of any part may take place without the written\\
+permission of Cambridge University Press.
+
+First published #3\\
+
+\podline{#4}
+
+\textit{A catalogue record for this publication is available
+from the British Library.}
+
+#5
+
+Cambridge University Press has no responsibility for the persistence or accuracy of\\
+URLs for external or third-party internet websites referred to in this publication\\
+and does not guarantee that any content on such websites is, or will remain,\\
+accurate or appropriate.\par}
+\end{flushleft}}{\clearpage}
+
+%%%
+
+%
+\newenvironment{dedication}[2]{\par\vspace*{14pt}{\noindent\fontsize{11}{16}\selectfont\fontspec{FrutigerLTStd-BoldCn.otf} #1}\vskip6pt\par
+{\noindent\fontsize{14}{16}\selectfont\fontspec{FrutigerLTStd-BoldCn.otf}{#2}}}{\thispagestyle{empty}}
+
+%
+\def\listofcontrib#1#2{\par%
+\noindent{\contribauthorfont#1\par}{\contribaffilfont\noindent#2\par}\vspace*{8.5pt}}
+%
+%%%%%%%%%%%%%%%% Prelims part ends %%%%%%%%%%%%%%%%%
+
+%%%%%%%%%fancy-box%%%
+\newcounter{boxnum}
+
+\newenvironment{chaptexbox}[2][]{\addvspace{13.5pt}%
+\def\breakboxparindent{1em}
+\setlength\fboxrule{1\p@}
+\def\bkvz@left{{\vrule \@width\fboxrule}\hskip\fboxsep}
+\def\bkvz@right{\hskip\fboxsep{\vrule \@width\fboxrule}}
+\def\bkvz@top{{\hrule\@height\fboxrule}}
+\def\bkvz@bottom{{\hrule\@height\fboxrule}}
+\refstepcounter{boxnum}
+\fboxsep12pt\begin{breakbox}{\noindent\vbox
+to 17pt{\noindent\fontsize{12}{14}\selectfont\fontspec{FrutigerLTStd-BoldCn.otf}{\bfseries
+Box~\thechapter.\arabic{boxnum}}{\enskip}\textcolor{black}{#1}}}\@afterheading\@afterindentfalse\par\fontsize{10.25}{12}\selectfont\color{black} #2}
+{\end{breakbox}\par\addvspace{13.5pt}\color{black}}
+
+\usepackage{changepage}
+
+\newenvironment{examplebox}[1]{\addvspace{13.5pt}%
+\def\bkvz@top{\relax}
+\def\bkvz@bottom{\relax}
+\def\breakboxparindent{1em}
+\setlength\fboxrule{1\p@}
+\setlength\textwidth{36pc}
+\advance\linewidth3pc
+\advance\leftskip-3pc
+%\arrayrulecolor{scolor}
+\def\bkvz@left{\vrule \@width\fboxrule\hskip\fboxsep\color{black}}
+\def\bkvz@right{\hskip\fboxsep\vrule \@width\fboxrule\color{black}}
+\refstepcounter{boxnum}
+\fboxsep12pt\begin{breakbox}\noindent\boxtitle{\noindent\vbox
+to 17pt{\noindent\fontsize{12}{14}\selectfont\fontspec{FrutigerLTStd-BoldCn.otf}{\bfseries
+Example~\thechapter-\arabic{boxnum}}{\enskip}#1}}\@afterheading\@afterindentfalse\par\fontsize{10.25}{13.5}\selectfont}
+{\end{breakbox}\par\addvspace{13.5pt}\setlength\textwidth{33pc}}
+%
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Fonts %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Prelims
+\def\HTfont{\fontsize{15}{16}\selectfont\fontspec{FrutigerLTStd-BoldCn.otf}\leftskip0pc\rightskip0pt plus1fill{}}%
+\def\HTsubfont{\fontspec{FrutigerLTStd-Cn.otf}\fontsize{11}{13.5}\selectfont\rightskip0pt plus1fill{}}%
+\def\HTauthorfont{\fontspec{FrutigerLTStd-Cn.otf}\fontsize{10.25}{13.5}\bfseries\selectfont}%
+\def\FTfont{\fontspec{FrutigerLTStd-BoldCn.otf}\fontsize{26}{29}\bfseries\selectfont\rightskip0pt plus1fill{}}%
+\def\FTsubfont{\fontspec{FrutigerLTStd-Cn.otf}\fontsize{18}{22}\selectfont\rightskip0pt plus1fill{}}%
+\def\FTauthorfont{\fontspec{FrutigerLTStd-Bold.otf}\fontsize{14}{16}\selectfont\rightskip0pt plus1fill{}}%
+\def\FTaffilfont{\fontspec{FrutigerLTStd-Cn.otf}\fontsize{9}{11}\selectfont\rightskip0pt plus1fill{}}%
+\def\dedicationfont{\fontspec{FrutigerLTStd-Cn.otf}\fontsize{11}{15}\bfseries\selectfont}
+\def\contribauthorfont{\fontspec{FrutigerLTStd-Cn.otf}\fontsize{10.25}{12}\bfseries\selectfont\rightskip0pt plus1fill{}}%
+\def\contribaffilfont{\reset@font\fontsize{10.25}{13.5}\selectfont\rightskip0pt plus1fill{}\mathversion{normal}}%
+%% headings
+\def\rhfont{\fontspec{FrutigerLTStd-BoldCn.otf}\fontsize{9.5}{9.5}\bfseries\selectfont}
+\def\foliofont{\fontspec{FrutigerLTStd-BoldCn.otf}\fontsize{9.5}{9.5}\selectfont}
+\def\dropfoliofont{\fontspec{FrutigerLTStd-Cn.otf}\fontsize{9.5}{9.5}\selectfont\ligseries}
+%% part
+\def\PNfont{\fontspec{FrutigerLTStd-Cn.otf}\fontsize{20}{22}\selectfont\bfseries\leftskip-3pc}
+\def\PTfont{\fontspec{FrutigerLTStd-Cn.otf}\fontsize{20}{22}\selectfont\bfseries\leftskip0pc\rightskip0pt plus1fill}
+%% chapter
+\def\CNfont{\fontspec{FrutigerLTStd-BoldCn.otf}\fontsize{30}{30}\bfseries\selectfont}
+\def\CTfont{\fontspec{FrutigerLTStd-BoldCn.otf}\fontsize{18}{20}\selectfont\bfseries\rightskip0pt plus1fill{}}
+\def\UCTfont{\fontspec{FrutigerLTStd-BoldCn.otf}\fontsize{18}{20}\bfseries\selectfont\rightskip0pt plus1fill{}}
+\def\MHfont{\fontspec{FrutigerLTStd-Cn.otf}\fontsize{18}{20}\selectfont\bfseries\rightskip0pt plus1fill}
+\def\abstractfont{\leftskip1pc\rightskip\leftskip}
+\def\authorfont{\fontspec{FrutigerLTStd-BoldCn.otf}\fontsize{12}{14}\selectfont\rightskip0pt plus1fill}%
+\def\affilfont{\reset@font\fontspec{FrutigerLTStd-Cn.otf}\fontsize{8}{10.25}\selectfont\rightskip0pt plus1fill}%
+\def\continuedfont{\fontspec{FrutigerLTStd-Cn.otf}\fontsize{8}{8}\itshape\selectfont}
+%% sectionsf
+\def\Sectionfont{\fontspec{FrutigerLTStd-BoldCn.otf}\fontsize{12}{13.5}\selectfont\bfseries\rightskip0pt plus1fill{}}
+\def\sectionfont{\fontspec{FrutigerLTStd-BoldCn.otf}\fontsize{14}{16}\bfseries\selectfont\rightskip0pt plus1fill{}}
+\def\Asectionfont{\fontspec{FrutigerLTStd-BoldCn.otf}\fontsize{12}{14}\bfseries\selectfont\rightskip0pt plus1fill{}}
+\def\subsectionfont{\fontspec{FrutigerLTStd-BoldCn.otf}\fontsize{12}{14.75}\selectfont\bfseries\rightskip0pt plus1fill{}}
+\def\subsubsectionfont{\fontsize{11.25}{13.5}\selectfont\bfseries\rightskip0pt plus1fill{}\mathversion{bold}}
+\def\paragraphfont{\fontsize{10.25}{13.5}\selectfont\bfseries\rightskip0pt plus1fill{}\mathversion{normal}}%
+\def\subparagraphfont{}%
+\def\subsubparagraphfont{}%
+%% figure
+\def\figcaptionfont{\reset@font\fontsize{9}{12}\selectfont\rightskip0pt plus1fill{}}
+\def\figcaptionnumfont{\reset@font\fontspec{FrutigerLTStd-BoldCn.otf}\fontsize{9.5}{12}\bfseries\selectfont}
+%% table
+\def\tablefont{\fontsize{9}{12}\selectfont\mathversion{normal}}% use plus 1fill if needed
+\def\tablecaptionfont{\reset@font\fontspec{FrutigerLTStd-BoldCn.otf}\fontsize{10.25}{13.5}\selectfont}%
+\def\tablecaptionnumfont{\reset@font\fontspec{FrutigerLTStd-BoldCn.otf}\fontsize{10.25}{13.5}\selectfont}%
+\def\tabnotefont{\fontsize{8}{11}\selectfont\leftskip\tabnoteleftskip\rightskip\tabnoterightskip}% use plus 1fill if needed
+%% BM
+\def\indexfont{\fontsize{8}{10}\selectfont\raggedright}
+\def\bibliofont{\fontsize{9.5}{12}\selectfont\mathversion{normal}}
+\def\exhheadfont{\fontsize{9}{11}\selectfont\bfseries}
+\def\exampleheadfont{\fontspec{FrutigerLTStd-Cn.otf}\fontsize{10.25}{13.5}\bfseries\selectfont}%
+\def\problemheadfont{\fontspec{FrutigerLTStd-Cn.otf}\fontsize{10.25}{13.5}\bfseries\selectfont}%
+%
+\def\extractfont{\noindent\reset@font\fontsize{9.25}{12}\selectfont\itshape\raggedright\mathversion{normal}}
+\def\listdevicefont{}
+\def\tracksc#1{{\def\spreadoutfactor{.5}\selectfont\protect\spreadout{\scshape #1}}}
+%%%%%%%%%%%%%%%%%
+\newenvironment{CQuotes}[2]{\begin{minipage}{22pc}
+\raggedright #1\par
+\hfill #2}{\par\vspace*{13.5pt}\end{minipage}\@afterheading\@afterindentfalse}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Fonts %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+\renewcommand*\CROP@horigin{0truein}%{-.5truein}
+\renewcommand*\CROP@vorigin{0truein}%{-.5truein}
+
+\renewcommand*\CROP@center{%
+\voffset-2pt
+\hoffset-3.7pc
+}
+%
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  List Env. starts %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+\newdimen\enumdim%
+\newdimen\tempdimen%
+\newbox\tempbox
+%
+\font\lccir = pzdr at 6pt
+\font\ltccir = pzdr at 4pt
+\font\lcir = lcircle10 at 12pt
+\newcommand\bulls{\raise1.5pt\hbox{\lcir\char'162}}
+\newcommand\bbulls{\raise1.5pt\hbox{\lccir\char108}}
+\newcommand\tbbulls{\raise1.5pt\hbox{\ltccir\char108}}
+\def\textbullet{\leavevmode\raise2pt\hbox{\hskip2pt\bulls}}
+\def\ttextbullet{\leavevmode\hbox{\hskip0pt\bbulls}}
+\def\tbtextbullet{\leavevmode\hbox{\hskip0pt\tbbulls}}
+\def\textendash{{\bf--}}
+\def\textasteriskcentered{\leavevmode\raise-1.5pt\hbox{*}}
+\def\textperiodcentered{\leavevmode\raise1.5pt\hbox{\bulls}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newskip\topsepi \topsepi12\p@ \@plus2\p@%
+\newskip\topsepii \topsepii2pt%
+\newskip\topsepiii \topsepiii2pt%
+\newskip\topsepiv \topsepiv2pt%
+\newskip\topsepv \topsepv2pt%
+\newskip\topsepvi \topsepvi2pt%
+\newskip\topsepvii \topsepvii2pt%
+\newskip\topsepviii \topsepviii2pt%
+\newskip\topsepix \topsepix2pt%
+\newskip\topsepx \topsepx2pt%
+\newskip\itemsepi \itemsepi0pt
+\newskip\itemsepii \itemsepii0pt
+\newskip\itemsepiii \itemsepiii0pt
+\newskip\itemsepiv \itemsepiv0pt
+\newskip\itemsepv \itemsepv0pt
+\newskip\itemsepvi \itemsepvi0pt
+\newskip\itemsepvii \itemsepvii0pt
+\newskip\itemsepviii \itemsepviii0pt
+\newskip\itemsepix \itemsepix0pt
+\newskip\itemsepx \itemsepx0pt
+\newdimen\LabelSep \LabelSep4.7pt
+%
+\def\list#1#2{%
+  \ifnum \@listdepth >10\relax
+    \@toodeep
+  \else
+    \global\advance\@listdepth\@ne
+  \fi
+  \rightmargin\z@
+  \listparindent\z@
+  \itemindent\z@
+  \csname @list\romannumeral\the\@listdepth\endcsname
+  \def\@itemlabel{#1}%
+  \let\makelabel\@mklab
+  \@nmbrlistfalse
+  #2\relax
+  \@trivlist
+  \parskip\parsep
+  \parindent\listparindent
+  \advance\linewidth -\rightmargin
+  \advance\linewidth -\leftmargin
+  \advance\@totalleftmargin \leftmargin
+  \parshape \@ne \@totalleftmargin \linewidth
+  \ignorespaces}
+%
+\def\@listI{\leftmargin\leftmargini
+            \labelwidth\leftmargini
+            \advance\labelwidth-\labelsep
+            \parsep 0\p@%
+            \topsep \topsepi
+            \itemsep\itemsepi}%
+\let\@listi\@listI
+\@listi
+\def\@listii {\leftmargin\leftmarginii
+              \labelwidth\leftmarginii
+              \advance\labelwidth-\labelsep
+              \topsep\topsepii
+              \parsep 0pt
+              \itemsep\itemsepii}
+\def\@listiii {\leftmargin\leftmarginiii
+              \labelwidth\leftmarginiii
+              \advance\labelwidth-\labelsep
+              \topsep\topsepiii
+              \parsep 0pt
+              \itemsep\itemsepiii}
+\def\@listiv {\leftmargin\leftmarginiv
+              \labelwidth\leftmarginiv
+              \advance\labelwidth-\labelsep}
+\def\@listv  {\leftmargin\leftmarginv
+              \labelwidth\leftmarginv
+              \advance\labelwidth-\labelsep}
+\def\@listvi {\leftmargin\leftmarginvi
+              \labelwidth\leftmarginvi
+              \advance\labelwidth-\labelsep}
+\def\@listvii {\leftmargin\leftmarginvii
+              \labelwidth\leftmarginvii
+              \advance\labelwidth-\labelsep}
+\def\@listviii {\leftmargin\leftmarginviii
+              \labelwidth\leftmarginviii
+              \advance\labelwidth-\labelsep}
+\def\@listix {\leftmargin\leftmarginix
+              \labelwidth\leftmarginix
+              \advance\labelwidth-\labelsep}
+\def\@listx {\leftmargin\leftmarginx
+              \labelwidth\leftmarginx
+              \advance\labelwidth-\labelsep}
+%
+%
+\newdimen\leftmarginvii
+\newdimen\leftmarginviii
+\newdimen\leftmarginix
+\newdimen\leftmarginx
+\setlength\leftmargini  {1em}
+\setlength\leftmarginii  {1em}
+\setlength\leftmarginiii {1em}
+\setlength\leftmarginiv  {1em}
+\setlength\leftmarginv  {1em}
+\setlength\leftmarginvi {1em}
+\setlength\leftmarginvii {1em}
+\setlength\leftmarginviii {1em}
+\setlength\leftmarginix {1em}
+\setlength\leftmarginx {1em}
+\setlength\leftmargin    {\leftmargini}
+%
+\setlength  \labelsep  {\LabelSep}
+\setlength  \labelwidth{\leftmargini}
+\addtolength\labelwidth{-\labelsep}
+%
+\newcommand\theenumv{\Alph{enumv}}
+\newcommand\theenumvi{\Alph{enumvi}}
+\newcommand\theenumvii{\roman{enumvii}}
+\newcommand\theenumviii{\Alph{enumviii}}
+\newcommand\theenumix{\Alph{enumix}}
+\newcommand\theenumx{\roman{enumx}}
+\renewcommand\theenumi{\arabic{enumi}}
+\renewcommand\theenumii{\alph{enumii}}
+\renewcommand\theenumiii{\roman{enumiii}}
+\renewcommand\theenumiv{\Alph{enumiv}}
+\renewcommand\theenumv{\Alph{enumv}}
+\renewcommand\theenumvi{\Alph{enumvi}}
+\renewcommand\theenumvii{\Alph{enumvii}}
+\renewcommand\theenumviii{\Alph{enumviii}}
+\renewcommand\theenumix{\Alph{enumix}}
+\renewcommand\theenumx{\Alph{enumx}}
+\renewcommand\labelenumi{\theenumi}
+\renewcommand\labelenumii{\theenumii}
+\renewcommand\labelenumiii{\theenumiii}
+\renewcommand\labelenumiv{\theenumiv}
+\newcommand\labelenumv{\theenumv}
+\newcommand\labelenumvi{\theenumvi}
+\newcommand\labelenumvii{\theenumvii}
+\newcommand\labelenumviii{\theenumviii}
+\newcommand\labelenumix{\theenumix}
+\newcommand\labelenumx{\theenumx}
+\renewcommand\p@enumii{\theenumi}
+\renewcommand\p@enumiii{\theenumi(\theenumii)}
+\renewcommand\p@enumiv{\p@enumiii\theenumiii}
+%%%%%%%%%%%%%%%%%%%
+%
+\newskip\listtextleftmargin\listtextleftmargin 0pt%24pt
+\newskip\listtextleftmarginii\listtextleftmarginii0pt% 24pt
+\newskip\listtextleftmarginiii\listtextleftmarginiii0pt% 24pt
+\newskip\listtextleftmarginiv\listtextleftmarginiv0pt% 24pt
+\newskip\listtextleftmarginv\listtextleftmarginv0pt% 24pt
+\newskip\listtextleftmarginvi\listtextleftmarginvi0pt% 24pt
+\newskip\listtextleftmarginvii\listtextleftmarginvii0pt% 24pt
+\newskip\listtextleftmarginviii\listtextleftmarginviii0pt% 24pt
+\newskip\listtextleftmarginix\listtextleftmarginix0pt% 24pt
+\newskip\listtextleftmarginx\listtextleftmarginx0pt% 24pt
+\newskip\listtextrightmargin\listtextrightmargin0pt%.5pc
+\newskip\listlabelleftskip \listlabelleftskip0pt%3.3pt
+\newskip\listlabelleftskipii \listlabelleftskipii0pt%3.3pt
+\newskip\listlabelleftskipiii \listlabelleftskipiii0pt%3.3pt
+\newskip\listlabelleftskipiv \listlabelleftskipiv0pt%3.3pt
+\newskip\listlabelleftskipv \listlabelleftskipv0pt%3.3pt
+\newskip\listlabelleftskipvi \listlabelleftskipvi0pt%3.3pt
+\newskip\listlabelleftskipvii \listlabelleftskipvii0pt%3.3pt
+\newskip\listlabelleftskipviii \listlabelleftskipviii0pt%3.3pt
+\newskip\listlabelleftskipix \listlabelleftskipix0pt%3.3pt
+\newskip\listlabelleftskipx \listlabelleftskipx0pt%3.3pt
+\newskip\abovelistskipi\abovelistskipi6.5pt plus2pt
+\newskip\belowlistskipi\belowlistskipi6.5pt plus2pt
+\newskip\abovelistskipii\abovelistskipii0pt% plus2pt
+\newskip\belowlistskipii\belowlistskipii0pt% plus2pt
+\newskip\abovelistskipiii\abovelistskipiii0pt% plus2pt
+\newskip\belowlistskipiii\belowlistskipiii0pt% plus2pt
+\newskip\abovelistskipiv\abovelistskipiv0pt% plus2pt
+\newskip\belowlistskipiv\belowlistskipiv0pt% plus2pt
+\newskip\abovelistskipv\abovelistskipv0pt% plus2pt
+\newskip\belowlistskipv\belowlistskipv0pt% plus2pt
+\newskip\abovelistskipvi\abovelistskipvi0pt% plus2pt
+\newskip\belowlistskipvi\belowlistskipvi0pt% plus2pt
+\newskip\abovelistskipvii\abovelistskipvii0pt% plus2pt
+\newskip\belowlistskipvii\belowlistskipvii0pt% plus2pt
+\newskip\abovelistskipviii\abovelistskipviii0pt% plus2pt
+\newskip\belowlistskipviii\belowlistskipviii0pt% plus2pt
+\newskip\abovelistskipix\abovelistskipix0pt% plus2pt
+\newskip\belowlistskipix\belowlistskipix0pt% plus2pt
+\newskip\abovelistskipx\abovelistskipx0pt% plus2pt
+\newskip\belowlistskipx\belowlistskipx0pt% plus2pt
+\newskip\labelsepi \labelsepi5pt
+\newskip\labelsepii \labelsepii5pt
+\newskip\labelsepiii \labelsepiii5pt
+\newskip\labelsepiv \labelsepiv5pt
+\newskip\labelsepv \labelsepv\z@
+\newskip\labelsepvi \labelsepvi\z@
+\newskip\labelsepvii \labelsepvii\z@
+\newskip\labelsepviii \labelsepviii\z@
+\newskip\labelsepix \labelsepix\z@
+\newskip\labelsepx \labelsepx\z@
+\newdimen\enumdimwd
+\newif\iflabelrightalign\labelrightaligntrue
+%
+\def\listdevicefonti{}
+\def\listdevicefontii{}
+\def\listdevicefontiii{}
+\def\listdevicefontiv{}
+\def\listdevicefontv{}
+\def\listdevicefontvi{}
+\def\listdevicefontvii{}
+\def\listdevicefontviii{}
+\def\listdevicefontix{}
+\def\listdevicefontx{}
+\def\listfont{\reset@font\fontsize{10.25}{13.5}\selectfont\mathversion{normal}}
+\def\textlistlabel{}
+%
+\@definecounter{enumv} \@definecounter{enumvi}
+\@definecounter{enumvii} \@definecounter{enumviii}
+\@definecounter{enumix} \@definecounter{enumx}
+%
+\def\enummax#1{%
+  \labelsep\csname labelsep\romannumeral\the\@enumdepth\endcsname
+  \ifdim\listtextleftmargin>\z@\labelsepi0pt\fi
+  \ifdim\listtextleftmarginii>\z@\labelsepii0pt\fi
+  \ifdim\listtextleftmarginiii>\z@\labelsepiii0pt\fi
+  \setbox\tempbox\hbox{\csname listdevicefont\romannumeral\the\@enumdepth\endcsname#1\hskip\labelsep}%
+  \enumdim\wd\tempbox
+  \setbox\tempbox\hbox{\csname listdevicefont\romannumeral\the\@enumdepth\endcsname#1}%
+  \enumdimwd\wd\tempbox
+  \expandafter\global\csname leftmargin\romannumeral\the\@enumdepth\endcsname\enumdim
+  \ifdim\listtextleftmargin>\z@
+     \leftmargini\listtextleftmargin
+     \ifdim\listlabelleftskip>\z@
+        \advance\leftmargini-\listlabelleftskip
+     \fi
+  \fi
+  \ifdim\listtextleftmarginii>\z@
+     \leftmarginii\listtextleftmarginii
+     \ifdim\listlabelleftskipii>\z@
+        \advance\leftmarginii-\listlabelleftskipii
+     \fi
+  \fi
+  \ifdim\listtextleftmarginiii>\z@
+     \leftmarginiii\listtextleftmarginiii
+     \ifdim\listlabelleftskipiii>\z@
+        \advance\leftmarginiii-\listlabelleftskipiii
+     \fi
+  \fi
+  \ifdim\listtextleftmarginiv>\z@
+     \leftmarginiv\listtextleftmarginiv
+     \ifdim\listlabelleftskipiv>\z@
+        \advance\leftmarginiv-\listlabelleftskipiv
+     \fi
+  \fi
+  \ifdim\listtextleftmarginv>\z@
+     \leftmarginv\listtextleftmarginv
+     \ifdim\listlabelleftskipv>\z@
+        \advance\leftmarginv-\listlabelleftskipv
+     \fi
+  \fi
+  \ifdim\listtextleftmarginvi>\z@
+     \leftmarginvi\listtextleftmarginvi
+     \ifdim\listlabelleftskipvi>\z@
+        \advance\leftmarginvi-\listlabelleftskipvi
+     \fi
+  \fi
+  \ifdim\listtextleftmarginvii>\z@
+     \leftmarginvii\listtextleftmarginvii
+     \ifdim\listlabelleftskipvii>\z@
+        \advance\leftmarginvii-\listlabelleftskipvii
+     \fi
+  \fi
+  \ifdim\listtextleftmarginviii>\z@
+     \leftmarginviii\listtextleftmarginviii
+     \ifdim\listlabelleftskipviii>\z@
+        \advance\leftmarginviii-\listlabelleftskipviii
+     \fi
+  \fi
+  \ifdim\listtextleftmarginix>\z@
+     \leftmarginix\listtextleftmarginix
+     \ifdim\listlabelleftskipix>\z@
+        \advance\leftmarginix-\listlabelleftskipix
+     \fi
+  \fi
+  \ifdim\listtextleftmarginx>\z@
+     \leftmarginx\listtextleftmarginx
+     \ifdim\listlabelleftskipx>\z@
+        \advance\leftmarginx-\listlabelleftskipx
+     \fi
+  \fi
+  \ifdim\listlabelleftskip>\z@
+     \advance\leftmargini\listlabelleftskip
+  \fi
+  \ifdim\listlabelleftskipii>\z@
+     \advance\leftmarginii\listlabelleftskipii
+  \fi
+  \ifdim\listlabelleftskipiii>\z@
+     \advance\leftmarginiii\listlabelleftskipiii
+  \fi
+  \ifdim\listlabelleftskipiv>\z@
+     \advance\leftmarginiv\listlabelleftskipiv
+  \fi
+  \ifdim\listlabelleftskipv>\z@
+     \advance\leftmarginv\listlabelleftskipv
+  \fi
+  \ifdim\listlabelleftskipvi>\z@
+     \advance\leftmarginvi\listlabelleftskipvi
+  \fi
+  \ifdim\listlabelleftskipvii>\z@
+     \advance\leftmarginvii\listlabelleftskipvii
+  \fi
+  \ifdim\listlabelleftskipviii>\z@
+     \advance\leftmarginviii\listlabelleftskipviii
+  \fi
+  \ifdim\listlabelleftskipix>\z@
+     \advance\leftmarginix\listlabelleftskipix
+  \fi
+  \ifdim\listlabelleftskipx>\z@
+     \advance\leftmarginx\listlabelleftskipx
+  \fi
+  }
+%
+\enummax{1.}
+%
+
+\newif\iffnalpha
+\global\fnalphafalse
+
+\def\enumerate{\@ifnextchar[{\@enumerate}{\@enumerate[\csname label\@enumctr\endcsname]}}%%
+%
+\def\@enumerate[#1]{\par
+      \ifnum \@enumdepth >10 \@toodeep
+      \else
+         \advance\@enumdepth\@ne
+         \edef\@enumctr{enum\romannumeral\the\@enumdepth}%
+         \setcounter{\@enumctr}{1}\enummax{#1}%
+         \list
+            {{\fontspec{FrutigerLTStd-BoldCn.otf}\selectfont\bfseries\csname label\@enumctr\endcsname}}{\usecounter{\@enumctr}%
+         \topsep\csname abovelistskip\romannumeral\the\@enumdepth\endcsname
+         \itemsep\csname itemsep\romannumeral\the\@enumdepth\endcsname
+         \listfont %\listparindent18.25pt
+         \ifnum \@enumdepth=1
+            \rightmargin\listtextrightmargin
+            \advance\rightmargin\rightskip
+            \advance\leftmargin\leftskip
+            \tempdimen\leftmargini
+            \advance\tempdimen-\labelsep
+           \iffnalpha
+            \def\makelabel##1{{\fontspec{FrutigerLTStd-BoldCn.otf}\selectfont{\hskip\listlabelleftskip{\csname listdevicefont\romannumeral\the\@enumdepth\endcsname{\iflabelrightalign\hss\fi\textlistlabel##1}}}}}%
+            \global\fnalphafalse
+           \else
+            \def\makelabel##1{{\fontspec{FrutigerLTStd-BoldCn.otf}\selectfont\hbox to \tempdimen{\hskip\listlabelleftskip{\csname listdevicefont\romannumeral\the\@enumdepth\endcsname\hbox to \enumdimwd{\iflabelrightalign\hss\fi\textlistlabel##1}}}}}%
+           \fi
+         \else
+            \ifnum \@enumdepth=2
+               \tempdimen\leftmarginii
+               \advance\tempdimen-\labelsep
+               \def\makelabel##1{{\fontspec{FrutigerLTStd-BoldCn.otf}\hbox to \tempdimen{\hskip\listlabelleftskipii{\csname listdevicefont\romannumeral\the\@enumdepth\endcsname\hbox to \enumdimwd{\iflabelrightalign\hss\fi##1}}}}}%
+            \else
+               \ifnum \@enumdepth=3
+                  \tempdimen\leftmarginiii
+                  \advance\tempdimen-\labelsep
+                  \def\makelabel##1{\hbox to \tempdimen{\hskip\listlabelleftskipiii{\csname listdevicefont\romannumeral\the\@enumdepth\endcsname\hbox to \enumdimwd{\iflabelrightalign\hss\fi##1}}}}%
+              \else
+                 \ifnum \@enumdepth=4
+                    \tempdimen\leftmarginiv
+                    \advance\tempdimen-\labelsep
+                    \def\makelabel##1{\hbox to \tempdimen{\hskip\listlabelleftskipiv{\csname listdevicefont\romannumeral\the\@enumdepth\endcsname\hbox to \enumdimwd{\iflabelrightalign\hss\fi##1}}}}%
+                 \else
+                    \ifnum \@enumdepth=5
+                       \tempdimen\leftmarginv
+                       \advance\tempdimen-\labelsep
+                       \def\makelabel##1{\hbox to \tempdimen{\hskip\listlabelleftskipv{\csname listdevicefont\romannumeral\the\@enumdepth\endcsname\hbox to \enumdimwd{\iflabelrightalign\hss\fi##1}}}}%
+                    \else
+                       \ifnum \@enumdepth=6
+                          \tempdimen\leftmarginvi
+                          \advance\tempdimen-\labelsep
+                          \def\makelabel##1{\hbox to \tempdimen{\hskip\listlabelleftskipvi{\csname listdevicefont\romannumeral\the\@enumdepth\endcsname\hbox to \enumdimwd{\iflabelrightalign\hss\fi##1}}}}%
+                       \else
+                          \ifnum \@enumdepth=7
+                             \tempdimen\leftmarginvii
+                             \advance\tempdimen-\labelsep
+                             \def\makelabel##1{\hbox to \tempdimen{\hskip\listlabelleftskipvii{\csname listdevicefont\romannumeral\the\@enumdepth\endcsname\hbox to \enumdimwd{\iflabelrightalign\hss\fi##1}}}}%
+                          \else
+                             \ifnum \@enumdepth=8
+                                \tempdimen\leftmarginviii
+                                \advance\tempdimen-\labelsep
+                                \def\makelabel##1{\hbox to \tempdimen{\hskip\listlabelleftskipviii{\csname listdevicefont\romannumeral\the\@enumdepth\endcsname\hbox to \enumdimwd{\iflabelrightalign\hss\fi##1}}}}%
+                             \else
+                                 \ifnum \@enumdepth=9
+                                    \tempdimen\leftmarginix
+                                    \advance\tempdimen-\labelsep
+                                    \def\makelabel##1{\hbox to \tempdimen{\hskip\listlabelleftskipix{\csname listdevicefont\romannumeral\the\@enumdepth\endcsname\hbox to \enumdimwd{\iflabelrightalign\hss\fi##1}}}}%
+                                 \else
+                                    \ifnum \@enumdepth=10
+                                       \tempdimen\leftmarginx
+                                       \advance\tempdimen-\labelsep
+                                       \def\makelabel##1{\hbox to \tempdimen{\hskip\listlabelleftskipx{\csname listdevicefont\romannumeral\the\@enumdepth\endcsname\hbox to \enumdimwd{\iflabelrightalign\hss\fi##1}}}}%
+                                    \else
+                                       \def\makelabel##1{\hss\llap{\csname listdevicefont\romannumeral\the\@enumdepth\endcsname##1}}%
+                                    \fi
+                                 \fi
+                             \fi
+                          \fi
+                       \fi
+                    \fi
+                 \fi
+              \fi
+            \fi
+         \fi}
+      \fi}
+%
+\def\endenumerate{\@topsepadd\csname belowlistskip\romannumeral\the\@enumdepth\endcsname\endlist}%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+
+
+%%%%%%%%%%%%
+%
+\newif\ifnumsquare\global\numsquarefalse
+\newif\ifbibliotoc\global\bibliotocfalse
+%
+\newdimen\bibindent
+\newdimen\bibleftmargin
+\newdimen\bibitemsep
+\newdimen\bibparsep
+\newdimen\bibtext
+\newdimen\biblabelsep
+\newdimen\bibleftmargini
+%%%
+%\newbox\bibtempbox
+%\newdimen\bibtempdimen
+%%
+%%%%%%%% Unnumberd References %%%%%%%%%%%
+\setlength\bibleftmargin  {9.5\p@}
+\setlength\bibitemsep  {\z@}
+\setlength\bibparsep  {\z@}
+
+%%%%%%%% Numbered Within Square Bracket %%%%%%%%%%%
+\setlength\biblabelsep  {11\p@}
+\setlength\bibleftmargini  {5.75\p@}
+
+%%%%%%%% Numbered With Dot %%%%%%%%%%%%%%%
+\setlength\bibtext  {18\p@}
+%%%
+\renewenvironment{thebibliography}[1]
+      {\global\bibliotoctrue%
+      \bibliofont%
+%       \ifAJW@appendix%
+         \chapter*{\refname}%
+         \if@mainmatter
+         \addcontentsline{toc}{section}{\textit{\refname}}
+         \else
+         \fi
+\markright{\refname}
+\columnsep 15pt
+\begin{multicols}{2}
+       \def\@tempa{#1}%%%%%
+         \ifx\@tempa\@empty%%%
+          \bibliofont
+          \list{}%
+           {\labelwidth0pt\labelsep0pt
+           \leftmargin\bibleftmargin%12
+           \itemindent-\bibleftmargin
+           \itemsep\bibitemsep
+           \parsep\bibparsep
+           \usecounter{enumiv}%
+           \let\p@enumiv\@empty
+           \renewcommand\theenumiv{\arabic{enumiv}}}%
+      \else
+     \setbox\tempbox\hbox{\bibliofont[\@tempa]}
+    \tempdimen\wd\tempbox%%%\bibtempdimen\wd\bibtempbox
+          \ifnumsquare
+          \else
+             \def\@biblabel##1{{\hbox to \tempdimen{\hss[##1]}}}%
+          \fi%
+           \bibliofont
+           \list{\@biblabel{\arabic{enumiv}}}%
+           {\settowidth\labelwidth{\@biblabel{#1}}%
+           \labelsep6.5pt\leftmargin\labelsep
+           \advance\leftmargin\labelwidth
+           \itemindent0pt
+           \itemsep\bibitemsep
+           \parsep\bibparsep
+           \usecounter{enumiv}%
+           \let\p@enumiv\@empty
+           \renewcommand\theenumiv{\arabic{enumiv}}}%
+     \fi
+     \sloppy\clubpenalty10000\widowpenalty10000%
+     \sfcode`\.=\@m
+    \let\citeN\cite \let\shortcite\cite
+    \let\citeasnoun\cite
+}
+     {\def\@noitemerr
+     {\@latex@warning{Empty `thebibliography' environment}}%
+     \endlist%
+     \end{multicols}
+     \global\bibliotocfalse}%
+\renewcommand\newblock{}
+
+\@addtoreset{NAT@ctr}{chapter}
+
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Table of contents %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+\def\tocauthorfont{\fontspec{FrutigerLTStd-Cn.otf}\fontsize{9}{12}\selectfont}%
+\def\tocsecfont{\fontsize{10.25}{13.5}\selectfont\mathversion{normal}}%
+\def\tocsubsecfont{\fontsize{10.25}{13.5}\selectfont\mathversion{normal}}%
+\def\tocsecpagefont{\fontsize{10.25}{13.5}\selectfont\mathversion{normal}}%
+\def\tocsubsecpagefont{\fontsize{10.25}{13.5}\selectfont\mathversion{normal}}%
+\def\tocfloatfont{\fontsize{10.25}{13.5}\selectfont\mathversion{normal}}%
+%
+\newcommand\tableofcontents{\@restonecolfalse
+ \if@twocolumn\@restonecoltrue\onecolumn\fi
+ \AJW@addtocfalse
+ \chapter*{\contentsname}
+\vspace*{-13pt}
+ \@starttoc{toc}
+ \AJW@addtoctrue
+ \if@restonecol\twocolumn\fi
+}
+
+\newbox\tocchapbox
+\newbox\tocsecbox
+\newdimen\tocchpnum
+\newdimen\@chpmax
+\newdimen\@sectmax
+\newbox\tocsubsecbox
+\newdimen\@subsectmax
+\newdimen\tocsecnum
+\newdimen\tocsectotal
+\newdimen\tocsubsecnum
+\newdimen\tocsubsectotal
+\newdimen\tocsubsubsecnum
+\newdimen\tocsubsubsectotal
+\newdimen\tocparanum
+\newdimen\tocparatotal
+\newdimen\tocsubparanum
+%
+\def\chpmax#1{\global\setbox\tocchapbox\hbox{\bfseries #1}%
+    \@chpmax\wd\tocchapbox}%
+
+\def\sectmax#1{\global\setbox\tocsecbox\hbox{\bfseries #1\enspace}%
+       \@sectmax\wd\tocsecbox}
+
+\def\subsectmax#1{\global\setbox\tocsubsecbox\hbox{\bfseries #1\enspace}%
+    \@subsectmax\wd\tocsubsecbox
+}%
+\settowidth{\tocchpnum}{13\enspace\qquad}
+\settowidth{\tocsecnum}{13.6\enspace\qquad}
+\settowidth{\tocsubsecnum}{19.8.7\enspace\qquad}
+%
+\def\calctocindent{%
+\tocsectotal=\tocchpnum
+\advance\tocsectotal by\tocsecnum
+\tocsubsectotal=\tocsectotal
+\advance\tocsubsectotal by\tocsubsecnum
+\tocsubsubsectotal=\tocsubsectotal
+\advance\tocsubsubsectotal by\tocsubsubsecnum
+\tocparatotal=\tocsubsubsectotal
+\advance\tocparatotal by\tocparanum}
+\calctocindent
+\renewcommand\@pnumwidth{3pc}%
+%
+\newcommand*\l@part[2]{\vspace{\baselineskip}%
+ \addpenalty{-\@highpenalty}%
+ \begingroup
+  \rightskip \@pnumwidth
+  \parfillskip -\@pnumwidth
+  \leavevmode%
+  %\ifAJW@multisty \else \hspace*{\AJW@toclmarg}\fi
+  \ifAJW@firstTOCentry
+    {\hspace*{-1pc}\fontspec{FrutigerLTStd-BoldCn.otf}\fontsize{12}{14}\selectfont #1} \hfil \hbox to\@pnumwidth{\hss {\normalfont\itshape page\/} {#2}}\par
+    \global\AJW@firstTOCentryfalse
+  \else
+    {\hspace*{-1pc}\fontspec{FrutigerLTStd-BoldCn.otf}\fontsize{12}{14}\selectfont #1} \hfil \hbox to\@pnumwidth{\hss {#2}}\par%
+  \fi
+  \vspace*{-7pt}
+  \nobreak
+  \endgroup
+}
+
+\newcommand*\l@chapter[2]{\pagebreak[3]
+ \addvspace{\baselineskip}%
+ \@tempdima \@chpmax%
+ \begingroup%
+  \parindent 0pc%\z@
+    \rightskip \@pnumwidth  \parfillskip -\@pnumwidth%
+  \leavevmode%
+  \advance\rightskip by \z@ \@plus 2cm%
+  \ifAJW@firstTOCentry%
+   {\normalfont\fontspec{FrutigerLTStd-BoldCn.otf} #1}\nobreak\hfil \nobreak\hbox to\@pnumwidth{\hss {\normalfont\itshape page\/} {#2}}\par%
+   \global\AJW@firstTOCentryfalse%
+  \else%
+   \noindent\unskip{\normalfont\fontspec{FrutigerLTStd-BoldCn.otf}#1}\nobreak\hfil \nobreak\hbox to\@pnumwidth{\hss {#2}}\par%
+  \fi%
+ \endgroup%
+ \vspace*{6.5pt}
+}
+
+\newcommand*\l@author[2]{\pagebreak[3]
+ \@tempdima \AJW@toclmarg
+ \begingroup
+  \parindent 0pc%\z@
+    \rightskip \@pnumwidth  \parfillskip -\@pnumwidth
+  \leavevmode
+  \ifAJW@firstTOCentry
+   \noindent{\tocauthorfont #1}\nobreak\hfil \nobreak\hbox to\@pnumwidth{\hss {\normalfont\itshape page\/} }\par% #2
+   \global\AJW@firstTOCentryfalse
+  \else
+   \noindent{\tocauthorfont #1}\nobreak\hfil \nobreak\hbox to\@pnumwidth{\hss }\par%#2
+  \fi
+  \vskip6.5pt
+ \endgroup
+}
+
+\newcommand*\l@schapter[2]{\pagebreak[3]% now indented
+ \@tempdima \z@
+ \begingroup
+  \parindent \z@
+    \rightskip \@pnumwidth  \parfillskip -\@pnumwidth
+  \leavevmode
+  \advance \leftskip \@tempdima  \hskip -\leftskip
+  \ifAJW@firstTOCentry
+   {\itshape #1}\nobreak\hfil \nobreak\hbox to\@pnumwidth{\hss {\itshape page\/} #2}\par
+   \global\AJW@firstTOCentryfalse
+  \else
+   {\itshape #1}\nobreak\hfil \nobreak\hbox to\@pnumwidth{\hss #2}\par
+  \fi
+ \endgroup
+}
+
+\newcommand*\l@sschapter[2]{\pagebreak[3]% now indented
+ \vspace{\baselineskip}%
+ \@tempdima \z@
+ \begingroup
+  \parindent \z@
+    \rightskip \@pnumwidth  \parfillskip -\@pnumwidth
+  \leavevmode
+  \advance \leftskip \@tempdima  \hskip -\leftskip
+  \ifAJW@firstTOCentry
+   {\normalfont #1}\nobreak\hfil \nobreak\hbox to\@pnumwidth{\hss {\itshape page\/} #2}\par
+   \global\AJW@firstTOCentryfalse
+  \else
+   {\normalfont #1}\nobreak\hfil \nobreak\hbox to\@pnumwidth{\hss #2}\par
+  \fi
+ \endgroup
+}
+
+% remove page number from contributor page
+\newcommand*\l@contrib[2]{\pagebreak[3]
+ \@tempdima \z@%
+ \begingroup
+  \parindent \z@  \raggedright
+  \leavevmode
+  \advance \leftskip \@tempdima  \hskip -\leftskip
+  \ifAJW@firstTOCentry
+   {#1}\nobreak\hfil \nobreak\hbox to\@pnumwidth{\hss {\itshape page\/} #2}\par
+   \global\AJW@firstTOCentryfalse
+  \else
+   {#1}\nobreak\hfil \nobreak\hbox to\@pnumwidth{\hss }\par
+  \fi
+ \endgroup
+}
+%
+\def\l@section#1#2{\addpenalty{-\@highpenalty}
+\ifnum\c@tocdepth >0%
+\@tempdima \@sectmax%
+%\advance\@tempdima by 7pt%%7pt%
+ \calctocindent%
+ \begingroup%
+ \parindent \z@ \rightskip \@tocrmarg%
+ \advance\rightskip by \z@ \@plus 2cm%
+ \advance\leftskip\@tempdima
+ \advance\leftskip -9pt
+ \pretolerance=10000%
+ \parfillskip -\@tocrmarg%
+ \leavevmode%
+\hangindent\@sectmax%
+ {\tocsecfont#1}\nobreak%
+    \ifx0#2\hfil\null%
+    \else%
+        \hfill\nobreak\hbox to\@pnumwidth{\hss\tocsecpagefont{#2}}%
+    \fi%
+ \par%
+ \penalty\@highpenalty \endgroup
+\fi}
+%
+\def\l@subsection#1#2{\addpenalty{-\@highpenalty}
+\ifnum\c@tocdepth >\@ne%
+\@tempdima \@subsectmax\advance\@tempdima by 0pt%%7pt
+ \calctocindent
+ \begingroup
+ \parindent \z@ \rightskip \@tocrmarg \advance\rightskip by \z@ \@plus 2cm
+ \pretolerance=10000
+ \parfillskip -\@tocrmarg
+\leavevmode%
+\advance\leftskip\@sectmax
+\hangindent\@subsectmax%
+{\tocsubsecfont#1}\nobreak
+    \ifx0#2\hfil\null
+    \else
+        \hfill\nobreak\hbox to\@pnumwidth{\hss\tocsubsecpagefont#2}%
+    \fi
+ \par
+ \penalty\@highpenalty \endgroup
+\fi }
+%
+\newif\ifAJW@firstLOTentry\AJW@firstLOTentryfalse
+\newif\ifAJW@firstLOFentry\AJW@firstLOFentryfalse
+
+% listing for figures (repeat of schapter)
+\newcommand*\l@figure[2]{\pagebreak[3]
+ \@tempdima 19pt%\AJW@toclmarg
+\tocfloatfont
+ \begingroup
+  \parindent \z@  \rightskip \@pnumwidth  \parfillskip -\@pnumwidth
+  \leavevmode
+  \advance \leftskip \@tempdima  \hskip -\leftskip
+%
+  \ifAJW@firstLOFentry
+    {\tocfloatfont#1}\nobreak\hfil \nobreak\hbox to\@pnumwidth{\hss {\tocfloatfont\itshape page\/} #2\par}\par
+    \global\AJW@firstLOFentrytrue
+  \else
+      \global\AJW@firstLOFentryfalse
+    {\tocfloatfont#1}\nobreak\hfil \nobreak\hbox to\@pnumwidth{\hss\tocfloatfont #2\par}\par
+  \fi
+%
+ \endgroup
+}
+
+\newcommand*\l@table[2]{\pagebreak[3]
+ \@tempdima 19pt%\AJW@toclmarg
+\tocfloatfont
+ \begingroup
+  \parindent \z@  \rightskip \@pnumwidth  \parfillskip -\@pnumwidth
+  \leavevmode
+  \advance \leftskip \@tempdima  \hskip -\leftskip
+%
+  \ifAJW@firstLOTentry
+    {\tocfloatfont#1}\nobreak\hfil \nobreak\hbox to\@pnumwidth{\hss {\tocfloatfont\itshape page\/} #2\par}\par
+    \global\AJW@firstLOTentrytrue
+  \else
+  \AJW@firstLOTentryfalse
+    {\tocfloatfont#1}\nobreak\hfil \nobreak\hbox to\@pnumwidth{\hss\tocfloatfont #2\par}\par
+  \fi
+%
+ \endgroup
+}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Table of contents ends %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+\usepackage{amsthm}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%% Standard Macro Updation Ends %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\def\dtoprule{\toprule\\[-12pt]}
+\def\dmidrule{\\[-10pt]\midrule\\[-9.5pt]}
+\def\dbottomrule{\\[-10pt]\bottomrule}
+
+%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% Useful Macros %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Clearemptydoublepage should really clear the running heads too
+\newcommand{\clearemptydoublepage}{\newpage{\pagestyle{empty}\cleardoublepage}}
+
+% From ifmtarg.sty
+% Copyright Peter Wilson and Donald Arseneau, 2000
+\begingroup
+\catcode`\Q=3
+\long\gdef\@ifmtarg#1{\@xifmtarg#1QQ\@secondoftwo\@firstoftwo\@nil}
+\long\gdef\@xifmtarg#1#2Q#3#4#5\@nil{#4}
+\long\gdef\@ifnotmtarg#1{\@xifmtarg#1QQ\@firstofone\@gobble\@nil}
+\endgroup
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\TABLE{\processtable}
+\def\RRtab{\rightskip.2pc plus 18pc\hangindent1em\relax}
+\def\TTtab{\rightskip.2pc plus 18pc\relax}
+
+
+\usepackage{srcltx}
+
+\usepackage{stfloats}
+\fnbelowfloat
+%%%%
+
+%%%
+\let\firstmark\botmark
+%
+\allowdisplaybreaks
+%%%%
+\setcounter{tocdepth}{1}
+%
+\usepackage{textcomp}
+%%%%%%%%%%%%%%%%%%%%%%%%%%bullet-list%
+\def\itemize{\ifnum \@itemdepth >3 \@toodeep \else
+  \advance\@itemdepth \@ne
+  \edef\@itemitem{labelitem\romannumeral\the\@itemdepth}%
+%  \listsize
+  \list{\csname\@itemitem\endcsname}%
+   {\def\makelabel##1{\hss\llap{##1}}}
+ \fi
+}
+\let\enditemize\endlist
+%
+\usepackage{floatpag,upgreek}
+%
+\newdimen\origiwspc%
+\newdimen\origiwstr%
+  \origiwspc=\fontdimen2\font% original inter word space
+  \origiwstr=\fontdimen3\font% original inter word stretch
+\def\trackpara1{\fontdimen2\font=0.4ex}
+\def\endtrackpara1{\fontdimen2\font=\origiwspc}
+%
+\usepackage{pagegridx}
+\def\minorcolumn{3pc}
+%
+\usepackage[tight,k-tight]{minitoc}
+\pretocmd{\sv@minitoc@}
+  {\let\tocorminitoc\@secondoftwo}
+  {}{}
+%%%
+\newrobustcmd\tocorminitoc[2]{#1}
+\setcounter{tocdepth}{0}
+\setcounter{minitocdepth}{1}
+%%%
+\dominitoc
+\nomtcrule
+\def\mtctitle{\relax}
+\def\mtcfont{\normalsize\fontspec{FrutigerLTStd-Bold.otf}\hangindent3pc}
+\def\mtcSfont{\normalsize\fontspec{FrutigerLTStd-Bold.otf}\hangindent3pc}
+\def\mtcindent{3pc}
+\setcounter{minitocdepth}{1}
+%%
+\rotfloatpagestyle{empty}
+%%%
+\newenvironment{problemlist}[1]{%
+ \def\section{\@startsection {section}{1}{\z@}
+  {-24\p@ \@plus-7\p@ \@minus-3.5\p@}{6.5\p@}{\Asectionfont\AJW@hangraggedright}}
+\markright{Problems}
+\section*{\trackfive{PROBLEMS}}
+\addcontentsline{toc}{section}{Problems}
+\markright{Problems}
+\begin{enumerate}[#1]
+\renewcommand\theenumi{\fontspec{FrutigerLTStd-BoldCn.otf}\thechapter.\arabic{enumi}}
+\renewcommand\theenumii{\thechapter.\arabic{enumii}}
+}{\end{enumerate}}
+
+
+\newenvironment{exerciselist}[1]{%
+ \def\section{\@startsection {section}{1}{\z@}
+  {-24\p@ \@plus-7\p@ \@minus-3.5\p@}{6.5\p@}{\Asectionfont\AJW@hangraggedright}}
+\markright{Exercises}
+\section*{\trackfive{EXERCISES}}
+\addcontentsline{toc}{section}{Exercises}
+\markright{Exercises}
+\begin{enumerate}[#1]
+\renewcommand\theenumi{\fontspec{FrutigerLTStd-BoldCn.otf}\thechapter.\arabic{enumi}}
+\renewcommand\theenumii{\thechapter.\arabic{enumii}}
+}{\end{enumerate}}
+
+%%%
+\long\def\@makecaption#1#2{%
+\vskip-7pt
+\figcaptionfont
+  \vskip\abovecaptionskip
+  \sbox\@tempboxa{{\figcaptionnumfont#1}\enskip{\figcaptionfont #2}}%
+  \ifdim \wd\@tempboxa >\hsize
+   {\figcaptionnumfont#1}\enskip{\figcaptionfont #2}\par
+  \else
+    \global \@minipagefalse
+    \hb@xt@\hsize{\figcaptionfont\box\@tempboxa\hfill}%
+  \fi
+  \vskip\belowcaptionskip}
+%%%
+\long\def\@SCmakecaption#1#2{%
+\figcaptionfont
+  \vskip\abovecaptionskip
+  \sbox\@tempboxa{{\figcaptionnumfont#1}\enskip{\figcaptionfont #2}}%
+  \ifdim \wd\@tempboxa >\hsize
+   {\figcaptionnumfont#1}\enskip{\figcaptionfont #2}\par
+  \else
+    \global \@minipagefalse
+    \hb@xt@\hsize{\figcaptionfont\box\@tempboxa\hfill}%
+  \fi
+  \vskip\belowcaptionskip}
+%%%%
+%%%%%%%
+
+%%%match the width of fig cap with its figure width(narrow box figure)
+\newbox\fibox
+\newenvironment{nboxfig}[2]{\begin{center}
+\sbox\fibox{#1}
+\begin{minipage}{\wd\fibox}
+\usebox\fibox
+\captionof{figure}{#2}
+}{\end{minipage}\end{center}}
+%%
+%%normal figure in text
+%%
+\def\nfig#1#2{
+\sbox0{#1}
+\centering
+\begin{minipage}{\wd0}
+\usebox0
+#2
+\end{minipage}}
+%%%
+\def\figsource#1{\vskip3pt\figcaptionfont #1}
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{lemma}[theorem]{Lemma}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newtheoremstyle{exam}{}
+{} {} {}
+{\noindent\fontsize{12}{14}\selectfont\fontspec{FrutigerLTStd-BoldCn.otf}}
+{\enspace} { } {} \theoremstyle{exam}
+
+\newtheorem{exam}{Example}[chapter]
+
+%%%
+\tcbset{examstyle/.style={%
+enhanced,breakable,boxrule=0.75pt,sharp
+corners,colback=white,toprule=0pt,bottomrule=0pt,left
+skip=-3pc,boxsep=0pt,after skip=13pt,before skip=13.5pt,fonttitle=\fontsize{10.25}{13.5}\fontspec{FrutigerLTStd-BoldCn}
+}}
+
+%%%
+\newenvironment{example}[1][]{\begin{tcolorbox}[examstyle,#1]\begin{exam}}{\end{exam}\end{tcolorbox}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand\tabsource[1]{\textit{Source:} #1\par}
+\newcommand\tabnote[1]{\textit{Note:} #1\par}
+%%%%%%%%%%%%%%
+\newenvironment{contrib}{\par\normalfont\raggedright\parskip13.25pt}{\par}
+\newcommand\contribauthor[1]{{\fontsize{10.25}{13.5}\fontspec{FrutigerLTStd-BoldCn.otf} #1}}
+
+\usepackage{pagegridx}%%
+\usepackage{pagegridx,lipsum}%%
+\def\cambridge{HE2}
+%%extract
+\newenvironment{extract}{\addvspace{6pt}\list{\extractfont}{\item[]}}{\endlist\addvspace{6pt}}
+\def\Z{\zeta}
+
+\RequirePackage[xetex,draft=false,linktocpage,colorlinks=true,breaklinks,pdfpagelabels,hyperindex,linkcolor=sam,citecolor=sam,urlcolor=sam,filecolor=sam]{hyperref}
+\definecolor{sam}{cmyk}{0,0,0,1}
+
+\endinput

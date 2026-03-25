@@ -1,0 +1,38 @@
+\contentsline {schapter}{Figures}{viii}{chapter*.2}% 
+\contentsline {schapter}{Tables}{ix}{chapter*.3}% 
+\contentsline {schapter}{Contributors}{x}{chapter*.4}% 
+\contentsline {schapter}{Preface}{xi}{chapter*.5}% 
+\contentsline {schapter}{Introduction}{xii}{chapter*.6}% 
+\contentsline {part}{{Part\ I\leavevmode@ifvmode \kern .5em Water Balance}}{1}{part.1}% 
+\contentsline {xpart}{Water Balance}{3}{part.1}% 
+\contentsline {chapter}{\numberline {\leavevmode {\color {scolor}1}}Management of Water Resources}{3}{chapter.1}% 
+\contentsline {section}{\numberline {1.1}Watershed and Water Balance}{3}{section.1.1}% 
+\contentsline {subsection}{\numberline {1.1.1}Watershed concepts and characteristics}{3}{subsection.1.1.1}% 
+\contentsline {subsubsection}{C-heading}{5}{section*.10}% 
+\contentsline {paragraph}{D-heading}{5}{section*.11}% 
+\contentsline {section}{Problems}{9}{section*.13}% 
+\contentsline {part}{{Part\ II\leavevmode@ifvmode \kern .5em Migration and inversion}}{11}{part.2}% 
+\contentsline {xpart}{Migration and inversion}{13}{part.2}% 
+\contentsline {chapter}{\numberline {\leavevmode {\color {scolor}6}}Basic migration concepts operations usually considered to be linear operations usually considered to be linear}{13}{chapter.6}% 
+\contentsline {author}{{Stefan\nobreakspace {}M.\nobreakspace {}Moser, Amos\nobreakspace {}Lapidoth, Stefan\nobreakspace {}M.\nobreakspace {}Moser, Amos\nobreakspace {}Lapidoth, Stefan\nobreakspace {}M.\nobreakspace {}Moser, Amos\nobreakspace {}Lapidoth, Stefan\nobreakspace {}M.\nobreakspace {}Moser, Amos\nobreakspace {}Lapidoth, Stefan\nobreakspace {}M.\nobreakspace {}Moser}}{13}{section*.15}% 
+\contentsline {section}{\numberline {6.1}Migration as a map}{13}{section.6.1}% 
+\contentsline {subsection}{\numberline {6.1.1}The data}{13}{subsection.6.1.1}% 
+\contentsline {subsection}{\numberline {6.1.2}The image function}{14}{subsection.6.1.2}% 
+\contentsline {subsection}{\numberline {6.1.3}Mapping to points and lines}{17}{subsection.6.1.3}% 
+\contentsline {section}{\numberline {6.2}Ray-theoretical migration concepts}{18}{section.6.2}% 
+\contentsline {subsection}{\numberline {6.2.1}Migration to a point}{18}{subsection.6.2.1}% 
+\contentsline {subsection}{\numberline {6.2.2}Migration to a line}{20}{subsection.6.2.2}% 
+\contentsline {subsection}{\numberline {6.2.3}Migration to a curve}{22}{subsection.6.2.3}% 
+\contentsline {subsection}{\numberline {6.2.4}Migration by broadcast}{22}{subsection.6.2.4}% 
+\contentsline {section}{\numberline {6.3}Migration phase Head 1}{24}{section.6.3}% 
+\contentsline {subsection}{\numberline {6.3.1}Migration phase Head 2}{24}{subsection.6.3.1}% 
+\contentsline {subsection}{\numberline {6.3.2}Migrated image of the reflector migration phase Head 2}{25}{subsection.6.3.2}% 
+\contentsline {subsubsection}{Migrated image of the reflector migration phase Head 3}{25}{section*.25}% 
+\contentsline {subsubsection}{Migration of diffractions Head 3}{25}{section*.26}% 
+\contentsline {paragraph}{Migrated image of the reflector migration phase Head 4}{25}{section*.27}% 
+\contentsline {section}{\numberline {6.4}Downward continuation}{26}{section.6.4}% 
+\setcounter {tocdepth}{1}
+\contentsline {schapter}{References}{30}{appendix*.28}% 
+\contentsline {schapter}{References}{31}{appendix*.29}% 
+\contentsline {schapter}{Index}{32}{appendix*.30}% 
+\contentsline {schapter}{Index}{32}{appendix*.30}% 

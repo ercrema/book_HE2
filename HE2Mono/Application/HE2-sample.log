@@ -1,0 +1,2568 @@
+This is XeTeX, Version 3.14159265-2.6-0.999991 (TeX Live 2019/W32TeX) (preloaded format=xelatex 2019.6.18)  23 JAN 2021 00:58
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**HE2-sample.tex
+(./HE2-sample.tex
+LaTeX2e <2018-12-01>
+(./HE2-mono-design.cls
+
+LaTeX Warning: You have requested document class `HE2-mono-design',
+               but the document class provides `HE2'.
+
+Document Class: HE2 1999/07/28, v1.00 LaTeX2e document class
+\AJW@indent=\dimen102
+\AJW@floatindent=\dimen103
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/framed/framed.sty
+Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
+\OuterFrameSep=\skip41
+\fb@frw=\dimen104
+\fb@frh=\dimen105
+\FrameRule=\dimen106
+\FrameSep=\dimen107
+)
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/boites/boites.sty
+File: boites.sty 
+Package: boites 2013/11/21 v1.1 Colored, framed and breakable across pages boxe
+s
+\bk@bxb=\box27
+\bk@bxa=\box28
+\bk@lcnt=\count80
+)
+(./crop.sty
+Package: crop 2003/05/20 v1.9 crop marks (mf)
+\stockwidth=\dimen108
+\stockheight=\dimen109
+\CROP@index=\count81
+
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2016/07/10 v1.1e Standard LaTeX Color (DPC)
+
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package color Info: Driver file: xetex.def on input line 147.
+
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/graphics-def/xetex.def
+File: xetex.def 2017/06/24 v5.0h Graphics/color driver for xetex
+))
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
+
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/graphics-cfg/graphics.
+cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: xetex.def on input line 99.
+)
+\CROP@offset=\count82
+Package crop Info: Local config file crop.cfg used on input line 605.
+ (./crop.cfg))
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: xetex.def on input line 225.
+LaTeX Info: Redefining \color on input line 709.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+)
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/colortbl/colortbl.sty
+Package: colortbl 2018/12/12 v1.0d Color table columns (DPC)
+
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/tools/array.sty
+Package: array 2018/12/30 v2.4k Tabular extension package (FMi)
+\col@sep=\dimen110
+\ar@mcellbox=\box29
+\extrarowheight=\dimen111
+\NC@list=\toks14
+\extratabsurround=\skip42
+\backup@length=\skip43
+\ar@cellbox=\box30
+)
+\everycr=\toks15
+\minrowclearance=\skip44
+)
+\AJW@baseskip=\skip45
+\AJW@theskip=\skip46
+\AJW@measure=\dimen112
+\AJW@headwidth=\dimen113
+\threepica=\skip47
+\apptmp=\count83
+\c@problemhead=\count84
+\@dotbox=\box31
+\c@part=\count85
+\c@chapter=\count86
+\c@section=\count87
+\c@subsection=\count88
+\c@subsubsection=\count89
+\c@paragraph=\count90
+\c@subparagraph=\count91
+\c@example@bean=\count92
+\tmp=\count93
+\c@example@beanbychapter=\count94
+\AJW@tocindent=\dimen114
+\AJW@toclmarg=\dimen115
+
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/tools/multicol.sty
+Package: multicol 2018/12/27 v1.8v multicolumn formatting (FMi)
+\c@tracingmulticols=\count95
+\mult@box=\box32
+\multicol@leftmargin=\dimen116
+\c@unbalance=\count96
+\c@collectmore=\count97
+\doublecol@number=\count98
+\multicoltolerance=\count99
+\multicolpretolerance=\count100
+\full@width=\dimen117
+\page@free=\dimen118
+\premulticols=\dimen119
+\postmulticols=\dimen120
+\multicolsep=\skip48
+\multicolbaselineskip=\skip49
+\partial@page=\box33
+\last@line=\box34
+\maxbalancingoverflow=\dimen121
+\mult@rightbox=\box35
+\mult@grightbox=\box36
+\mult@gfirstbox=\box37
+\mult@firstbox=\box38
+\@tempa=\box39
+\@tempa=\box40
+\@tempa=\box41
+\@tempa=\box42
+\@tempa=\box43
+\@tempa=\box44
+\@tempa=\box45
+\@tempa=\box46
+\@tempa=\box47
+\@tempa=\box48
+\@tempa=\box49
+\@tempa=\box50
+\@tempa=\box51
+\@tempa=\box52
+\@tempa=\box53
+\@tempa=\box54
+\@tempa=\box55
+\c@columnbadness=\count101
+\c@finalcolumnbadness=\count102
+\last@try=\dimen122
+\multicolovershoot=\dimen123
+\multicolundershoot=\dimen124
+\mult@nat@firstbox=\box56
+\colbreak@box=\box57
+\mc@col@check@num=\count103
+)
+\@footindent=\skip50
+\c@endnote=\count104
+\endnotesep=\dimen125
+\@enotes=\write3
+\@figbox=\box58
+\AJW@floatwidth=\dimen126
+
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2018/10/06 v3.3-154 Customizing captions (AR)
+
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2018/09/12 v1.8c caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 64.
+
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks16
+)
+\captionmargin=\dimen127
+\captionmargin@=\dimen128
+\captionwidth=\dimen129
+\caption@tempdima=\dimen130
+\caption@indent=\dimen131
+\caption@parindent=\dimen132
+\caption@hangindent=\dimen133
+\abovecaptionskip=\skip51
+\belowcaptionskip=\skip52
+Package caption Info: Unknown document class (or package),
+(caption)             standard defaults will be used.
+)
+
+Package caption Warning: Unsupported document class (or package) detected,
+(caption)                usage of the caption package is not recommended.
+See the caption package documentation for explanation.
+
+Package caption Info: \@makecaption = undefined.
+\c@caption@flags=\count105
+\c@ContinuedFloat=\count106
+)
+\c@figure=\count107
+
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/caption/subcaption.sty
+Package: subcaption 2018/05/01 v1.1-162 Sub-captions (AR)
+\c@subfigure=\count108
+) (//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/wrapfig/wrapfig.sty
+\wrapoverhang=\dimen134
+\WF@size=\dimen135
+\c@WF@wrappedlines=\count109
+\WF@box=\box59
+\WF@everypar=\toks17
+Package: wrapfig 2003/01/31  v 3.6
+)
+\c@table=\count110
+\c@floatingbox=\count111
+\textwidthplus=\skip53
+
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/pgf/frontendlayer/tikz
+.sty
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/pgf/utilities/pgfrcs.s
+ty
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/generic/pgf/utilities/pgfuti
+l-common.tex
+\pgfutil@everybye=\toks18
+\pgfutil@tempdima=\dimen136
+\pgfutil@tempdimb=\dimen137
+
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/generic/pgf/utilities/pgfuti
+l-common-lists.tex))
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/generic/pgf/utilities/pgfuti
+l-latex.def
+\pgfutil@abb=\box60
+
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/ms/everyshi.sty
+Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
+))
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/generic/pgf/utilities/pgfrcs
+.code.tex
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/generic/pgf/pgf.revision.tex
+)
+Package: pgfrcs 2019/02/02 v3.1.1 (3.1.1)
+))
+Package: pgf 2019/02/02 v3.1.1 (3.1.1)
+
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/pgf/basiclayer/pgfcore
+.sty
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
+\Gin@req@height=\dimen138
+\Gin@req@width=\dimen139
+)
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/pgf/systemlayer/pgfsys
+.sty
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/generic/pgf/systemlayer/pgfs
+ys.code.tex
+Package: pgfsys 2019/02/02 v3.1.1 (3.1.1)
+
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/generic/pgf/utilities/pgfkey
+s.code.tex
+\pgfkeys@pathtoks=\toks19
+\pgfkeys@temptoks=\toks20
+
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/generic/pgf/utilities/pgfkey
+sfiltered.code.tex
+\pgfkeys@tmptoks=\toks21
+))
+\pgf@x=\dimen140
+\pgf@y=\dimen141
+\pgf@xa=\dimen142
+\pgf@ya=\dimen143
+\pgf@xb=\dimen144
+\pgf@yb=\dimen145
+\pgf@xc=\dimen146
+\pgf@yc=\dimen147
+\w@pgf@writea=\write4
+\r@pgf@reada=\read1
+\c@pgf@counta=\count112
+\c@pgf@countb=\count113
+\c@pgf@countc=\count114
+\c@pgf@countd=\count115
+\t@pgf@toka=\toks22
+\t@pgf@tokb=\toks23
+\t@pgf@tokc=\toks24
+\pgf@sys@id@count=\count116
+
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/generic/pgf/systemlayer/pgf.
+cfg
+File: pgf.cfg 2019/02/02 v3.1.1 (3.1.1)
+)
+Driver file for pgf: pgfsys-xetex.def
+
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/generic/pgf/systemlayer/pgfs
+ys-xetex.def
+File: pgfsys-xetex.def 2019/02/02 v3.1.1 (3.1.1)
+
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/generic/pgf/systemlayer/pgfs
+ys-dvipdfmx.def
+File: pgfsys-dvipdfmx.def 2019/02/02 v3.1.1 (3.1.1)
+
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/generic/pgf/systemlayer/pgfs
+ys-common-pdf.def
+File: pgfsys-common-pdf.def 2019/02/02 v3.1.1 (3.1.1)
+)
+\pgfsys@objnum=\count117
+)))
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/generic/pgf/systemlayer/pgfs
+yssoftpath.code.tex
+File: pgfsyssoftpath.code.tex 2019/02/02 v3.1.1 (3.1.1)
+\pgfsyssoftpath@smallbuffer@items=\count118
+\pgfsyssoftpath@bigbuffer@items=\count119
+)
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/generic/pgf/systemlayer/pgfs
+ysprotocol.code.tex
+File: pgfsysprotocol.code.tex 2019/02/02 v3.1.1 (3.1.1)
+))
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfco
+re.code.tex
+Package: pgfcore 2019/02/02 v3.1.1 (3.1.1)
+
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmath.cod
+e.tex
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmathcalc
+.code.tex
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmathutil
+.code.tex)
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmathpars
+er.code.tex
+\pgfmath@dimen=\dimen148
+\pgfmath@count=\count120
+\pgfmath@box=\box61
+\pgfmath@toks=\toks25
+\pgfmath@stack@operand=\toks26
+\pgfmath@stack@operation=\toks27
+)
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmathfunc
+tions.code.tex
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmathfunc
+tions.basic.code.tex)
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmathfunc
+tions.trigonometric.code.tex)
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmathfunc
+tions.random.code.tex)
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmathfunc
+tions.comparison.code.tex)
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmathfunc
+tions.base.code.tex)
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmathfunc
+tions.round.code.tex)
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmathfunc
+tions.misc.code.tex)
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmathfunc
+tions.integerarithmetics.code.tex)))
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmathfloa
+t.code.tex
+\c@pgfmathroundto@lastzeros=\count121
+))
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfco
+repoints.code.tex
+File: pgfcorepoints.code.tex 2019/02/02 v3.1.1 (3.1.1)
+\pgf@picminx=\dimen149
+\pgf@picmaxx=\dimen150
+\pgf@picminy=\dimen151
+\pgf@picmaxy=\dimen152
+\pgf@pathminx=\dimen153
+\pgf@pathmaxx=\dimen154
+\pgf@pathminy=\dimen155
+\pgf@pathmaxy=\dimen156
+\pgf@xx=\dimen157
+\pgf@xy=\dimen158
+\pgf@yx=\dimen159
+\pgf@yy=\dimen160
+\pgf@zx=\dimen161
+\pgf@zy=\dimen162
+)
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfco
+repathconstruct.code.tex
+File: pgfcorepathconstruct.code.tex 2019/02/02 v3.1.1 (3.1.1)
+\pgf@path@lastx=\dimen163
+\pgf@path@lasty=\dimen164
+)
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfco
+repathusage.code.tex
+File: pgfcorepathusage.code.tex 2019/02/02 v3.1.1 (3.1.1)
+\pgf@shorten@end@additional=\dimen165
+\pgf@shorten@start@additional=\dimen166
+)
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfco
+rescopes.code.tex
+File: pgfcorescopes.code.tex 2019/02/02 v3.1.1 (3.1.1)
+\pgfpic=\box62
+\pgf@hbox=\box63
+\pgf@layerbox@main=\box64
+\pgf@picture@serial@count=\count122
+)
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfco
+regraphicstate.code.tex
+File: pgfcoregraphicstate.code.tex 2019/02/02 v3.1.1 (3.1.1)
+\pgflinewidth=\dimen167
+)
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfco
+retransformations.code.tex
+File: pgfcoretransformations.code.tex 2019/02/02 v3.1.1 (3.1.1)
+\pgf@pt@x=\dimen168
+\pgf@pt@y=\dimen169
+\pgf@pt@temp=\dimen170
+)
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfco
+requick.code.tex
+File: pgfcorequick.code.tex 2019/02/02 v3.1.1 (3.1.1)
+)
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfco
+reobjects.code.tex
+File: pgfcoreobjects.code.tex 2019/02/02 v3.1.1 (3.1.1)
+)
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfco
+repathprocessing.code.tex
+File: pgfcorepathprocessing.code.tex 2019/02/02 v3.1.1 (3.1.1)
+)
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfco
+rearrows.code.tex
+File: pgfcorearrows.code.tex 2019/02/02 v3.1.1 (3.1.1)
+\pgfarrowsep=\dimen171
+)
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfco
+reshade.code.tex
+File: pgfcoreshade.code.tex 2019/02/02 v3.1.1 (3.1.1)
+\pgf@max=\dimen172
+\pgf@sys@shading@range@num=\count123
+)
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfco
+reimage.code.tex
+File: pgfcoreimage.code.tex 2019/02/02 v3.1.1 (3.1.1)
+
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfco
+reexternal.code.tex
+File: pgfcoreexternal.code.tex 2019/02/02 v3.1.1 (3.1.1)
+\pgfexternal@startupbox=\box65
+))
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfco
+relayers.code.tex
+File: pgfcorelayers.code.tex 2019/02/02 v3.1.1 (3.1.1)
+)
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfco
+retransparency.code.tex
+File: pgfcoretransparency.code.tex 2019/02/02 v3.1.1 (3.1.1)
+)
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfco
+repatterns.code.tex
+File: pgfcorepatterns.code.tex 2019/02/02 v3.1.1 (3.1.1)
+)
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfco
+rerdf.code.tex
+File: pgfcorerdf.code.tex 2019/02/02 v3.1.1 (3.1.1)
+)))
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/generic/pgf/modules/pgfmodul
+eshapes.code.tex
+File: pgfmoduleshapes.code.tex 2019/02/02 v3.1.1 (3.1.1)
+\pgfnodeparttextbox=\box66
+)
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/generic/pgf/modules/pgfmodul
+eplot.code.tex
+File: pgfmoduleplot.code.tex 2019/02/02 v3.1.1 (3.1.1)
+)
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/pgf/compatibility/pgfc
+omp-version-0-65.sty
+Package: pgfcomp-version-0-65 2019/02/02 v3.1.1 (3.1.1)
+\pgf@nodesepstart=\dimen173
+\pgf@nodesepend=\dimen174
+)
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/pgf/compatibility/pgfc
+omp-version-1-18.sty
+Package: pgfcomp-version-1-18 2019/02/02 v3.1.1 (3.1.1)
+))
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/pgf/utilities/pgffor.s
+ty
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/pgf/utilities/pgfkeys.
+sty
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/generic/pgf/utilities/pgfkey
+s.code.tex))
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/pgf/math/pgfmath.sty
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmath.cod
+e.tex))
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/generic/pgf/utilities/pgffor
+.code.tex
+Package: pgffor 2019/02/02 v3.1.1 (3.1.1)
+
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmath.cod
+e.tex)
+\pgffor@iter=\dimen175
+\pgffor@skip=\dimen176
+\pgffor@stack=\toks28
+\pgffor@toks=\toks29
+))
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/generic/pgf/frontendlayer/ti
+kz/tikz.code.tex
+Package: tikz 2019/02/02 v3.1.1 (3.1.1)
+
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/generic/pgf/libraries/pgflib
+raryplothandlers.code.tex
+File: pgflibraryplothandlers.code.tex 2019/02/02 v3.1.1 (3.1.1)
+\pgf@plot@mark@count=\count124
+\pgfplotmarksize=\dimen177
+)
+\tikz@lastx=\dimen178
+\tikz@lasty=\dimen179
+\tikz@lastxsaved=\dimen180
+\tikz@lastysaved=\dimen181
+\tikzleveldistance=\dimen182
+\tikzsiblingdistance=\dimen183
+\tikz@figbox=\box67
+\tikz@figbox@bg=\box68
+\tikz@tempbox=\box69
+\tikz@tempbox@bg=\box70
+\tikztreelevel=\count125
+\tikznumberofchildren=\count126
+\tikznumberofcurrentchild=\count127
+\tikz@fig@count=\count128
+
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/generic/pgf/modules/pgfmodul
+ematrix.code.tex
+File: pgfmodulematrix.code.tex 2019/02/02 v3.1.1 (3.1.1)
+\pgfmatrixcurrentrow=\count129
+\pgfmatrixcurrentcolumn=\count130
+\pgf@matrix@numberofcolumns=\count131
+)
+\tikz@expandcount=\count132
+
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/generic/pgf/frontendlayer/ti
+kz/libraries/tikzlibrarytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2019/02/02 v3.1.1 (3.1.1)
+)))
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/tikz-cd/tikz-cd.sty
+Package: tikz-cd 2018/11/19 v0.9f Commutative diagrams with TikZ
+
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/generic/tikz-cd/tikzlibraryc
+d.code.tex
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/generic/pgf/frontendlayer/ti
+kz/libraries/tikzlibrarymatrix.code.tex
+File: tikzlibrarymatrix.code.tex 2019/02/02 v3.1.1 (3.1.1)
+)
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/generic/pgf/frontendlayer/ti
+kz/libraries/tikzlibraryquotes.code.tex
+File: tikzlibraryquotes.code.tex 2019/02/02 v3.1.1 (3.1.1)
+)
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/generic/pgf/libraries/pgflib
+raryarrows.meta.code.tex
+File: pgflibraryarrows.meta.code.tex 2019/02/02 v3.1.1 (3.1.1)
+\pgfarrowinset=\dimen184
+\pgfarrowlength=\dimen185
+\pgfarrowwidth=\dimen186
+\pgfarrowlinewidth=\dimen187
+)))
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/tikzmark/tikzlibraryti
+kzmark.code.tex
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2019-04-06 L3 programming layer (loader) 
+
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/l3kernel/expl3-code.te
+x
+Package: expl3 2019-04-06 L3 programming layer (code)
+\c_max_int=\count133
+\l_tmpa_int=\count134
+\l_tmpb_int=\count135
+\g_tmpa_int=\count136
+\g_tmpb_int=\count137
+\g__kernel_prg_map_int=\count138
+\c__ior_term_ior=\count139
+\c_log_iow=\count140
+\l_iow_line_count_int=\count141
+\l__iow_line_target_int=\count142
+\l__iow_one_indent_int=\count143
+\l__iow_indent_int=\count144
+\c_zero_dim=\dimen188
+\c_max_dim=\dimen189
+\l_tmpa_dim=\dimen190
+\l_tmpb_dim=\dimen191
+\g_tmpa_dim=\dimen192
+\g_tmpb_dim=\dimen193
+\c_zero_skip=\skip54
+\c_max_skip=\skip55
+\l_tmpa_skip=\skip56
+\l_tmpb_skip=\skip57
+\g_tmpa_skip=\skip58
+\g_tmpb_skip=\skip59
+\c_zero_muskip=\muskip10
+\c_max_muskip=\muskip11
+\l_tmpa_muskip=\muskip12
+\l_tmpb_muskip=\muskip13
+\g_tmpa_muskip=\muskip14
+\g_tmpb_muskip=\muskip15
+\l_keys_choice_int=\count145
+\l__intarray_loop_int=\count146
+\c__intarray_sp_dim=\dimen194
+\g__intarray_font_int=\count147
+\c__fp_leading_shift_int=\count148
+\c__fp_middle_shift_int=\count149
+\c__fp_trailing_shift_int=\count150
+\c__fp_big_leading_shift_int=\count151
+\c__fp_big_middle_shift_int=\count152
+\c__fp_big_trailing_shift_int=\count153
+\c__fp_Bigg_leading_shift_int=\count154
+\c__fp_Bigg_middle_shift_int=\count155
+\c__fp_Bigg_trailing_shift_int=\count156
+\g__fp_array_int=\count157
+\l__fp_array_loop_int=\count158
+\l__sort_length_int=\count159
+\l__sort_min_int=\count160
+\l__sort_top_int=\count161
+\l__sort_max_int=\count162
+\l__sort_true_max_int=\count163
+\l__sort_block_int=\count164
+\l__sort_begin_int=\count165
+\l__sort_end_int=\count166
+\l__sort_A_int=\count167
+\l__sort_B_int=\count168
+\l__sort_C_int=\count169
+\l__tl_analysis_normal_int=\count170
+\l__tl_analysis_index_int=\count171
+\l__tl_analysis_nesting_int=\count172
+\l__tl_analysis_type_int=\count173
+\l__regex_internal_a_int=\count174
+\l__regex_internal_b_int=\count175
+\l__regex_internal_c_int=\count176
+\l__regex_balance_int=\count177
+\l__regex_group_level_int=\count178
+\l__regex_mode_int=\count179
+\c__regex_cs_in_class_mode_int=\count180
+\c__regex_cs_mode_int=\count181
+\l__regex_catcodes_int=\count182
+\l__regex_default_catcodes_int=\count183
+\c__regex_catcode_L_int=\count184
+\c__regex_catcode_O_int=\count185
+\c__regex_catcode_A_int=\count186
+\c__regex_all_catcodes_int=\count187
+\l__regex_show_lines_int=\count188
+\l__regex_min_state_int=\count189
+\l__regex_max_state_int=\count190
+\l__regex_left_state_int=\count191
+\l__regex_right_state_int=\count192
+\l__regex_capturing_group_int=\count193
+\l__regex_min_pos_int=\count194
+\l__regex_max_pos_int=\count195
+\l__regex_curr_pos_int=\count196
+\l__regex_start_pos_int=\count197
+\l__regex_success_pos_int=\count198
+\l__regex_curr_char_int=\count199
+\l__regex_curr_catcode_int=\count266
+\l__regex_last_char_int=\count267
+\l__regex_case_changed_char_int=\count268
+\l__regex_curr_state_int=\count269
+\l__regex_step_int=\count270
+\l__regex_min_active_int=\count271
+\l__regex_max_active_int=\count272
+\l__regex_replacement_csnames_int=\count273
+\l__regex_match_count_int=\count274
+\l__regex_min_submatch_int=\count275
+\l__regex_submatch_int=\count276
+\l__regex_zeroth_submatch_int=\count277
+\g__regex_trace_regex_int=\count278
+\c_empty_box=\box71
+\l_tmpa_box=\box72
+\l_tmpb_box=\box73
+\g_tmpa_box=\box74
+\g_tmpb_box=\box75
+\l__box_top_dim=\dimen195
+\l__box_bottom_dim=\dimen196
+\l__box_left_dim=\dimen197
+\l__box_right_dim=\dimen198
+\l__box_top_new_dim=\dimen199
+\l__box_bottom_new_dim=\dimen256
+\l__box_left_new_dim=\dimen257
+\l__box_right_new_dim=\dimen258
+\l__box_internal_box=\box76
+\l__coffin_internal_box=\box77
+\l__coffin_internal_dim=\dimen259
+\l__coffin_offset_x_dim=\dimen260
+\l__coffin_offset_y_dim=\dimen261
+\l__coffin_x_dim=\dimen262
+\l__coffin_y_dim=\dimen263
+\l__coffin_x_prime_dim=\dimen264
+\l__coffin_y_prime_dim=\dimen265
+\c_empty_coffin=\box78
+\l__coffin_aligned_coffin=\box79
+\l__coffin_aligned_internal_coffin=\box80
+\l_tmpa_coffin=\box81
+\l_tmpb_coffin=\box82
+\g_tmpa_coffin=\box83
+\g_tmpb_coffin=\box84
+\l__coffin_bounding_shift_dim=\dimen266
+\l__coffin_left_corner_dim=\dimen267
+\l__coffin_right_corner_dim=\dimen268
+\l__coffin_bottom_corner_dim=\dimen269
+\l__coffin_top_corner_dim=\dimen270
+\l__coffin_scaled_total_height_dim=\dimen271
+\l__coffin_scaled_width_dim=\dimen272
+\c__coffin_empty_coffin=\box85
+\l__coffin_display_coffin=\box86
+\l__coffin_display_coord_coffin=\box87
+\l__coffin_display_pole_coffin=\box88
+\l__coffin_display_offset_dim=\dimen273
+\l__coffin_display_x_dim=\dimen274
+\l__coffin_display_y_dim=\dimen275
+\g__file_internal_ior=\read2
+\l__seq_internal_a_int=\count279
+\l__seq_internal_b_int=\count280
+\c__deprecation_minus_one=\count281
+)
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/l3kernel/l3xdvipdfmx.d
+ef
+File: l3xdvipdfmx.def 2019-04-06 v L3 Experimental driver: xdvipdfmx
+\g__driver_image_int=\count282
+\g__driver_pdf_object_int=\count283
+))
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/l3packages/l3keys2e/l3
+keys2e.sty
+Package: l3keys2e 2019-03-05 LaTeX2e option processing using LaTeX3 keys
+)
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/l3packages/xparse/xpar
+se.sty
+Package: xparse 2019-03-05 L3 Experimental document command parser
+\l__xparse_current_arg_int=\count284
+\g__xparse_grabber_int=\count285
+\l__xparse_m_args_int=\count286
+\l__xparse_v_nesting_int=\count287
+)
+\l__sn_x_dim=\dimen276
+\l__sn_y_dim=\dimen277
+\l__sn_xa_dim=\dimen278
+\l__sn_ya_dim=\dimen279
+)
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/generic/pgf/frontendlayer/ti
+kz/libraries/tikzlibraryshapes.arrows.code.tex
+File: tikzlibraryshapes.arrows.code.tex 2019/02/02 v3.1.1 (3.1.1)
+
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/generic/pgf/libraries/shapes
+/pgflibraryshapes.arrows.code.tex
+File: pgflibraryshapes.arrows.code.tex 2019/02/02 v3.1.1 (3.1.1)
+))
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/tcolorbox/tcolorbox.st
+y
+Package: tcolorbox 2019/03/02 version 4.20 text color boxes
+ (//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/tools/verbatim.sty
+Package: verbatim 2014/10/28 v1.5q LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks30
+\verbatim@line=\toks31
+\verbatim@in@stream=\read3
+)
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/environ/environ.sty
+Package: environ 2014/05/04 v0.3 A new way to define environments
+
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/trimspaces/trimspaces.
+sty
+Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
+)
+\@envbody=\toks32
+)
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2018/08/19 v2.5f e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count288
+)
+\tcb@titlebox=\box89
+\tcb@upperbox=\box90
+\tcb@lowerbox=\box91
+\tcb@phantombox=\box92
+\c@tcbbreakpart=\count289
+\c@tcblayer=\count290
+\tcolorbox@number=\count291
+\tcb@temp=\box93
+\tcb@temp=\box94
+\tcb@temp=\box95
+\tcb@temp=\box96
+\tcb@out=\write5
+\tcb@record@out=\write6
+
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/tcolorbox/tcbraster.co
+de.tex
+Library (tcolorbox): 'tcbraster.code.tex' version '4.20'
+\c@tcbrastercolumn=\count292
+\c@tcbrasterrow=\count293
+\c@tcbraster=\count294
+)
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/tcolorbox/tcbskins.cod
+e.tex
+Library (tcolorbox): 'tcbskins.code.tex' version '4.20'
+\tcb@waterbox=\box97
+
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/tcolorbox/tcbskinsjigs
+aw.code.tex
+Library (tcolorbox): 'tcbskinsjigsaw.code.tex' version '4.20'
+))
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/tcolorbox/tcbbreakable
+.code.tex
+Library (tcolorbox): 'tcbbreakable.code.tex' version '4.20'
+\tcb@testbox=\box98
+\tcb@totalupperbox=\box99
+\tcb@totallowerbox=\box100
+)
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/tcolorbox/tcbhooks.cod
+e.tex
+Library (tcolorbox): 'tcbhooks.code.tex' version '4.20'
+)
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/tcolorbox/tcbtheorems.
+code.tex
+Library (tcolorbox): 'tcbtheorems.code.tex' version '4.20'
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2018/12/01 v2.17b AMS math features
+\@mathmargin=\skip60
+
+For additional information on amsmath, use the `?' option.
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01 AMS text
+
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks33
+\ex@=\dimen280
+))
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen281
+)
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count295
+LaTeX Info: Redefining \frac on input line 223.
+\uproot@=\count296
+\leftroot@=\count297
+LaTeX Info: Redefining \overline on input line 385.
+\classnum@=\count298
+\DOTSCASE@=\count299
+LaTeX Info: Redefining \ldots on input line 482.
+LaTeX Info: Redefining \dots on input line 485.
+LaTeX Info: Redefining \cdots on input line 606.
+\Mathstrutbox@=\box101
+\strutbox@=\box102
+\big@size=\dimen282
+LaTeX Font Info:    Redeclaring font encoding OML on input line 729.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 730.
+\macc@depth=\count300
+\c@MaxMatrixCols=\count301
+\dotsspace@=\muskip16
+\c@parentequation=\count302
+\dspbrk@lvl=\count303
+\tag@help=\toks34
+\row@=\count304
+\column@=\count305
+\maxfields@=\count306
+\andhelp@=\toks35
+\eqnshift@=\dimen283
+\alignsep@=\dimen284
+\tagshift@=\dimen285
+\tagwidth@=\dimen286
+\totwidth@=\dimen287
+\lineht@=\dimen288
+\@envbody=\toks36
+\multlinegap=\skip61
+\multlinetaggap=\skip62
+\mathdisplay@stack=\toks37
+LaTeX Info: Redefining \[ on input line 2844.
+LaTeX Info: Redefining \] on input line 2845.
+))
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/tcolorbox/tcbfitting.c
+ode.tex
+Library (tcolorbox): 'tcbfitting.code.tex' version '4.20'
+\tcbfitdim=\dimen289
+\tcb@lowerfitdim=\dimen290
+\tcb@upperfitdim=\dimen291
+\tcb@cur@hbadness=\count307
+)
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/tcolorbox/tcbxparse.co
+de.tex
+Library (tcolorbox): 'tcbxparse.code.tex' version '4.20'
+)
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/tcolorbox/tcblistingsu
+tf8.code.tex
+Library (tcolorbox): 'tcblistingsutf8.code.tex' version '4.20'
+
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/oberdiek/listingsutf8.
+sty
+Package: listingsutf8 2016/05/16 v1.3 Allow UTF-8 in listings input (HO)
+
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count308
+\lst@gtempboxa=\box103
+\lst@token=\toks38
+\lst@length=\count309
+\lst@currlwidth=\dimen292
+\lst@column=\count310
+\lst@pos=\count311
+\lst@lostspace=\dimen293
+\lst@width=\dimen294
+\lst@newlines=\count312
+\lst@lineno=\count313
+\lst@maxwidth=\dimen295
+
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2019/02/27 1.8b (Carsten Heinz)
+\c@lstnumber=\count314
+\lst@skipnumbers=\count315
+\lst@framebox=\box104
+)
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2019/02/27 1.8b listings configuration
+))
+Package: listings 2019/02/27 1.8b (Carsten Heinz)
+
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/generic/oberdiek/pdftexcmds.
+sty
+Package: pdftexcmds 2018/09/10 v0.29 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/generic/oberdiek/infwarerr.s
+ty
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+)
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/generic/oberdiek/ifluatex.st
+y
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+) (//integra-net/TeXLive/texlive/2019/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2018/09/07 v3.3 Provides the ifpdf switch
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: pdfTeX >= 1.30 not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode not found.
+)
+
+Package listingsutf8 Warning: Package loading is aborted because of missing \pd
+f@unescapehex.
+(listingsutf8)                It is provided by pdfTeX >= 1.30.
+
+)
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/tcolorbox/tcblistings.
+code.tex
+Library (tcolorbox): 'tcblistings.code.tex' version '4.20'
+
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/tcolorbox/tcblistingsc
+ore.code.tex
+Library (tcolorbox): 'tcblistingscore.code.tex' version '4.20'
+
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/tcolorbox/tcbprocessin
+g.code.tex
+Library (tcolorbox): 'tcbprocessing.code.tex' version '4.20'
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/tools/shellesc.sty
+Package: shellesc 2016/06/07 v0.02a unified shell escape interface for LaTeX
+Package shellesc Info: Restricted shell escape enabled on input line 69.
+))
+\c@tcblisting=\count316
+)))
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/tcolorbox/tcbexternal.
+code.tex
+Library (tcolorbox): 'tcbexternal.code.tex' version '4.20'
+)
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/tcolorbox/tcbmagazine.
+code.tex
+Library (tcolorbox): 'tcbmagazine.code.tex' version '4.20'
+)
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/tcolorbox/tcbvignette.
+code.tex
+Library (tcolorbox): 'tcbvignette.code.tex' version '4.20'
+
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/generic/pgf/frontendlayer/ti
+kz/libraries/tikzlibraryfadings.code.tex
+File: tikzlibraryfadings.code.tex 2019/02/02 v3.1.1 (3.1.1)
+
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/generic/pgf/libraries/pgflib
+raryfadings.code.tex
+File: pgflibraryfadings.code.tex 2019/02/02 v3.1.1 (3.1.1)
+)))
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/tcolorbox/tcbposter.co
+de.tex
+Library (tcolorbox): 'tcbposter.code.tex' version '4.20'
+))
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+) (//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/fontspec/fontspec.st
+y
+Package: fontspec 2019/03/15 v2.7c Font selection for XeLaTeX and LuaLaTeX
+
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/fontspec/fontspec-xete
+x.sty
+Package: fontspec-xetex 2019/03/15 v2.7c Font selection for XeLaTeX and LuaLaTe
+X
+\l__fontspec_script_int=\count317
+\l__fontspec_language_int=\count318
+\l__fontspec_strnum_int=\count319
+\l__fontspec_tmp_int=\count320
+\l__fontspec_tmpa_int=\count321
+\l__fontspec_tmpb_int=\count322
+\l__fontspec_tmpc_int=\count323
+\l__fontspec_em_int=\count324
+\l__fontspec_emdef_int=\count325
+\l__fontspec_strong_int=\count326
+\l__fontspec_strongdef_int=\count327
+\l__fontspec_tmpa_dim=\dimen296
+\l__fontspec_tmpb_dim=\dimen297
+\l__fontspec_tmpc_dim=\dimen298
+ (//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2018/08/11 v2.0j Standard LaTeX package
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/base/tuenc.def
+File: tuenc.def 2018/08/11 v2.0j Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding TU on input line 82.
+))
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/fontspec/fontspec.cfg)
+LaTeX Info: Redefining \itshape on input line 4051.
+LaTeX Info: Redefining \slshape on input line 4056.
+LaTeX Info: Redefining \scshape on input line 4061.
+LaTeX Info: Redefining \upshape on input line 4066.
+LaTeX Info: Redefining \em on input line 4096.
+LaTeX Info: Redefining \emph on input line 4121.
+))
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/xelatex/xltxtra/xltxtra.sty
+Package: xltxtra 2018/12/31 v0.7 Improvements for the "XeLaTeX" format
+
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/realscripts/realscript
+s.sty
+Package: realscripts 2016/02/13 v0.3d Access OpenType subscripts and superscrip
+ts
+\subsupersep=\dimen299
+)
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/metalogo/metalogo.sty
+Package: metalogo 2010/05/29 v0.12 Extended TeX logo macros
+\xl@everylogo=\toks39
+\xl@@everylogo=\toks40
+LaTeX Info: Redefining \TeX on input line 193.
+LaTeX Info: Redefining \LaTeX on input line 202.
+LaTeX Info: Redefining \LaTeXe on input line 219.
+)
+\l__xetex_show_hyphens_wrapping_box=\box105
+\l__xetex_show_hyphens_temp_box=\box106
+\l__xetex_show_hyphens_final_box=\box107
+\g__xetex_show_hyphens_word_box=\box108
+)
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/xelatex/xunicode/xunicode.st
+y
+File: xunicode.sty 2011/09/09 v0.981 provides access to latin accents and many 
+other characters in Unicode lower plane
+ (//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/tipa/t3enc.def
+File: t3enc.def 2001/12/31 T3 encoding
+)
+\tipaTiiicode=\count328
+\tipasavetokens=\toks41
+\tipachecktokens=\toks42
+)
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/xelatex/mathspec/mathspec.st
+y
+Package: mathspec 2016/12/22 v0.2b LaTeX Package (Mathematics font selection fo
+r XeLaTeX)
+ (//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
+
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+\XKV@toks=\toks43
+\XKV@tempa@toks=\toks44
+)
+\XKV@depth=\count329
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+))
+\c@eu@=\count330
+\c@eu@i=\count331
+\c@mkern=\count332
+)
+
+Package fontspec Info: Font family 'TimesLTStd-Roman.otf(0)' created for font
+(fontspec)             'TimesLTStd-Roman.otf' with options
+(fontspec)             [Mapping=tex-text,Ligatures=TeX,Ligatures=Common,Mapping
+=tex-text,ItalicFont=TimesLTStd-Italic.otf,BoldFont=TimesLTStd-Bold.otf,BoldIta
+licFont=TimesLTStd-BoldItalic.otf].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->"[TimesLTStd-Roman.otf]/OT:script=latn;language=DFLT;
++liga;mapping=tex-text;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.:
+(fontspec)             <->"[TimesLTStd-Roman.otf]/OT:script=latn;language=DFLT;
++liga;+smcp;mapping=tex-text;"
+(fontspec)             - 'bold' (bx/n) with NFSS spec.:
+(fontspec)             <->"[TimesLTStd-Bold.otf]/OT:script=latn;language=DFLT;+
+liga;mapping=tex-text;"
+(fontspec)             - 'bold small caps'  (bx/sc) with NFSS spec.:
+(fontspec)             <->"[TimesLTStd-Bold.otf]/OT:script=latn;language=DFLT;+
+liga;+smcp;mapping=tex-text;"
+(fontspec)             - 'italic' (m/it) with NFSS spec.:
+(fontspec)             <->"[TimesLTStd-Italic.otf]/OT:script=latn;language=DFLT
+;+liga;mapping=tex-text;"
+(fontspec)             - 'italic small caps'  (m/itsc) with NFSS spec.: 
+(fontspec)             - 'bold italic' (bx/it) with NFSS spec.:
+(fontspec)             <->"[TimesLTStd-BoldItalic.otf]/OT:script=latn;language=
+DFLT;+liga;mapping=tex-text;"
+(fontspec)             - 'bold italic small caps'  (bx/itsc) with NFSS spec.: 
+
+LaTeX Info: Redefining \rmfamily on input line 2558.
+
+Package fontspec Info: Font family 'TimesLTStd-Roman.otf(1)' created for font
+(fontspec)             'TimesLTStd-Roman.otf' with options
+(fontspec)             [Mapping=tex-text,Ligatures=TeX,ItalicFont=TimesLTStd-It
+alic.otf,BoldFont=TimesLTStd-Bold.otf,BoldItalicFont=TimesLTStd-BoldItalic.otf]
+.
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->"[TimesLTStd-Roman.otf]/OT:script=latn;language=DFLT;
+mapping=tex-text;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.:
+(fontspec)             <->"[TimesLTStd-Roman.otf]/OT:script=latn;language=DFLT;
++smcp;mapping=tex-text;"
+(fontspec)             - 'bold' (bx/n) with NFSS spec.:
+(fontspec)             <->"[TimesLTStd-Bold.otf]/OT:script=latn;language=DFLT;m
+apping=tex-text;"
+(fontspec)             - 'bold small caps'  (bx/sc) with NFSS spec.:
+(fontspec)             <->"[TimesLTStd-Bold.otf]/OT:script=latn;language=DFLT;+
+smcp;mapping=tex-text;"
+(fontspec)             - 'italic' (m/it) with NFSS spec.:
+(fontspec)             <->"[TimesLTStd-Italic.otf]/OT:script=latn;language=DFLT
+;mapping=tex-text;"
+(fontspec)             - 'italic small caps'  (m/itsc) with NFSS spec.: 
+(fontspec)             - 'bold italic' (bx/it) with NFSS spec.:
+(fontspec)             <->"[TimesLTStd-BoldItalic.otf]/OT:script=latn;language=
+DFLT;mapping=tex-text;"
+(fontspec)             - 'bold italic small caps'  (bx/itsc) with NFSS spec.: 
+
+LaTeX Font Info:    Redeclaring math alphabet \mathrm on input line 2559.
+LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
+(Font)                  TU/TimesLTStd-Roman.otf(1)/m/n --> TU/TimesLTStd-Roman.
+otf(1)/bx/n on input line 2559.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 2559.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> TU/TimesLTStd-Roman.otf(1)/m/it on inp
+ut line 2559.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> TU/TimesLTStd-Roman.otf(1)/m/it on in
+put line 2559.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 2559.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> TU/TimesLTStd-Roman.otf(1)/bx/n on inp
+ut line 2559.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/cmr/bx/n --> TU/TimesLTStd-Roman.otf(1)/bx/n on inp
+ut line 2559.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  TU/TimesLTStd-Roman.otf(1)/m/it --> TU/TimesLTStd-Roman
+.otf(1)/bx/it on input line 2559.
+\symOperators:m:n=\mathgroup6
+
+Package fontspec Info: Font family 'TimesLTStd-Italic.otf(0)' created for font
+(fontspec)             'TimesLTStd-Italic.otf' with options
+(fontspec)             [Mapping=tex-text,Ligatures=TeX].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->"[TimesLTStd-Italic.otf]/OT:script=latn;language=DFLT
+;mapping=tex-text;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
+
+\symLatin:m:n=\mathgroup7
+\symLatin:m:it=\mathgroup8
+
+Package fontspec Info: Font family 'TimesLTStd-Roman.otf(2)' created for font
+(fontspec)             'TimesLTStd-Roman.otf' with options
+(fontspec)             [Mapping=tex-text,Ligatures=TeX].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->"[TimesLTStd-Roman.otf]/OT:script=latn;language=DFLT;
+mapping=tex-text;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.:
+(fontspec)             <->"[TimesLTStd-Roman.otf]/OT:script=latn;language=DFLT;
++smcp;mapping=tex-text;"
+
+\symDigits:m:n=\mathgroup9
+\symGreek:m:n=\mathgroup10
+\symGreek:m:it=\mathgroup11
+
+Package fontspec Info: Font family 'FrutigerLTStd-Cn.otf(0)' created for font
+(fontspec)             'FrutigerLTStd-Cn.otf' with options
+(fontspec)             [Mapping=tex-text,Ligatures=TeX,Ligatures=TeX,Mapping=te
+x-text,ItalicFont=FrutigerLTStd-Italic.otf,BoldFont=FrutigerLTStd-Bold.otf,Bold
+ItalicFont=FrutigerLTStd-BoldItalic.otf].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->"[FrutigerLTStd-Cn.otf]/OT:script=latn;language=DFLT;
+mapping=tex-text;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
+(fontspec)             - 'bold' (bx/n) with NFSS spec.:
+(fontspec)             <->"[FrutigerLTStd-Bold.otf]/OT:script=latn;language=DFL
+T;mapping=tex-text;"
+(fontspec)             - 'bold small caps'  (bx/sc) with NFSS spec.: 
+(fontspec)             - 'italic' (m/it) with NFSS spec.:
+(fontspec)             <->"[FrutigerLTStd-Italic.otf]/OT:script=latn;language=D
+FLT;mapping=tex-text;"
+(fontspec)             - 'italic small caps'  (m/itsc) with NFSS spec.: 
+(fontspec)             - 'bold italic' (bx/it) with NFSS spec.:
+(fontspec)             <->"[FrutigerLTStd-BoldItalic.otf]/OT:script=latn;langua
+ge=DFLT;mapping=tex-text;"
+(fontspec)             - 'bold italic small caps'  (bx/itsc) with NFSS spec.: 
+
+LaTeX Info: Redefining \sffamily on input line 2566.
+LaTeX Font Info:    Encoding `TU' has changed to `EU1' for symbol font
+(Font)              `Latin:m:it' in the math version `bold' on input line 2578.
+
+LaTeX Font Info:    Overwriting symbol font `Latin:m:it' in version `bold'
+(Font)                  TU/TimesLTStd-Italic.otf(0)/m/it --> EU1/dgs/bx/it on i
+nput line 2578.
+LaTeX Font Info:    Encoding `TU' has changed to `EU1' for symbol font
+(Font)              `Digits:m:n' in the math version `bold' on input line 2579.
+
+LaTeX Font Info:    Overwriting symbol font `Digits:m:n' in version `bold'
+(Font)                  TU/TimesLTStd-Roman.otf(2)/m/n --> EU1/dgs/bx/n on inpu
+t line 2579.
+LaTeX Font Info:    Encoding `TU' has changed to `EU1' for symbol font
+(Font)              `Greek:m:n' in the math version `bold' on input line 2580.
+LaTeX Font Info:    Overwriting symbol font `Greek:m:n' in version `bold'
+(Font)                  TU/TimesLTStd-Roman.otf(2)/m/n --> EU1/dgs/bx/it on inp
+ut line 2580.
+LaTeX Font Info:    Encoding `TU' has changed to `EU1' for symbol font
+(Font)              `Greek:m:it' in the math version `bold' on input line 2581.
+
+LaTeX Font Info:    Overwriting symbol font `Greek:m:it' in version `bold'
+(Font)                  TU/TimesLTStd-Roman.otf(2)/m/it --> EU1/dgs/bx/it on in
+put line 2581.
+LaTeX Font Info:    Encoding `TU' has changed to `EU1' for symbol font
+(Font)              `Operators:m:n' in the math version `bold' on input line 25
+82.
+LaTeX Font Info:    Overwriting symbol font `Operators:m:n' in version `bold'
+(Font)                  TU/TimesLTStd-Roman.otf(1)/m/n --> EU1/dgs/bx/n on inpu
+t line 2582.
+LaTeX Font Info:    Encoding `TU' has changed to `EU1' for symbol font
+(Font)              `Latin:m:it' in the math version `normal' on input line 258
+3.
+LaTeX Font Info:    Overwriting symbol font `Latin:m:it' in version `normal'
+(Font)                  TU/TimesLTStd-Italic.otf(0)/m/it --> EU1/dgs/m/it on in
+put line 2583.
+LaTeX Font Info:    Encoding `TU' has changed to `EU1' for symbol font
+(Font)              `Digits:m:n' in the math version `normal' on input line 258
+4.
+LaTeX Font Info:    Overwriting symbol font `Digits:m:n' in version `normal'
+(Font)                  TU/TimesLTStd-Roman.otf(2)/m/n --> EU1/dgs/m/n on input
+ line 2584.
+LaTeX Font Info:    Encoding `TU' has changed to `EU1' for symbol font
+(Font)              `Greek:m:n' in the math version `normal' on input line 2585
+.
+LaTeX Font Info:    Overwriting symbol font `Greek:m:n' in version `normal'
+(Font)                  TU/TimesLTStd-Roman.otf(2)/m/n --> EU1/dgs/m/it on inpu
+t line 2585.
+LaTeX Font Info:    Encoding `TU' has changed to `EU1' for symbol font
+(Font)              `Greek:m:it' in the math version `normal' on input line 258
+6.
+LaTeX Font Info:    Overwriting symbol font `Greek:m:it' in version `normal'
+(Font)                  TU/TimesLTStd-Roman.otf(2)/m/it --> EU1/dgs/m/it on inp
+ut line 2586.
+LaTeX Font Info:    Encoding `TU' has changed to `EU1' for symbol font
+(Font)              `Operators:m:n' in the math version `normal' on input line 
+2587.
+LaTeX Font Info:    Overwriting symbol font `Operators:m:n' in version `normal'
+
+(Font)                  TU/TimesLTStd-Roman.otf(1)/m/n --> EU1/dgs/m/n on input
+ line 2587.
+\c@mv@sfsans=\count333
+LaTeX Font Info:    Encoding `TU' has changed to `EU1' for symbol font
+(Font)              `Latin:m:it' in the math version `sfsans' on input line 259
+3.
+LaTeX Font Info:    Overwriting symbol font `Latin:m:it' in version `sfsans'
+(Font)                  TU/TimesLTStd-Italic.otf(0)/m/it --> EU1/FrutigerLTStd-
+Cn.otf(0)/m/n on input line 2593.
+LaTeX Font Info:    Encoding `TU' has changed to `EU1' for symbol font
+(Font)              `Digits:m:n' in the math version `sfsans' on input line 259
+4.
+LaTeX Font Info:    Overwriting symbol font `Digits:m:n' in version `sfsans'
+(Font)                  TU/TimesLTStd-Roman.otf(2)/m/n --> EU1/FrutigerLTStd-Cn
+.otf(0)/m/n on input line 2594.
+LaTeX Font Info:    Encoding `TU' has changed to `EU1' for symbol font
+(Font)              `Greek:m:it' in the math version `sfsans' on input line 259
+5.
+LaTeX Font Info:    Overwriting symbol font `Greek:m:it' in version `sfsans'
+(Font)                  TU/TimesLTStd-Roman.otf(2)/m/it --> EU1/dgs/m/it on inp
+ut line 2595.
+ (//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/natbib/natbib.sty
+Package: natbib 2010/09/13 8.31b (PWD, AO)
+\bibhang=\skip63
+\bibsep=\skip64
+LaTeX Info: Redefining \cite on input line 694.
+\c@NAT@ctr=\count334
+)
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/booktabs/booktabs.sty
+Package: booktabs 2016/04/27 v1.618033 publication quality tables
+\heavyrulewidth=\dimen300
+\lightrulewidth=\dimen301
+\cmidrulewidth=\dimen302
+\belowrulesep=\dimen303
+\belowbottomsep=\dimen304
+\aboverulesep=\dimen305
+\abovetopsep=\dimen306
+\cmidrulesep=\dimen307
+\cmidrulekern=\dimen308
+\defaultaddspace=\dimen309
+\@cmidla=\count335
+\@cmidlb=\count336
+\@aboverulesep=\dimen310
+\@belowrulesep=\dimen311
+\@thisruleclass=\count337
+\@lastruleclass=\count338
+\@thisrulewidth=\dimen312
+) (//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/base/makeidx.sty
+Package: makeidx 2014/09/29 v1.0m Standard LaTeX package
+)
+\@indexfile=\write7
+\openout7 = `HE2-sample.idx'.
+
+
+Writing index file HE2-sample.idx
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/tools/dcolumn.sty
+Package: dcolumn 2014/10/28 v1.06 decimal alignment package (DPC)
+)
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/soul/soul.sty
+Package: soul 2003/11/17 v2.4 letterspacing/underlining (mf)
+\SOUL@word=\toks45
+\SOUL@lasttoken=\toks46
+\SOUL@cmds=\toks47
+\SOUL@buffer=\toks48
+\SOUL@token=\toks49
+\SOUL@spaceskip=\skip65
+\SOUL@ttwidth=\dimen313
+\SOUL@uldp=\dimen314
+\SOUL@ulht=\dimen315
+)
+\tabbelowcaptionskip=\skip66
+\tababovefootskip=\skip67
+\tempdime=\dimen316
+\temptbox=\box109
+\authorcount=\count339
+\tempauthorcount=\count340
+\affilcount=\count341
+\tempcount=\count342
+\c@boxnum=\count343
+
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/changepage/changepage.
+sty
+Package: changepage 2009/10/20 v1.0c check page and change page layout
+\c@cp@cntr=\count344
+\cp@tempcnt=\count345
+)
+\enumdim=\dimen317
+\tempdimen=\dimen318
+\tempbox=\box110
+\topsepi=\skip68
+\topsepii=\skip69
+\topsepiii=\skip70
+\topsepiv=\skip71
+\topsepv=\skip72
+\topsepvi=\skip73
+\topsepvii=\skip74
+\topsepviii=\skip75
+\topsepix=\skip76
+\topsepx=\skip77
+\itemsepi=\skip78
+\itemsepii=\skip79
+\itemsepiii=\skip80
+\itemsepiv=\skip81
+\itemsepv=\skip82
+\itemsepvi=\skip83
+\itemsepvii=\skip84
+\itemsepviii=\skip85
+\itemsepix=\skip86
+\itemsepx=\skip87
+\LabelSep=\dimen319
+\leftmarginvii=\dimen320
+\leftmarginviii=\dimen321
+\leftmarginix=\dimen322
+\leftmarginx=\dimen323
+\listtextleftmargin=\skip88
+\listtextleftmarginii=\skip89
+\listtextleftmarginiii=\skip90
+\listtextleftmarginiv=\skip91
+\listtextleftmarginv=\skip92
+\listtextleftmarginvi=\skip93
+\listtextleftmarginvii=\skip94
+\listtextleftmarginviii=\skip95
+\listtextleftmarginix=\skip96
+\listtextleftmarginx=\skip97
+\listtextrightmargin=\skip98
+\listlabelleftskip=\skip99
+\listlabelleftskipii=\skip100
+\listlabelleftskipiii=\skip101
+\listlabelleftskipiv=\skip102
+\listlabelleftskipv=\skip103
+\listlabelleftskipvi=\skip104
+\listlabelleftskipvii=\skip105
+\listlabelleftskipviii=\skip106
+\listlabelleftskipix=\skip107
+\listlabelleftskipx=\skip108
+\abovelistskipi=\skip109
+\belowlistskipi=\skip110
+\abovelistskipii=\skip111
+\belowlistskipii=\skip112
+\abovelistskipiii=\skip113
+\belowlistskipiii=\skip114
+\abovelistskipiv=\skip115
+\belowlistskipiv=\skip116
+\abovelistskipv=\skip117
+\belowlistskipv=\skip118
+\abovelistskipvi=\skip119
+\belowlistskipvi=\skip120
+\abovelistskipvii=\skip121
+\belowlistskipvii=\skip122
+\abovelistskipviii=\skip123
+\belowlistskipviii=\skip124
+\abovelistskipix=\skip125
+\belowlistskipix=\skip126
+\abovelistskipx=\skip127
+\belowlistskipx=\skip128
+\labelsepi=\skip129
+\labelsepii=\skip130
+\labelsepiii=\skip131
+\labelsepiv=\skip132
+\labelsepv=\skip133
+\labelsepvi=\skip134
+\labelsepvii=\skip135
+\labelsepviii=\skip136
+\labelsepix=\skip137
+\labelsepx=\skip138
+\enumdimwd=\dimen324
+\c@enumv=\count346
+\c@enumvi=\count347
+\c@enumvii=\count348
+\c@enumviii=\count349
+\c@enumix=\count350
+\c@enumx=\count351
+\bibindent=\dimen325
+\bibleftmargin=\dimen326
+\bibitemsep=\dimen327
+\bibparsep=\dimen328
+\bibtext=\dimen329
+\biblabelsep=\dimen330
+\bibleftmargini=\dimen331
+\tocchapbox=\box111
+\tocsecbox=\box112
+\tocchpnum=\dimen332
+\@chpmax=\dimen333
+\@sectmax=\dimen334
+\tocsubsecbox=\box113
+\@subsectmax=\dimen335
+\tocsecnum=\dimen336
+\tocsectotal=\dimen337
+\tocsubsecnum=\dimen338
+\tocsubsectotal=\dimen339
+\tocsubsubsecnum=\dimen340
+\tocsubsubsectotal=\dimen341
+\tocparanum=\dimen342
+\tocparatotal=\dimen343
+\tocsubparanum=\dimen344
+ (//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/amscls/amsthm.sty
+Package: amsthm 2017/10/31 v2.20.4
+\thm@style=\toks50
+\thm@bodyfont=\toks51
+\thm@headfont=\toks52
+\thm@notefont=\toks53
+\thm@headpunct=\toks54
+\thm@preskip=\skip139
+\thm@postskip=\skip140
+\thm@headsep=\skip141
+\dth@everypar=\toks55
+) (//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/srcltx/srcltx.sty
+Package: srcltx 2006/11/12 v1.6 Source specials for inverse search in DVI files
+
+
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+\src@lastline=\count352
+\src@new@everypar=\toks56
+\src@new@output=\toks57
+)
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/sttools/stfloats.sty
+Package: stfloats 2017/03/27 v3.3 Improve float mechanism and baselineskip sett
+ings
+\@dblbotnum=\count353
+\c@dblbotnumber=\count354
+)
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/base/textcomp.sty
+Package: textcomp 2018/08/11 v2.0j Standard LaTeX package
+Package textcomp Info: Sub-encoding information:
+(textcomp)               5 = only ISO-Adobe without \textcurrency
+(textcomp)               4 = 5 + \texteuro
+(textcomp)               3 = 4 + \textohm
+(textcomp)               2 = 3 + \textestimated + \textcurrency
+(textcomp)               1 = TS1 - \textcircled - \t
+(textcomp)               0 = TS1 (full)
+(textcomp)             Font families with sub-encoding setting implement
+(textcomp)             only a restricted character set as indicated.
+(textcomp)             Family '?' is the default used for unknown fonts.
+(textcomp)             See the documentation for details.
+Package textcomp Info: Setting ? sub-encoding to TS1/1 on input line 79.
+Package srcltx Info: Expanded filename `ts1enc.def' to `ts1enc.def.tex' on inpu
+t line 330.
+
+:<+ ts1enc.def.tex
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/base/ts1enc.def
+File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
+)
+:<-
+LaTeX Info: Redefining \oldstylenums on input line 334.
+Package textcomp Info: Setting cmr sub-encoding to TS1/0 on input line 349.
+Package textcomp Info: Setting cmss sub-encoding to TS1/0 on input line 350.
+Package textcomp Info: Setting cmtt sub-encoding to TS1/0 on input line 351.
+Package textcomp Info: Setting cmvtt sub-encoding to TS1/0 on input line 352.
+Package textcomp Info: Setting cmbr sub-encoding to TS1/0 on input line 353.
+Package textcomp Info: Setting cmtl sub-encoding to TS1/0 on input line 354.
+Package textcomp Info: Setting ccr sub-encoding to TS1/0 on input line 355.
+Package textcomp Info: Setting ptm sub-encoding to TS1/4 on input line 356.
+Package textcomp Info: Setting pcr sub-encoding to TS1/4 on input line 357.
+Package textcomp Info: Setting phv sub-encoding to TS1/4 on input line 358.
+Package textcomp Info: Setting ppl sub-encoding to TS1/3 on input line 359.
+Package textcomp Info: Setting pag sub-encoding to TS1/4 on input line 360.
+Package textcomp Info: Setting pbk sub-encoding to TS1/4 on input line 361.
+Package textcomp Info: Setting pnc sub-encoding to TS1/4 on input line 362.
+Package textcomp Info: Setting pzc sub-encoding to TS1/4 on input line 363.
+Package textcomp Info: Setting bch sub-encoding to TS1/4 on input line 364.
+Package textcomp Info: Setting put sub-encoding to TS1/5 on input line 365.
+Package textcomp Info: Setting uag sub-encoding to TS1/5 on input line 366.
+Package textcomp Info: Setting ugq sub-encoding to TS1/5 on input line 367.
+Package textcomp Info: Setting ul8 sub-encoding to TS1/4 on input line 368.
+Package textcomp Info: Setting ul9 sub-encoding to TS1/4 on input line 369.
+Package textcomp Info: Setting augie sub-encoding to TS1/5 on input line 370.
+Package textcomp Info: Setting dayrom sub-encoding to TS1/3 on input line 371.
+Package textcomp Info: Setting dayroms sub-encoding to TS1/3 on input line 372.
+
+Package textcomp Info: Setting pxr sub-encoding to TS1/0 on input line 373.
+Package textcomp Info: Setting pxss sub-encoding to TS1/0 on input line 374.
+Package textcomp Info: Setting pxtt sub-encoding to TS1/0 on input line 375.
+Package textcomp Info: Setting txr sub-encoding to TS1/0 on input line 376.
+Package textcomp Info: Setting txss sub-encoding to TS1/0 on input line 377.
+Package textcomp Info: Setting txtt sub-encoding to TS1/0 on input line 378.
+Package textcomp Info: Setting lmr sub-encoding to TS1/0 on input line 379.
+Package textcomp Info: Setting lmdh sub-encoding to TS1/0 on input line 380.
+Package textcomp Info: Setting lmss sub-encoding to TS1/0 on input line 381.
+Package textcomp Info: Setting lmssq sub-encoding to TS1/0 on input line 382.
+Package textcomp Info: Setting lmvtt sub-encoding to TS1/0 on input line 383.
+Package textcomp Info: Setting lmtt sub-encoding to TS1/0 on input line 384.
+Package textcomp Info: Setting qhv sub-encoding to TS1/0 on input line 385.
+Package textcomp Info: Setting qag sub-encoding to TS1/0 on input line 386.
+Package textcomp Info: Setting qbk sub-encoding to TS1/0 on input line 387.
+Package textcomp Info: Setting qcr sub-encoding to TS1/0 on input line 388.
+Package textcomp Info: Setting qcs sub-encoding to TS1/0 on input line 389.
+Package textcomp Info: Setting qpl sub-encoding to TS1/0 on input line 390.
+Package textcomp Info: Setting qtm sub-encoding to TS1/0 on input line 391.
+Package textcomp Info: Setting qzc sub-encoding to TS1/0 on input line 392.
+Package textcomp Info: Setting qhvc sub-encoding to TS1/0 on input line 393.
+Package textcomp Info: Setting futs sub-encoding to TS1/4 on input line 394.
+Package textcomp Info: Setting futx sub-encoding to TS1/4 on input line 395.
+Package textcomp Info: Setting futj sub-encoding to TS1/4 on input line 396.
+Package textcomp Info: Setting hlh sub-encoding to TS1/3 on input line 397.
+Package textcomp Info: Setting hls sub-encoding to TS1/3 on input line 398.
+Package textcomp Info: Setting hlst sub-encoding to TS1/3 on input line 399.
+Package textcomp Info: Setting hlct sub-encoding to TS1/5 on input line 400.
+Package textcomp Info: Setting hlx sub-encoding to TS1/5 on input line 401.
+Package textcomp Info: Setting hlce sub-encoding to TS1/5 on input line 402.
+Package textcomp Info: Setting hlcn sub-encoding to TS1/5 on input line 403.
+Package textcomp Info: Setting hlcw sub-encoding to TS1/5 on input line 404.
+Package textcomp Info: Setting hlcf sub-encoding to TS1/5 on input line 405.
+Package textcomp Info: Setting pplx sub-encoding to TS1/3 on input line 406.
+Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 407.
+Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 408.
+Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 409.
+) (//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/sttools/floatpag.sty
+Package: floatpag 2012/05/29 v1.1 Different pagestyles on float pages
+Package: floatpag 1999/04/29 FLOAT PAGESTYLE
+) (//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/was/upgreek.sty
+Package: upgreek 2003/02/12 v2.0 (WaS)
+Package upgreek Info: Using Euler Roman for upright Greek on input line 31.
+\symugrf@m=\mathgroup12
+LaTeX Font Info:    Overwriting symbol font `ugrf@m' in version `bold'
+(Font)                  U/eur/m/n --> U/eur/b/n on input line 38.
+)
+\origiwspc=\dimen345
+\origiwstr=\dimen346
+
+(./pagegridx.sty
+
+LaTeX Warning: You have requested package `pagegridx',
+               but the package provides `pagegrid'.
+
+Package: pagegrid 2008/08/01 Pagegrid option for the Major/Minor Layout
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/eso-pic/eso-pic.sty
+Package: eso-pic 2018/04/12 v2.0h eso-pic (RN)
+
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/generic/oberdiek/atbegshi.st
+y
+Package: atbegshi 2016/06/09 v1.18 At begin shipout hook (HO)
+Package atbegshi Info: Package `crop' patched.
+)) (//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count355
+\calc@Bcount=\count356
+\calc@Adimen=\dimen347
+\calc@Bdimen=\dimen348
+\calc@Askip=\skip142
+\calc@Bskip=\skip143
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count357
+\calc@Cskip=\skip144
+)
+\ruleheight=\dimen349
+\rulewidth=\dimen350
+\ruleht=\count358
+\rulewd=\count359
+\textgluewidth=\dimen351
+\pg@left=\skip145
+\pg@right=\skip146
+\pg@top=\skip147
+\pg@bottom=\skip148
+\pg@headtop=\skip149
+\pg@headbottom=\skip150
+\pg@foottop=\skip151
+\pg@footbottom=\skip152
+\pg@bls=\skip153
+\c@pg@numlines=\count360
+\pg@firstline=\skip154
+\c@pg@linenumber=\count361
+)
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/minitoc/minitoc.sty
+Package: minitoc 2018/07/12 v62 Package minitoc
+
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/minitoc/mtcmess.sty
+Package: mtcmess 2006/03/14
+)
+Package minitoc Info: I0001
+(minitoc)             *** minitoc package, version 62 ***.
+\tf@mtc=\write8
+\mtcindent=\skip155
+\mtcskipamount=\skip156
+Package minitoc Info: I0005
+(minitoc)             compatible with hyperref.
+Package minitoc Info: I0023
+(minitoc)             part level macros available.
+Package minitoc Info: I0003
+(minitoc)             chapter level macros available.
+\mtc@toks=\toks58
+\mtc@strutbox=\box114
+\mtc@hstrutbox=\box115
+Package minitoc Info: I0002
+(minitoc)             Autoconfiguration of extensions.
+\openout8 = `HE2-sample.mtc0'.
+
+\openout8 = `HE2-sample.mtc'.
+
+Package srcltx Info: Expanded filename `HE2-sample.mtc0' to `HE2-sample.mtc0.te
+x' on input line 404.
+
+:<+ HE2-sample.mtc0.tex
+(./HE2-sample.mtc0)
+:<-
+Package minitoc Info: I0012
+(minitoc)             Long extensions (Unix-like) will be used.
+Package minitoc Info: I0031
+(minitoc)             ==> this version is configured for UNIX-like 
+(minitoc)                 (long extensions) file names.
+\openout8 = `HE2-sample.mtc'.
+
+\openout8 = `HE2-sample.mtc0'.
+
+\c@mtc=\count362
+\c@minitocdepth=\count363
+\c@ptc=\count364
+\c@parttocdepth=\count365
+\ptcindent=\skip157
+Package minitoc Info: I0010
+(minitoc)             The english language is selected.
+(minitoc)              on input line 4910.
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/minitoc/english.mld
+File: english.mld 2006/01/13
+)
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/minitoc/english.mld
+File: english.mld 2006/01/13
+))
+Package minitoc Info: I0024
+(minitoc)             PREPARING MINITOCS FROM HE2-sample.toc on input line 3784
+.
+Package minitoc Info: I0033
+(minitoc)             Writing HE2-sample.mtc1.
+\openout8 = `HE2-sample.mtc1'.
+
+Package minitoc Info: I0033
+(minitoc)             Writing HE2-sample.mtc2.
+\openout8 = `HE2-sample.mtc2'.
+
+\fibox=\box116
+\c@theorem=\count366
+\c@exam=\count367
+
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/lipsum/lipsum.sty
+Package: lipsum 2019/01/02 v2.2 150 paragraphs of Lorem Ipsum dummy text
+
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/lipsum/lipsum.ltd.tex
+File: lipsum.ltd.tex 2019/01/02 v2.2 The Lorem ipsum dummy text
+))
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2018/11/30 v6.88e Hypertext links for LaTeX
+
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/generic/oberdiek/hobsub-hype
+rref.sty
+Package: hobsub-hyperref 2016/05/16 v1.14 Bundle oberdiek, subset hyperref (HO)
+
+
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/generic/oberdiek/hobsub-gene
+ric.sty
+Package: hobsub-generic 2016/05/16 v1.14 Bundle oberdiek, subset generic (HO)
+Package: hobsub 2016/05/16 v1.14 Construct package bundles (HO)
+Package hobsub Info: Skipping package `infwarerr' (already loaded).
+Package hobsub Info: Skipping package `ltxcmds' (already loaded).
+Package hobsub Info: Skipping package `ifluatex' (already loaded).
+Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+Package: intcalc 2016/05/16 v1.2 Expandable calculations with integers (HO)
+Package hobsub Info: Skipping package `ifpdf' (already loaded).
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+Package hobsub Info: Skipping package `pdftexcmds' (already loaded).
+Package: pdfescape 2016/05/16 v1.14 Implements pdfTeX's escape features (HO)
+Package: bigintcalc 2016/05/16 v1.4 Expandable calculations on big integers (HO
+)
+Package: bitset 2016/05/16 v1.2 Handle bit-vector datatype (HO)
+Package: uniquecounter 2016/05/16 v1.3 Provide unlimited unique counter (HO)
+)
+Package hobsub Info: Skipping package `hobsub' (already loaded).
+Package: letltxmacro 2016/05/16 v1.5 Let assignment for LaTeX macros (HO)
+Package: hopatch 2016/05/16 v1.3 Wrapper for package hooks (HO)
+Package: xcolor-patch 2016/05/16 xcolor patch
+Package: atveryend 2016/05/16 v1.9 Hooks at the very end of document (HO)
+Package hobsub Info: Skipping package `atbegshi' (already loaded).
+Package: refcount 2016/05/16 v3.5 Data extraction from label references (HO)
+Package: hycolor 2016/05/16 v1.8 Color options for hyperref/bookmark (HO)
+)
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/oberdiek/auxhook.sty
+Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
+)
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+)
+\@linkdim=\dimen352
+\Hy@linkcounter=\count368
+\Hy@pagecounter=\count369
+Package srcltx Info: Expanded filename `pd1enc.def' to `pd1enc.def.tex' on inpu
+t line 853.
+
+:<+ pd1enc.def.tex
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2018/11/30 v6.88e Hyperref: PDFDocEncoding definition (HO)
+)
+:<-
+\Hy@SavedSpaceFactor=\count370
+
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/latexconfig/hyperref.c
+fg
+File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
+)
+Package hyperref Info: Option `draft' set `false' on input line 4393.
+Package hyperref Info: Option `linktocpage' set `true' on input line 4393.
+Package hyperref Info: Option `colorlinks' set `true' on input line 4393.
+Package hyperref Info: Option `breaklinks' set `true' on input line 4393.
+Package hyperref Info: Option `pdfpagelabels' set `true' on input line 4393.
+Package hyperref Info: Option `hyperindex' set `true' on input line 4393.
+Package hyperref Info: Hyper figures OFF on input line 4519.
+Package hyperref Info: Link nesting OFF on input line 4524.
+Package hyperref Info: Hyper index ON on input line 4527.
+Package hyperref Info: Plain pages OFF on input line 4534.
+Package hyperref Info: Backreferencing OFF on input line 4539.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4772.
+\c@Hy@tempcnt=\count371
+ (//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip17
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 5125.
+\XeTeXLinkMargin=\dimen353
+\Fld@menulength=\count372
+\Field@Width=\dimen354
+\Fld@charsize=\dimen355
+Package hyperref Info: Hyper figures OFF on input line 6380.
+Package hyperref Info: Link nesting OFF on input line 6385.
+Package hyperref Info: Hyper index ON on input line 6388.
+Package hyperref Info: backreferencing OFF on input line 6395.
+Package hyperref Info: Link coloring ON on input line 6398.
+Package hyperref Info: Link coloring with OCG OFF on input line 6405.
+Package hyperref Info: PDF/A mode OFF on input line 6410.
+LaTeX Info: Redefining \ref on input line 6450.
+LaTeX Info: Redefining \pageref on input line 6454.
+\Hy@abspage=\count373
+\c@Item=\count374
+\c@Hfootnote=\count375
+)
+Package hyperref Info: Driver: hxetex.
+Package srcltx Info: Expanded filename `hxetex.def' to `hxetex.def.tex' on inpu
+t line 3906.
+
+:<+ hxetex.def.tex
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/hyperref/hxetex.def
+File: hxetex.def 2018/11/30 v6.88e Hyperref driver for XeTeX
+Package srcltx Info: Expanded filename `puenc.def' to `puenc.def.tex' on input 
+line 37.
+
+:<+ puenc.def.tex
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/hyperref/puenc.def
+File: puenc.def 2018/11/30 v6.88e Hyperref: PDF Unicode definition (HO)
+)
+:<-
+
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/generic/oberdiek/stringenc.s
+ty
+Package: stringenc 2016/05/16 v1.11 Convert strings between diff. encodings (HO
+)
+)
+\pdfm@box=\box117
+\c@Hy@AnnotLevel=\count376
+\HyField@AnnotCount=\count377
+\Fld@listcount=\count378
+\c@bookmark@seq@number=\count379
+
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/oberdiek/rerunfilechec
+k.sty
+Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+82.
+)
+\Hy@SectionHShift=\skip158
+)
+:<-
+) (./HE2-sample.aux (./Prelims.aux) (./part01.aux) (./chapter01.aux)
+(./part02.aux) (./chapter02.aux) (./appendix.aux) (./references.aux
+
+Package natbib Warning: Citation `agrawal_etal_book' multiply defined.
+
+
+Package natbib Warning: Citation `gelman_etal_book' multiply defined.
+
+
+Package natbib Warning: Citation `anderson_sally' multiply defined.
+
+
+Package natbib Warning: Citation `wooldridge_advanced' multiply defined.
+
+) (./index.aux)
+
+! Package natbib Error: Bibliography not compatible with author-year citations.
+
+(natbib)                Press <return> to continue in numerical citation style.
+
+
+See the natbib package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.42 ...mand\NAT@force@numbers{}\NAT@force@numbers
+                                                  
+? 
+)
+\openout1 = `HE2-sample.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for T3/cmr/m/n on input line 4.
+LaTeX Font Info:    Try loading font information for T3+cmr on input line 4.
+ (//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/tipa/t3cmr.fd
+File: t3cmr.fd 2001/12/31 TIPA font definitions
+)
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for EU1/lmr/m/n on input line 4.
+LaTeX Font Info:    Try loading font information for EU1+lmr on input line 4.
+
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/euenc/eu1lmr.fd
+File: eu1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 4.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 4.
+
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/base/ts1cmr.fd
+File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+Package crop Info: requested driver: `' on input line 4.
+Package crop Info: detected driver: `xetex' on input line 4.
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: hyperref package is loaded.
+Package caption Info: listings package is loaded.
+Package caption Info: wrapfig package is loaded.
+Package caption Info: End \AtBeginDocument code.
+
+ABD: EveryShipout initializing macros
+\c@lstlisting=\count380
+
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2018/08/11 v1.3c Input encoding file
+\inpenc@prehook=\toks59
+\inpenc@posthook=\toks60
+)
+*** you should *not* be loading the inputenc package
+*** XeTeX expects the source to be in UTF8 encoding
+*** some features of other encodings may conflict, resulting in poor output.
+\AtBeginShipoutBox=\box118
+Package minitoc(hints) Info: I0049
+(minitoc(hints))             ==> You requested the hints option. 
+(minitoc(hints))             Some hints are eventually given below.
+
+Package minitoc(hints) Warning: W0030
+(minitoc(hints))                --- The \part command is altered 
+(minitoc(hints))                after minitoc.
+
+
+Package minitoc(hints) Warning: W0023
+(minitoc(hints))                --- It may be the consequence 
+(minitoc(hints))                of loading the ``hyperref'' package.
+
+
+Package minitoc(hints) Warning: W0028
+(minitoc(hints))                --- The \chapter command is altered 
+(minitoc(hints))                after minitoc.
+
+
+Package minitoc(hints) Warning: W0023
+(minitoc(hints))                --- It may be the consequence 
+(minitoc(hints))                of loading the ``hyperref'' package.
+
+Package hyperref Info: Link coloring ON on input line 4.
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
+
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/generic/oberdiek/gettitlestr
+ing.sty
+Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
+)
+\c@section@level=\count381
+)
+LaTeX Info: Redefining \ref on input line 4.
+LaTeX Info: Redefining \pageref on input line 4.
+LaTeX Info: Redefining \nameref on input line 4.
+ (./HE2-sample.out) (./HE2-sample.out)
+\@outlinefile=\write9
+\openout9 = `HE2-sample.out'.
+
+
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/graphics/rotating.sty
+Package: rotating 2016/08/11 v2.16d rotated objects in LaTeX
+\c@r@tfl@t=\count382
+\rotFPtop=\skip159
+\rotFPbot=\skip160
+\rot@float@box=\box119
+\rot@mess@toks=\toks61
+)
+\rotFPtop=\skip161
+\rotFPbot=\skip162
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/sidecap/sidecap.sty
+Package: sidecap 2003/06/06 v1.6f SideCap Package (RN/HjG)
+\SC@BOXWD=\dimen356
+\SC@CAPWD=\dimen357
+\SC@tempdima=\dimen358
+\SC@tempdimb=\dimen359
+\c@SC@C=\count383
+\SC@BOX=\box120
+
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/ms/ragged2e.sty
+Package: ragged2e 2009/05/21 v2.1 ragged2e Package (MS)
+
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/ms/everysel.sty
+Package: everysel 2011/10/28 v1.2 EverySelectfont Package (MS)
+
+ABD: EverySelectfont initializing macros
+LaTeX Info: Redefining \selectfont on input line 126.
+)
+\CenteringLeftskip=\skip163
+\RaggedLeftLeftskip=\skip164
+\RaggedRightLeftskip=\skip165
+\CenteringRightskip=\skip166
+\RaggedLeftRightskip=\skip167
+\RaggedRightRightskip=\skip168
+\CenteringParfillskip=\skip169
+\RaggedLeftParfillskip=\skip170
+\RaggedRightParfillskip=\skip171
+\JustifyingParfillskip=\skip172
+\CenteringParindent=\skip173
+\RaggedLeftParindent=\skip174
+\RaggedRightParindent=\skip175
+\JustifyingParindent=\skip176
+))
+:<+ Prelims.tex
+\openout2 = `Prelims.aux'.
+
+(./Prelims.tex
+
+Package fontspec Info: Font family 'FrutigerLTStd-BoldCn.otf(0)' created for
+(fontspec)             font 'FrutigerLTStd-BoldCn.otf' with options
+(fontspec)             [Mapping=tex-text].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->"[FrutigerLTStd-BoldCn.otf]/OT:script=latn;language=D
+FLT;mapping=tex-text;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
+
+
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/generic/oberdiek/se-ascii-pr
+int.def
+File: se-ascii-print.def 2016/05/16 v1.11 stringenc: Printable ASCII characters
+
+) [1
+
+
+
+
+] [2
+
+]
+
+LaTeX Font Warning: Font shape `TU/FrutigerLTStd-BoldCn.otf(0)/bx/n' undefined
+(Font)              using `TU/FrutigerLTStd-BoldCn.otf(0)/m/n' instead on input
+ line 29.
+
+
+Package fontspec Info: Font family 'FrutigerLTStd-Cn.otf(1)' created for font
+(fontspec)             'FrutigerLTStd-Cn.otf' with options [Mapping=tex-text].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->"[FrutigerLTStd-Cn.otf]/OT:script=latn;language=DFLT;
+mapping=tex-text;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
+
+
+Package fontspec Info: Font family 'FrutigerLTStd-Bold.otf(0)' created for
+(fontspec)             font 'FrutigerLTStd-Bold.otf' with options
+(fontspec)             [Mapping=tex-text].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->"[FrutigerLTStd-Bold.otf]/OT:script=latn;language=DFL
+T;mapping=tex-text;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
+
+File: fig/CUP-Logo.pdf Graphic file (type pdf)
+<use fig/CUP-Logo.pdf>
+[3]
+File: fig/7mmheight.pdf Graphic file (type pdf)
+<use fig/7mmheight.pdf>
+ [4
+
+] [5
+
+
+] (./toc.tex
+LaTeX Font Info:    Calculating math sizes for size <10.25> on input line 4.
+LaTeX Font Info:    Try loading font information for U+msa on input line 4.
+
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 4.
+
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+[6
+
+] [7]) [8] (./lof.tex) [9
+
+] (./lot.tex) [10
+
+] [11
+
+] [12
+
+] [13
+
+]) [14
+
+]
+:<-
+:<+ part01.tex
+\openout2 = `part01.aux'.
+
+(./part01.tex
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\leavevmode@ifvmode' on input line 1.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 5.125pt
+(hyperref)                replaced by space on input line 1.
+
+
+LaTeX Font Warning: Font shape `TU/FrutigerLTStd-Cn.otf(1)/bx/n' undefined
+(Font)              using `TU/FrutigerLTStd-Cn.otf(1)/m/n' instead on input lin
+e 1.
+
+[1
+
+
+
+
+
+] [2
+
+])
+:<-
+:<+ chapter01.tex
+\openout2 = `chapter01.aux'.
+
+(./chapter01.tex
+Chapter 1.
+
+Overfull \hbox (36.0pt too wide) in paragraph at lines 2--2
+[][]  
+ []
+
+
+Overfull \hbox (18.2pt too wide) detected at line 10
+\TU/FrutigerLTStd-BoldCn.otf(0)/bx/n/14 1.1
+ []
+
+
+Overfull \hbox (7.0pt too wide) in paragraph at lines 16--18
+[][][][]  
+ []
+
+
+Overfull \hbox (24.96pt too wide) detected at line 21
+\TU/FrutigerLTStd-BoldCn.otf(0)/bx/n/12 1.1.1
+ []
+
+[3
+
+
+
+
+
+]
+Overfull \hbox (7.0pt too wide) in paragraph at lines 27--32
+[]| [][][] 
+ []
+
+
+Package natbib Warning: Citation `Hastie_Tibshirani' on page 4 undefined on inp
+ut line 35.
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 46.
+See the caption package documentation for explanation.
+
+[4] [5]
+
+Package natbib Warning: Citation `Hastie_LASSO' on page 6 undefined on input li
+ne 57.
+
+
+Package natbib Warning: Citation `bruinshoofd_terWell_2003' on page 6 undefined
+ on input line 58.
+
+[6] [7] [8] [9] [10]) [11]
+:<-
+:<+ part02.tex
+\openout2 = `part02.aux'.
+
+(./part02.tex [12
+
+
+
+
+]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\leavevmode@ifvmode' on input line 1.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 5.125pt
+(hyperref)                replaced by space on input line 1.
+
+[13] [14
+
+])
+:<-
+:<+ chapter02.tex
+\openout2 = `chapter02.aux'.
+
+(./chapter02.tex
+Chapter 6.
+
+Overfull \hbox (36.0pt too wide) in paragraph at lines 8--8
+[][]  
+ []
+
+
+Overfull \hbox (18.2pt too wide) detected at line 15
+\TU/FrutigerLTStd-BoldCn.otf(0)/bx/n/14 6.1
+ []
+
+LaTeX Font Info:    Try loading font information for U+euf on input line 17.
+(//integra-net/TeXLive/texlive/2019/texmf-dist/tex/latex/amsfonts/ueuf.fd
+File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
+)
+Overfull \hbox (24.96pt too wide) detected at line 28
+\TU/FrutigerLTStd-BoldCn.otf(0)/bx/n/12 6.1.1
+ []
+
+[15
+
+
+
+
+
+]
+Overfull \hbox (24.96pt too wide) detected at line 64
+\TU/FrutigerLTStd-BoldCn.otf(0)/bx/n/12 6.1.2
+ []
+
+
+Overfull \hbox (7.0pt too wide) in paragraph at lines 77--78
+[][][][] 
+ []
+
+[16]
+
+Package natbib Warning: Citation `Besters2016' on page 17 undefined on input li
+ne 103.
+
+
+Package natbib Warning: Citation `Chawla_etal_2002' on page 17 undefined on inp
+ut line 110.
+
+
+Package natbib Warning: Citation `bruinshoofd_terWell_2003' on page 17 undefine
+d on input line 111.
+
+
+Package natbib Warning: Citation `Hastie_ISLR' on page 17 undefined on input li
+ne 112.
+
+
+Package natbib Warning: Citation `louppe2014understanding' on page 17 undefined
+ on input line 138.
+
+
+LaTeX Warning: Command \nobreakspace invalid in math mode on input line 138.
+
+
+Package fontspec Info: Font family 'TimesLTStd-Roman.otf(3)' created for font
+(fontspec)             'TimesLTStd-Roman.otf' with options
+(fontspec)             [Mapping=tex-text,Ligatures=TeX,Ligatures=Common,Mapping
+=tex-text,ItalicFont=TimesLTStd-Italic.otf,BoldFont=TimesLTStd-Bold.otf,BoldIta
+licFont=TimesLTStd-BoldItalic.otf,VerticalPosition=Superior].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->"[TimesLTStd-Roman.otf]/OT:script=latn;language=DFLT;
++liga;+sups;mapping=tex-text;"
+(fontspec)             - 'small caps'  (m/sc) with NFSS spec.:
+(fontspec)             <->"[TimesLTStd-Roman.otf]/OT:script=latn;language=DFLT;
++liga;+sups;+smcp;mapping=tex-text;"
+(fontspec)             - 'bold' (bx/n) with NFSS spec.:
+(fontspec)             <->"[TimesLTStd-Bold.otf]/OT:script=latn;language=DFLT;+
+liga;+sups;mapping=tex-text;"
+(fontspec)             - 'bold small caps'  (bx/sc) with NFSS spec.:
+(fontspec)             <->"[TimesLTStd-Bold.otf]/OT:script=latn;language=DFLT;+
+liga;+sups;+smcp;mapping=tex-text;"
+(fontspec)             - 'italic' (m/it) with NFSS spec.:
+(fontspec)             <->"[TimesLTStd-Italic.otf]/OT:script=latn;language=DFLT
+;+liga;+sups;mapping=tex-text;"
+(fontspec)             - 'italic small caps'  (m/itsc) with NFSS spec.: 
+(fontspec)             - 'bold italic' (bx/it) with NFSS spec.:
+(fontspec)             <->"[TimesLTStd-BoldItalic.otf]/OT:script=latn;language=
+DFLT;+liga;+sups;mapping=tex-text;"
+(fontspec)             - 'bold italic small caps'  (bx/itsc) with NFSS spec.: 
+
+
+LaTeX Warning: Command \nobreakspace invalid in math mode on input line 141.
+
+
+Package natbib Warning: Citation `louppe2014understanding' on page 17 undefined
+ on input line 145.
+
+
+LaTeX Warning: Command \nobreakspace invalid in math mode on input line 145.
+
+
+LaTeX Warning: Command \nobreakspace invalid in math mode on input line 145.
+
+[17] [18]
+
+Package natbib Warning: Citation `elliott_lieli_2013' on page 19 undefined on i
+nput line 159.
+
+
+Overfull \hbox (24.96pt too wide) detected at line 183
+\TU/FrutigerLTStd-BoldCn.otf(0)/bx/n/12 6.1.3
+ []
+
+[19]
+Overfull \hbox (18.2pt too wide) detected at line 191
+\TU/FrutigerLTStd-BoldCn.otf(0)/bx/n/14 6.2
+ []
+
+
+Overfull \hbox (24.96pt too wide) detected at line 193
+\TU/FrutigerLTStd-BoldCn.otf(0)/bx/n/12 6.2.1
+ []
+
+[20] [21]
+Overfull \hbox (24.96pt too wide) detected at line 241
+\TU/FrutigerLTStd-BoldCn.otf(0)/bx/n/12 6.2.2
+ []
+
+[22] [23]
+
+LaTeX Font Warning: Font shape `TU/FrutigerLTStd-BoldCn.otf(0)/m/it' undefined
+(Font)              using `TU/FrutigerLTStd-BoldCn.otf(0)/m/n' instead on input
+ line 260.
+
+
+Overfull \hbox (18.2pt too wide) detected at line 266
+\TU/FrutigerLTStd-BoldCn.otf(0)/bx/n/14 6.3
+ []
+
+
+Overfull \hbox (24.96pt too wide) detected at line 267
+\TU/FrutigerLTStd-BoldCn.otf(0)/bx/n/12 6.3.1
+ []
+
+[24]
+Overfull \hbox (24.96pt too wide) detected at line 274
+\TU/FrutigerLTStd-BoldCn.otf(0)/bx/n/12 6.3.2
+ []
+
+[25]
+Overfull \hbox (18.2pt too wide) detected at line 301
+\TU/FrutigerLTStd-BoldCn.otf(0)/bx/n/14 6.4
+ []
+
+[26] [27] [28]) [29]
+:<-
+:<+ appendix.tex
+\openout2 = `appendix.aux'.
+
+(./appendix.tex
+Appendix A.
+
+Overfull \hbox (36.0pt too wide) in paragraph at lines 1--1
+[][]  
+ []
+
+
+Overfull \hbox (19.474pt too wide) detected at line 13
+\TU/FrutigerLTStd-BoldCn.otf(0)/bx/n/14 A.1
+ []
+
+
+Overfull \hbox (26.052pt too wide) detected at line 16
+\TU/FrutigerLTStd-BoldCn.otf(0)/bx/n/12 A.1.1
+ []
+
+[30
+
+
+
+
+]
+Overfull \hbox (26.052pt too wide) detected at line 41
+\TU/FrutigerLTStd-BoldCn.otf(0)/bx/n/12 A.1.2
+ []
+
+
+Overfull \hbox (26.052pt too wide) detected at line 70
+\TU/FrutigerLTStd-BoldCn.otf(0)/bx/n/12 A.1.3
+ []
+
+[31]
+Overfull \hbox (26.052pt too wide) detected at line 83
+\TU/FrutigerLTStd-BoldCn.otf(0)/bx/n/12 A.1.4
+ []
+
+[32]) [33]
+:<-
+:<+ references.tex
+\openout2 = `references.aux'.
+
+(./references.tex [34
+
+
+
+
+
+]
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <9.5> not available
+(Font)              size <9> substituted on input line 133.
+
+
+LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <9.5> not available
+(Font)              size <9> substituted on input line 133.
+
+
+LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <9.5> not available
+(Font)              size <9> substituted on input line 133.
+
+
+Underfull \hbox (badness 7468) in paragraph at lines 128--134
+\TU/TimesLTStd-Roman.otf(0)/m/it/9.5 Analysis\TU/TimesLTStd-Roman.otf(0)/m/n/9.
+5 . CRC Press, third edition, 2018.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 128--134
+\TU/TimesLTStd-Roman.otf(0)/m/n/9.5 URL [][]$[][][][][] [] [] [] [][][] [] [][]
+[][] [] [][][][][][][][] [] [][][] []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 143--147
+[][]\TU/TimesLTStd-Roman.otf(0)/bx/n/9.5 Wooldridge\TU/TimesLTStd-Roman.otf(0)/
+m/n/9.5 , \TU/TimesLTStd-Roman.otf(0)/bx/n/9.5 2001\TU/TimesLTStd-Roman.otf(0)/
+m/n/9.5 . Jeffrey Wooldridge.
+ []
+
+[35
+
+]
+Underfull \hbox (badness 7291) in paragraph at lines 158--162
+[][]\TU/TimesLTStd-Roman.otf(0)/m/n/9.5 S. Abenda and P. G. Grinevich. Ratio-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 164--168
+\TU/TimesLTStd-Roman.otf(0)/m/n/9.5 M-curves for Le-networks in the totally-
+ []
+
+) [36
+
+]
+:<-
+:<+ index.tex
+\openout2 = `index.aux'.
+
+(./index.tex (./HE2-sample.ind
+
+Package hyperref Warning: bookmark level for unknown schapter defaults to 0.
+
+Index.
+[37
+
+
+
+
+]) [38
+
+
+])
+:<-
+
+Package natbib Warning: There were undefined citations.
+
+
+Package natbib Warning: There were multiply defined citations.
+
+Package minitoc Info: I0009
+(minitoc)             Listing minitoc auxiliary files. 
+(minitoc)             Creating the HE2-sample.maf file.
+\openout8 = `HE2-sample.maf'.
+
+
+Package minitoc(hints) Warning: W0078
+(minitoc(hints))                You have used \dominitoc, 
+(minitoc(hints))                but not \minitoc.
+
+
+Package minitoc(hints) Warning: W0024
+(minitoc(hints))                Some hints have been written 
+(minitoc(hints))                in the HE2-sample.log file.
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 21.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 21.
+(./HE2-sample.aux (./Prelims.aux) (./part01.aux) (./chapter01.aux)
+(./part02.aux) (./chapter02.aux) (./appendix.aux) (./references.aux
+
+Package natbib Warning: Citation(s) may have changed.
+(natbib)                Rerun to get citations correct.
+
+) (./index.aux))
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 21.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 21.
+Package rerunfilecheck Info: File `HE2-sample.out' has not changed.
+(rerunfilecheck)             Checksum: 3F25654BCD3781411E0EDD5D4558E8F6.
+
+
+LaTeX Font Warning: Size substitutions with differences
+(Font)              up to 3.71875pt have occurred.
+
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 47638 strings out of 492922
+ 961955 string characters out of 6136751
+ 1333301 words of memory out of 5000000
+ 50561 multiletter control sequences out of 15000+600000
+ 557216 words of font info for 302 fonts, out of 8000000 for 9000
+ 1348 hyphenation exceptions out of 8191
+ 71i,20n,103p,1934b,1107s stack positions out of 5000i,500n,10000p,200000b,80000s
+
+Output written on HE2-sample.pdf (52 pages).

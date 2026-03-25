@@ -1,0 +1,107 @@
+This is BibTeX, Version 0.99dThe top-level auxiliary file: HE2-sample.aux
+A level-1 auxiliary file: Prelims.aux
+A level-1 auxiliary file: part01.aux
+A level-1 auxiliary file: chapter01.aux
+A level-1 auxiliary file: part02.aux
+A level-1 auxiliary file: chapter02.aux
+A level-1 auxiliary file: appendix.aux
+A level-1 auxiliary file: references.aux
+The style file: agsm.bst
+Illegal, another \bibstyle command---line 31 of file references.aux
+ : \bibstyle
+ :          {IEEEtrans}
+I'm skipping whatever remains of this command
+A level-1 auxiliary file: index.aux
+Database file #1: ref.bib
+Warning--I didn't find a database entry for "SGA4"
+Name 1 in "Gelman, Andrew, John B. Carlin, Hal S. Stern, David B. Dunson, Aki Vehtari, and Donald B. Rubin" has a comma at the end for entry gelman_etal_book
+while executing---line 1222 of file agsm.bst
+Too many commas in name 1 of "Gelman, Andrew, John B. Carlin, Hal S. Stern, David B. Dunson, Aki Vehtari, and Donald B. Rubin" for entry gelman_etal_book
+while executing---line 1222 of file agsm.bst
+Too many commas in name 1 of "Gelman, Andrew, John B. Carlin, Hal S. Stern, David B. Dunson, Aki Vehtari, and Donald B. Rubin" for entry gelman_etal_book
+while executing---line 1222 of file agsm.bst
+Too many commas in name 1 of "Gelman, Andrew, John B. Carlin, Hal S. Stern, David B. Dunson, Aki Vehtari, and Donald B. Rubin" for entry gelman_etal_book
+while executing---line 1222 of file agsm.bst
+Name 1 in "Gelman, Andrew, John B. Carlin, Hal S. Stern, David B. Dunson, Aki Vehtari, and Donald B. Rubin" has a comma at the end for entry gelman_etal_book
+while executing---line 1222 of file agsm.bst
+Too many commas in name 1 of "Gelman, Andrew, John B. Carlin, Hal S. Stern, David B. Dunson, Aki Vehtari, and Donald B. Rubin" for entry gelman_etal_book
+while executing---line 1222 of file agsm.bst
+Too many commas in name 1 of "Gelman, Andrew, John B. Carlin, Hal S. Stern, David B. Dunson, Aki Vehtari, and Donald B. Rubin" for entry gelman_etal_book
+while executing---line 1222 of file agsm.bst
+Too many commas in name 1 of "Gelman, Andrew, John B. Carlin, Hal S. Stern, David B. Dunson, Aki Vehtari, and Donald B. Rubin" for entry gelman_etal_book
+while executing---line 1222 of file agsm.bst
+Name 1 in "Ajay Agrawal, Avi Goldfarb, and Joshua Gans" has a comma at the end for entry agrawal_etal_book
+while executing---line 1222 of file agsm.bst
+Name 1 in "Ajay Agrawal, Avi Goldfarb, and Joshua Gans" has a comma at the end for entry agrawal_etal_book
+while executing---line 1222 of file agsm.bst
+Name 1 in "Ajay Agrawal, Avi Goldfarb, and Joshua Gans" has a comma at the end for entry agrawal_etal_book
+while executing---line 1258 of file agsm.bst
+Name 1 in "Gelman, Andrew, John B. Carlin, Hal S. Stern, David B. Dunson, Aki Vehtari, and Donald B. Rubin" has a comma at the end for entry gelman_etal_book
+while executing---line 1258 of file agsm.bst
+Too many commas in name 1 of "Gelman, Andrew, John B. Carlin, Hal S. Stern, David B. Dunson, Aki Vehtari, and Donald B. Rubin" for entry gelman_etal_book
+while executing---line 1258 of file agsm.bst
+Too many commas in name 1 of "Gelman, Andrew, John B. Carlin, Hal S. Stern, David B. Dunson, Aki Vehtari, and Donald B. Rubin" for entry gelman_etal_book
+while executing---line 1258 of file agsm.bst
+Too many commas in name 1 of "Gelman, Andrew, John B. Carlin, Hal S. Stern, David B. Dunson, Aki Vehtari, and Donald B. Rubin" for entry gelman_etal_book
+while executing---line 1258 of file agsm.bst
+Name 1 in "Gelman, Andrew, John B. Carlin, Hal S. Stern, David B. Dunson, Aki Vehtari, and Donald B. Rubin" has a comma at the end for entry gelman_etal_book
+while executing---line 1262 of file agsm.bst
+Too many commas in name 1 of "Gelman, Andrew, John B. Carlin, Hal S. Stern, David B. Dunson, Aki Vehtari, and Donald B. Rubin" for entry gelman_etal_book
+while executing---line 1262 of file agsm.bst
+Too many commas in name 1 of "Gelman, Andrew, John B. Carlin, Hal S. Stern, David B. Dunson, Aki Vehtari, and Donald B. Rubin" for entry gelman_etal_book
+while executing---line 1262 of file agsm.bst
+Too many commas in name 1 of "Gelman, Andrew, John B. Carlin, Hal S. Stern, David B. Dunson, Aki Vehtari, and Donald B. Rubin" for entry gelman_etal_book
+while executing---line 1262 of file agsm.bst
+Name 1 in "Ajay Agrawal, Avi Goldfarb, and Joshua Gans" has a comma at the end for entry agrawal_etal_book
+while executing---line 1262 of file agsm.bst
+Name 1 in "Ajay Agrawal, Avi Goldfarb, and Joshua Gans" has a comma at the end for entry agrawal_etal_book
+while executing---line 1294 of file agsm.bst
+Name 1 in "Ajay Agrawal, Avi Goldfarb, and Joshua Gans" has a comma at the end for entry agrawal_etal_book
+while executing---line 1294 of file agsm.bst
+Name 1 in "Gelman, Andrew, John B. Carlin, Hal S. Stern, David B. Dunson, Aki Vehtari, and Donald B. Rubin" has a comma at the end for entry gelman_etal_book
+while executing---line 1294 of file agsm.bst
+Too many commas in name 1 of "Gelman, Andrew, John B. Carlin, Hal S. Stern, David B. Dunson, Aki Vehtari, and Donald B. Rubin" for entry gelman_etal_book
+while executing---line 1294 of file agsm.bst
+Too many commas in name 1 of "Gelman, Andrew, John B. Carlin, Hal S. Stern, David B. Dunson, Aki Vehtari, and Donald B. Rubin" for entry gelman_etal_book
+while executing---line 1294 of file agsm.bst
+Too many commas in name 1 of "Gelman, Andrew, John B. Carlin, Hal S. Stern, David B. Dunson, Aki Vehtari, and Donald B. Rubin" for entry gelman_etal_book
+while executing---line 1294 of file agsm.bst
+Name 1 in "Gelman, Andrew, John B. Carlin, Hal S. Stern, David B. Dunson, Aki Vehtari, and Donald B. Rubin" has a comma at the end for entry gelman_etal_book
+while executing---line 1294 of file agsm.bst
+Too many commas in name 1 of "Gelman, Andrew, John B. Carlin, Hal S. Stern, David B. Dunson, Aki Vehtari, and Donald B. Rubin" for entry gelman_etal_book
+while executing---line 1294 of file agsm.bst
+Too many commas in name 1 of "Gelman, Andrew, John B. Carlin, Hal S. Stern, David B. Dunson, Aki Vehtari, and Donald B. Rubin" for entry gelman_etal_book
+while executing---line 1294 of file agsm.bst
+Too many commas in name 1 of "Gelman, Andrew, John B. Carlin, Hal S. Stern, David B. Dunson, Aki Vehtari, and Donald B. Rubin" for entry gelman_etal_book
+while executing---line 1294 of file agsm.bst
+Name 1 in "Ajay Agrawal, Avi Goldfarb, and Joshua Gans" has a comma at the end for entry agrawal_etal_book
+while executing---line 1327 of file agsm.bst
+Name 1 in "Gelman, Andrew, John B. Carlin, Hal S. Stern, David B. Dunson, Aki Vehtari, and Donald B. Rubin" has a comma at the end for entry gelman_etal_book
+while executing---line 1327 of file agsm.bst
+Too many commas in name 1 of "Gelman, Andrew, John B. Carlin, Hal S. Stern, David B. Dunson, Aki Vehtari, and Donald B. Rubin" for entry gelman_etal_book
+while executing---line 1327 of file agsm.bst
+Too many commas in name 1 of "Gelman, Andrew, John B. Carlin, Hal S. Stern, David B. Dunson, Aki Vehtari, and Donald B. Rubin" for entry gelman_etal_book
+while executing---line 1327 of file agsm.bst
+Too many commas in name 1 of "Gelman, Andrew, John B. Carlin, Hal S. Stern, David B. Dunson, Aki Vehtari, and Donald B. Rubin" for entry gelman_etal_book
+while executing---line 1327 of file agsm.bst
+Name 1 in "Ajay Agrawal, Avi Goldfarb, and Joshua Gans" has a comma at the end for entry agrawal_etal_book
+while executing---line 1346 of file agsm.bst
+Name 1 in "Ajay Agrawal, Avi Goldfarb, and Joshua Gans" has a comma at the end for entry agrawal_etal_book
+while executing---line 1346 of file agsm.bst
+Name 1 in "Gelman, Andrew, John B. Carlin, Hal S. Stern, David B. Dunson, Aki Vehtari, and Donald B. Rubin" has a comma at the end for entry gelman_etal_book
+while executing---line 1346 of file agsm.bst
+Too many commas in name 1 of "Gelman, Andrew, John B. Carlin, Hal S. Stern, David B. Dunson, Aki Vehtari, and Donald B. Rubin" for entry gelman_etal_book
+while executing---line 1346 of file agsm.bst
+Too many commas in name 1 of "Gelman, Andrew, John B. Carlin, Hal S. Stern, David B. Dunson, Aki Vehtari, and Donald B. Rubin" for entry gelman_etal_book
+while executing---line 1346 of file agsm.bst
+Too many commas in name 1 of "Gelman, Andrew, John B. Carlin, Hal S. Stern, David B. Dunson, Aki Vehtari, and Donald B. Rubin" for entry gelman_etal_book
+while executing---line 1346 of file agsm.bst
+Name 1 in "Gelman, Andrew, John B. Carlin, Hal S. Stern, David B. Dunson, Aki Vehtari, and Donald B. Rubin" has a comma at the end for entry gelman_etal_book
+while executing---line 1346 of file agsm.bst
+Too many commas in name 1 of "Gelman, Andrew, John B. Carlin, Hal S. Stern, David B. Dunson, Aki Vehtari, and Donald B. Rubin" for entry gelman_etal_book
+while executing---line 1346 of file agsm.bst
+Too many commas in name 1 of "Gelman, Andrew, John B. Carlin, Hal S. Stern, David B. Dunson, Aki Vehtari, and Donald B. Rubin" for entry gelman_etal_book
+while executing---line 1346 of file agsm.bst
+Too many commas in name 1 of "Gelman, Andrew, John B. Carlin, Hal S. Stern, David B. Dunson, Aki Vehtari, and Donald B. Rubin" for entry gelman_etal_book
+while executing---line 1346 of file agsm.bst
+(There were 46 error messages)

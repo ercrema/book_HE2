@@ -1,0 +1,417 @@
+\part{Hydrologic processes}\label{p01:part01}
+
+\chapter{Watershed and Hydrologic Processes}
+\label{ch01:chap01}
+
+\chaptermark{Watershed and Hydrologic Processes}
+
+\contributor{Author Name
+\affiliation{Affiliation text,
+Scott Polar Research Institute,
+Lensfield Road, Cambridge CB2 1ER}}
+
+This chapter discusses hydrologic processes\index{analysis
+methods related to design} and management of water resources
+engineering structures. In this regard, the concept of a watershed
+is introduced and its physical characteristics described,
+qualitative and quantitative aspects of water balance examined, and
+the notion of water resources protection and utilization discussed.
+Furthermore, the five major hydrologic processes that control runoff
+volume and flow rate, in particular peak discharge, are explored.
+
+\section{Watershed and Water Balance}
+\label{ch01:sec3.1}
+
+This section introduces the concept of a watershed,\index{describes its
+most important characteristics} and investigates components of water
+balance. It also presents the basic analysis methods of water supply
+and demand.
+
+\begin{figure}
+{\hspace*{-3pc}\fcolorbox{grey}{grey}{\vbox to 10pc{\hbox to 33pc{\ }}}}
+\caption{A topographic map showing the process of delineating a watershed. The contour interval is 10 ft.}
+\end{figure}
+
+\subsection{Watershed concepts and characteristics}
+\label{ch01:sec3.1.1}
+
+A watershed (Figure) is the\index{land area from which
+water tends} to flow downward due to gravity along a drainage network
+to a single common point, called the outlet. The drainage network
+can consist of natural streams, manmade channels, drainage ditches,
+culverts, and storm sewers. Its boundary is defined by a ridge line
+(which usually is not linear per se, but rather curvilinear), on
+which any given point has a topographic elevation higher than the
+two adjacent points along the straight line passing through the
+three points and perpendicular to the ridge line (as shown by the
+I-I$'$ elevation profile in Figure). Thus, water
+inside the watershed cannot flow across its boundary due only to
+gravity; likewise, water outside the boundary cannot flow into the
+watershed only due to gravity. Thus, water
+inside the watershed cannot flow across its boundary due only to
+gravity; likewise, water outside the boundary cannot flow into the
+watershed only due to gravity. Thus, water
+inside the watershed cannot flow across its boundary due only to
+gravity; likewise, water outside the boundary cannot flow into the
+watershed only due to gravity.
+
+The discharge coefficient is computed as:
+
+\begin{example}{\label{ch01:exa3.1}}
+Figurea shows a\index{topographic map with a contour}
+interval of 10 ft. Delineate the boundary of the watershed with its
+outlet at W.
+
+\solution The delineation can be implemented by following three\enlargethispage{13pt}
+steps. First, identify the contours representing ridges and the
+contours representing valleys. The V-shaped contours that point
+toward lower elevation form a ridge, whereas the V-shaped contours
+that point toward higher elevation form a valley. The identified
+ridges and valleys are labeled in Figureb. Second,
+start from outlet W to draw step-wise straight gradient lines along
+the two ridges adjacent to the stream that drains the watershed, as
+shown in Figureb. Note that any\index{line should always}
+be perpendicular to its two intersect contours. Finally, make
+necessary adjustments to ensure that any artificial high-elevation
+obstructions (e.g., railroads and highways) or localized high spots
+(i.e., closed contours) are considered as parts of the watershed
+boundary. The finally delineated watershed boundary is shown in
+Figurec.
+
+\begin{nboxfig}
+{\fcolorbox{grey}{grey}{\vbox to 10pc{\hbox to .5\textwidth{\ }}}}
+{A topographic map showing the process of delineating a watershed. The contour interval is 10 ft.}
+\end{nboxfig}
+\end{example}
+
+A watershed (Figure) is the\index{land area from which
+water tends} to flow downward due to gravity along a drainage network
+to a single common point, called the outlet. The drainage network
+can consist of natural streams, manmade channels, drainage ditches,
+culverts, and storm sewers. Its boundary is defined by a ridge line
+(which usually is not linear per se, but rather curvilinear), on
+which any given point has a topographic elevation higher than the
+two adjacent points along the straight line passing through the
+three points and perpendicular to the ridge line (as shown by the
+I-I$'$ elevation profile in Figure). Thus, water
+inside the watershed cannot flow across its boundary due only to
+gravity; likewise, water outside the boundary cannot flow into the
+watershed only due to gravity.
+
+\subsubsection{C-heading}
+A watershed (Figure) is the\index{land area from which
+water tends} to flow downward due to gravity along a drainage network
+to a single common point, called the outlet. The drainage network
+can consist of natural streams, manmade channels, drainage ditches,
+culverts, and storm sewers. Its boundary
+
+Consider a discretization of the scalar Lagrangian
+\begin{equation}
+\mathcal{L}(\phi)=\frac{1}{2}(\partial_\mu\phi)^2+V(\phi)(+J\cdot
+\phi)\label{ch63:eqn63.1}
+\end{equation}
+and its path integral, on a (hyper)cubic lattice of size $a$, via
+\begin{eqnarray}
+&&x\rightarrow x_n;\;\;\; \phi(x)\rightarrow \phi_n=\phi(x_n);\;\;\;
+\mathcal{D}\phi\rightarrow \prod_n d\phi_n;\nonumber\\
+&&\partial_\mu\phi\rightarrow
+\frac{1}{a}(\phi_{n+\mu}-\phi_n),\label{ch63:eqn63.2}
+\end{eqnarray}
+where $n+\mu$ is the nearest neighbor on the lattice (in direction
+$\mu$) to site $n$.
+
+is defined by a ridge line
+(which usually is not linear per se, but rather curvilinear), on
+which any given point has a topographic elevation higher than the
+two adjacent points along the straight line passing through the
+three points and perpendicular to the ridge line (as shown by the
+I-I$'$ elevation profile in Figure). Thus, water
+inside the watershed cannot flow across its boundary due only to
+gravity; likewise, water outside the boundary cannot flow into the
+watershed only due to gravity.
+
+\paragraph{D-heading}
+A watershed (Figure) is the\index{land area from which
+water tends} to flow downward due to gravity along a drainage network
+to a single common point, called the outlet. The drainage network
+can consist of natural streams, manmade channels, drainage ditches,
+culverts, and storm sewers.
+
+\bigskip
+
+\begin{equation}
+\label{ch05:eqn5.9}
+\tikzmarknode{C}{\mathrm{C}}_\mathrm{Q} = \frac{\tikzmarknode{Q}{\mathrm{Q}}_\mathrm{p}}{\mathrm{\tikzmarknode{n}{\mathrm{n}}\tikzmarknode{D}{D}}^3}
+\end{equation}
+%~\\
+\begin{tikzpicture}[overlay,remember picture,
+    color=voilet,
+    >=Latex,node distance=.5cm,
+    lbl/.style = {align=center, font=\footnotesize}  % <--- new
+                        ]
+\draw[<-] (C) -- ++ (-0.5,0)    node[lbl,left]        {discharge coefficient}; % <--- now the text is in two lines
+\draw[<-] (Q) -- ++ (0.5,0.5)  node[lbl,above right]  {discharge capacity}; % node position is moved to left
+\draw[<-] (n) -- ++ (-0.3,-0.5)  node[lbl,below left,left=-20pt,below=2pt] {rotation speed in revolution per unit time};% node position is moved to right
+\draw[<-] (D) -- ++ (0.5,-0.1)  node[lbl,right]       {impeller diameter};
+\end{tikzpicture}
+
+\bigskip\smallskip
+
+A watershed (Figure) is the\index{land area from which
+water tends} to flow downward due to gravity along a drainage network
+to a single common point, called the outlet.
+
+\begin{enumerate}[(3)]
+\item[(1)] Simple arithmetic average method. Simple arithmetic average method. Simple arithmetic average method
+
+\item[(2)] Thiessen polygon area-weighted average method. Simple arithmetic average method.
+
+\item[(3)] Thus, water inside the watershed cannot flow across its boundary due only to gravity; likewise, water outside the boundary cannot flow into the
+watershed only due to gravity.
+\end{enumerate}
+
+Its boundary is defined by a ridge line
+(which usually is not linear per se, but rather curvilinear), on
+which any given point has a topographic elevation higher than the
+two adjacent points along the straight line passing through the
+three points and perpendicular to the ridge line (as shown by the
+I-I$'$ elevation profile in Figure). Thus, water
+inside the watershed cannot flow across its boundary due only to
+gravity; likewise, water outside the boundary cannot flow into the
+watershed only due to gravity.
+
+
+
+
+The drainage network
+can consist of natural streams, manmade channels, drainage ditches,
+culverts, and storm sewers. Its boundary is defined by a ridge line
+(which usually is not linear per se, but rather curvilinear), on
+which any given point has a topographic elevation higher than the
+two adjacent points along the straight line passing through the
+three points and perpendicular to the ridge line (as shown by the
+I-I$'$ elevation profile in Figure). Thus, water
+inside the watershed cannot flow across its boundary due only to
+gravity; likewise, water outside the boundary cannot flow into the
+watershed only due to gravity.
+
+\begin{table}
+\processtable{Definition of hydrologic soil groups
+(HSGs).\label{ch03:tab3.1}}
+{\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}ll@{\raggedright}p{20pc}@{}}
+\dtoprule
+HSG & Runoff potential & \multicolumn{1}{l}{Definition} \\
+\midrule
+A & low & \multicolumn{1}{p{20pc}}{\raggedright High rate of water transmission; well to excessively drained sands or gravels; high infiltration rate, saturated hydraulic conductivity of the least transmissive layer $\textrm{K}_{\textrm{sat}} > 5.67\ \textrm{in\ hr}^{-1}$} \\[6pt]
+B & moderately low &
+\multicolumn{1}{p{20pc}}{\raggedright Moderate rate of water transmission; moderately well to well drained soils with moderately fine to moderately coarse textures; moderate infiltration rate, $\textrm{K}_{\textrm{sat}} = 1.42 \sim 5.67\ \textrm{in\ hr}^{ -1}$} \\[6pt]
+C& moderately high&
+\multicolumn{1}{p{20pc}}{\raggedright Slow rate of water transmission; soils with a layer that impedes downward movement of water or with moderately fine to fine texture; slow infiltration rate, $\textrm{K}_{\textrm{sat}} = 0.06 \sim 1.42\ \textrm{in\ hr}^{-1}$} \\[6pt]
+D& high&
+\multicolumn{1}{p{20pc}}{\raggedright Very slow rate of water transmission; clay soils, soils with a permanent high water table, soils with a claypan or clay layer at or near the surface, and shallow soils over nearly impervious material; very slow infiltration rate, $\textrm{K}_{\textrm{sat}} \le 0.06\ \textrm{in\ hr}^{ -1}$} \\
+\dbottomrule
+\end{tabular*}}
+{\tabsource{The drainage network can consist of natural streams, manmade channels, drainage ditches.}}
+\end{table}
+
+A watershed (Figure) is the\index{land area from which
+water tends} to flow downward due to gravity along a drainage network
+to a single common point, called the outlet. The drainage network
+can consist of natural streams, manmade channels, drainage ditches,
+culverts, and storm sewers. Its boundary is defined by a ridge line
+(which usually is not linear per se, but rather curvilinear), on
+which any given point has a topographic elevation higher than the
+two adjacent points along the straight line passing through the
+three points and perpendicular to the ridge line (as shown by the
+I-I$'$ elevation profile in Figure). Thus, water
+inside the watershed cannot flow across its boundary due only to
+gravity; likewise, water outside the boundary cannot flow into the
+watershed only due to gravity.
+
+\begin{SCfigure}
+\dummyfigure2
+\captionof{figure}{This is a caption, with exactly this specific number of lines in it. The caption has to be in the lower left corner of the figure}
+\label{fig:stoejfralandevej}
+\end{SCfigure}
+
+A watershed (Figure) is the\index{land area from which
+water tends} to flow downward due to gravity along a drainage network
+to a single common point, called the outlet. The drainage network
+can consist of natural streams, manmade channels, drainage ditches,
+culverts, and storm sewers. Its boundary is defined by a ridge line
+(which usually is not linear per se, but rather curvilinear), on
+which any given point has a topographic elevation higher than the
+two adjacent points along the straight line passing through the
+three points and perpendicular to the ridge line (as shown by the
+I-I$'$ elevation profile in Figure). Thus, water
+inside the watershed cannot flow across its boundary due only to
+gravity; likewise, water outside the boundary cannot flow into the
+watershed only due to gravity.
+
+
+A watershed (Figure) is the\index{land area from which
+water tends} to flow downward due to gravity along a drainage network
+to a single common point, called the outlet. The drainage network
+can consist of natural streams, manmade channels, drainage ditches,
+culverts, and storm sewers. Its boundary is defined by a ridge line
+(which usually is not linear per se, but rather curvilinear), on
+which any given point has a topographic elevation higher than the
+two adjacent points along the straight line passing through the
+three points and perpendicular to the ridge line (as shown by the
+I-I$'$ elevation profile in Figure). Thus, water
+inside the watershed cannot flow across its boundary due only to
+gravity; likewise, water outside the boundary cannot flow into the
+watershed only due to gravity.
+
+A watershed (Figure) is the\index{land area from which
+water tends} to flow downward due to gravity along a drainage network
+to a single common point, called the outlet. The drainage network
+can consist of natural streams, manmade channels, drainage ditches,
+culverts, and storm sewers. Its boundary is defined by a ridge line
+(which usually is not linear per se, but rather curvilinear), on
+which any given point has a topographic elevation higher than the
+two adjacent points along the straight line passing through the
+three points and perpendicular to the ridge line (as shown by the
+I-I$'$ elevation profile in Figure). Thus, water
+inside the watershed cannot flow across its boundary due only to
+gravity; likewise, water outside the boundary cannot flow into the
+watershed only due to gravity.
+
+
+
+
+he drainage network
+can consist of natural streams, manmade channels, drainage ditches,
+culverts, and storm sewers. Its boundary is defined by a ridge line
+(which usually is not linear per se, but rather curvilinear), on
+which any given point has a topographic elevation higher than the
+two adjacent points along the straight line passing through the
+three points and perpendicular to the ridge line (as shown by the
+I-I$'$ elevation profile in Figure). Thus, water
+inside the watershed cannot flow across its boundary due only to
+gravity; likewise, water outside the boundary cannot flow into the
+watershed only due to gravity.
+
+A watershed (Figure) is the\index{land area from which
+water tends} to flow downward due to gravity along a drainage network
+to a single common point, called the outlet. The drainage network
+can consist of natural streams, manmade channels, drainage ditches,
+culverts, and storm sewers. Its boundary is defined by a ridge line
+(which usually is not linear per se, but rather curvilinear), on
+which any given point has a topographic elevation higher than the
+two adjacent points along the straight line passing through the
+three points and perpendicular to the ridge line (as shown by the
+I-I$'$ elevation profile in Figure). Thus, water
+inside the watershed cannot flow across its boundary due only to
+gravity; likewise, water outside the boundary cannot flow into the
+watershed only due to gravity.
+
+
+\begin{chaptexbox}[Drainage network]
+A watershed (Figure) is the\index{land area from which
+water tends} to flow downward due to gravity along a drainage network
+to a single common point, called the outlet. The drainage network
+can consist of natural streams, manmade channels, drainage ditches,
+culverts, and storm sewers. Its boundary is defined by a ridge line
+(which usually is not linear per se, but rather curvilinear), on
+which any given point has a topographic elevation higher than the
+two adjacent points along the straight line passing through the
+three points and perpendicular to the ridge line (as shown by the
+I-I$'$ elevation profile in Figure). Thus, water
+inside the watershed cannot flow across its boundary due only to
+gravity; likewise, water outside the boundary cannot flow into the
+watershed only due to gravity.
+
+A watershed (Figure) is the\index{land area from which
+water tends} to flow downward due to gravity along a drainage network
+to a single common point, called the outlet. The drainage network
+can consist of natural streams, manmade channels, drainage ditches,
+culverts, and storm sewers. Its boundary is defined by a ridge line
+(which usually is not linear per se, but rather curvilinear), on
+which any given point has a topographic elevation higher than the
+two adjacent points along the straight line passing through the
+three points and perpendicular to the ridge line (as shown by the
+I-I$'$ elevation profile in Figure). Thus, water
+inside the watershed cannot flow across its boundary due only to
+gravity; likewise, water outside the boundary cannot flow into the
+watershed only due to gravity.
+\end{chaptexbox}
+
+A watershed (Figure) is the\index{land area from which
+water tends} to flow downward due to gravity along a drainage network
+to a single common point, called the outlet. The drainage network
+can consist of natural streams, manmade channels, drainage ditches,
+culverts, and storm sewers. Its boundary is defined by a ridge line
+(which usually is not linear per se, but rather curvilinear), on
+which any given point has a topographic elevation higher than the
+two adjacent points along the straight line passing through the
+three points and perpendicular to the ridge line (as shown by the
+I-I$'$ elevation profile in Figure). Thus, water
+inside the watershed cannot flow across its boundary due only to
+gravity; likewise, water outside the boundary cannot flow into the
+watershed only due to gravity.
+
+\begin{problemlist}{9.9}
+\item \label{ch01:prob3.1}
+For the following USGS quadrangle map, identify and highlight the
+ridges and valleys or gullies.
+
+\begin{figure}[!h]
+\hspace*{18pt}\fcolorbox{grey}{grey}{\vbox to 10pc{\hbox to .5\textwidth{\ }}}
+\end{figure}
+
+\item \label{ch01:prob3.2}
+For the USGS quadrangle map of Problem, delineate
+the watersheds with their outlets at A and B, respectively. Also,
+determine the\index{geometric characteristics} of each of the two
+watersheds, including drainage area, longest flow path length,
+width, slope, slope length, and drainage\break density.
+
+\item \label{ch01:prob3.3}
+The following topographic\index{map is superimposed} by 30-m grids to
+develop a digital elevation model (DEM). The elevations on the map
+have units of meters.
+\begin{enumerate}[(3)]
+\item[(1)] Develop the DEM
+
+\item[(2)] Determine the flow directions using the D8 algorithm
+manually
+
+\item[(3)] Use subroutine \textit{FlowDir{\_}DEM( )} to check your
+answer in (2)
+\end{enumerate}
+
+\item\label{ch01:prob3.15}
+For a site with loam soils, the results from a field infiltrometer
+test are shown in the following table.
+\begin{enumerate}[(2)]
+\item[(1)] Determine the\index{parameters} of the Horton and Philip models for
+the site
+
+\item[(2)] Estimate the actual\index{cumulative infiltration} and total direct
+runoff resulting from a 1-hr storm with an average rainfall
+intensity of 45 mm hr$^{-1}$ using these two models
+
+\bigskip
+
+\begin{unnumtable} [!h]
+\processtable{}
+{\hspace*{-28pt}\begin{tabular}{@{}lrrrrrrrr}
+\dtoprule Time (min)& 0& 2& 5& 10& 20& 30& 40&60 \\[3pt]
+%%\midrule
+Infiltration rate (mm hr$^{-1})$& 240& 140& 120& 102&
+66&42& 27&27 \\
+\dbottomrule
+\end{tabular}}{}
+\end{unnumtable}
+\end{enumerate}
+
+
+\item\label{ch01:prob3.16}
+For the site in Problem, if the initial soil
+moisture is 0.15, develop the\index{infiltration capacity} curve using the
+G-A model using the means of the soil water parameters listed in
+Table. Also, plot the developed curve versus the
+measured values on a same graph to visually assess the performance
+of the G-A model.
+\end{problemlist}

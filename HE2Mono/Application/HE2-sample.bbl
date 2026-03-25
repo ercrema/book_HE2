@@ -1,0 +1,79 @@
+\begin{thebibliography}{xx}
+
+\harvarditem{Ajay~Agrawal \harvardand\ Gans}{2018}{agrawal_etal_book}
+Ajay~Agrawal, A.~G. \harvardand\ Gans, J.  \harvardyearleft
+  2018\harvardyearright , {\em Prediction Machines: The Simple Economics of
+  Artificial Intelligence}, Harvard Business Review Press.
+
+\harvarditem[Besters et~al.]{Besters, van Ours \harvardand\ van
+  Tuijl}{2016}{Besters2016}
+Besters, L.~M., van Ours, J.~C. \harvardand\ van Tuijl, M.~A.  \harvardyearleft
+  2016\harvardyearright , `Effectiveness of in-season manager changes in
+  english premier league football', {\em De Economist} {\bf 164}(3),~335--356.
+
+\harvarditem{Buinsfold \harvardand\ ter Weel}{2003}{bruinshoofd_terWell_2003}
+Buinsfold, A. \harvardand\ ter Weel, B.  \harvardyearleft 2003\harvardyearright
+  , `Manager to go? performance dips reconsidered with evidence from dutch
+  football', {\em European Journal of Operational Research} {\bf 148}(2),~233
+  -- 246.
+
+\harvarditem[Chawla et~al.]{Chawla, Bowyer, Hall \harvardand\
+  Kegelmeyer}{2002}{Chawla_etal_2002}
+Chawla, N.~V., Bowyer, K.~W., Hall, L.~O. \harvardand\ Kegelmeyer, W.~P.
+  \harvardyearleft 2002\harvardyearright , `Smote: Synthetic minority
+  over-sampling technique', {\em Journal of Artificial Intelligence Research}
+  {\bf 16}(1),~321--357.
+
+\harvarditem{Elliott \harvardand\ Lieli}{2013}{elliott_lieli_2013}
+Elliott, G. \harvardand\ Lieli, R.~P.  \harvardyearleft 2013\harvardyearright ,
+  `Predicting binary outcomes', {\em Journal of Econometrics} {\bf 174}(1),~15
+  -- 26.
+
+\harvarditem{Gelman \harvardand\ Rubin}{2018}{gelman_etal_book}
+Gelman, Andrew, J. B. C. H. S. S. D. B. D. A.~V. \harvardand\ Rubin, D.~B.
+  \harvardyearleft 2018\harvardyearright , {\em Bayesian Data Analysis}, third
+  edn, CRC Press.
+\newline\harvardurl{http://www.stat.columbia.edu/~gelman/book}
+
+\harvarditem{Hastie \harvardand\ Tibshirani}{2016}{Hastie_Tibshirani}
+Hastie, T. \harvardand\ Tibshirani, R.  \harvardyearleft 2016\harvardyearright
+  , {\em The Elements of Statistical Learning: Data Mining, Inference, and
+  Prediction}, second edn, Springer.
+
+\harvarditem[Hastie et~al.]{Hastie, Tibshirani \harvardand\
+  Wainwright}{2015}{Hastie_LASSO}
+Hastie, T., Tibshirani, R. \harvardand\ Wainwright, M.  \harvardyearleft
+  2015\harvardyearright , {\em Statistical Learning with Sparsity: The Lasso
+  and Generalizations}, Chapman \& Hall/CRC.
+
+\harvarditem[James et~al.]{James, Witten, Hastie \harvardand\
+  Tibshirani}{2014}{Hastie_ISLR}
+James, G., Witten, D., Hastie, T. \harvardand\ Tibshirani, R.  \harvardyearleft
+  2014\harvardyearright , {\em An Introduction to Statistical Learning: With
+  Applications in R}, Springer.
+\newline\harvardurl{http://www-bcf.usc.edu/~gareth/ISL/}
+
+\harvarditem{Kuhn \harvardand\ Johnson}{2019}{kuhn_johnson_feature}
+Kuhn, M. \harvardand\ Johnson, K.  \harvardyearleft 2019\harvardyearright ,
+  {\em Feature Engineering and Selection: A Practical Approach for Predictive
+  Models}, Chapman and Hall/CRC.
+
+\harvarditem{Louppe}{2014}{louppe2014understanding}
+Louppe, G.  \harvardyearleft 2014\harvardyearright , Understanding Random
+  Forests: From Theory to Practice, PhD thesis, University of Liege, Belgium.
+\newblock arXiv:1407.7502.
+
+\harvarditem{Pafka}{2019}{pafka_benchmark}
+Pafka, S.  \harvardyearleft 2019\harvardyearright , `benchm-ml'.
+\newline\harvardurl{github.com/szilard/benchm-ml}
+
+\harvarditem{Sally \harvardand\ Anderson}{2013}{anderson_sally}
+Sally, D. \harvardand\ Anderson, C.  \harvardyearleft 2013\harvardyearright ,
+  {\em The Numbers Game: Why Everything You Know About Soccer Is Wrong},
+  Viking/Penguin, New York.
+
+\harvarditem{Wooldridge}{2001}{wooldridge_advanced}
+Wooldridge, J.  \harvardyearleft 2001\harvardyearright , {\em Econometric
+  Analysis of Cross Section and Panel Data}, The MIT Press.
+
+\end{thebibliography}

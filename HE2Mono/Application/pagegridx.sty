@@ -1,0 +1,318 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% This file is copyright 2008 by Suresh AL. All rights reserved to MS!
+%
+% Created On        :  2008 August for Thomson (DYA)
+% Description       :  Placing the boxes for the Minor column and major columns
+%
+% You are not allowed to copy, modify or distribute this file in any form
+% without the explicit permission of the copyright holder.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\ProvidesPackage{pagegrid}[2008/08/01 Pagegrid option for the Major/Minor Layout]
+
+\RequirePackage{eso-pic}[2002/11/16]
+\RequirePackage{calc}
+\RequirePackage{keyval}
+
+\def\pg@numps{\@setfontsize\pg@numps{6\p@}{7\p@}}
+
+% Pagegrid required option
+\newif\if@page@grid
+\@page@gridfalse %% By default false
+
+% Options to enable saving the bounding box into the aux file
+\DeclareOption{pagegrid}{\@page@gridtrue}
+\DeclareOption{pagegridoff}{\@page@gridfalse}
+\ProcessOptions
+
+\newdimen\ruleheight
+\newdimen\rulewidth
+\newcount\ruleht
+\newcount\rulewd
+
+%%\providecommand{\invisiblerule}[2]{%
+%%  \rulewidth=#1\relax
+%%  \ruleheight=#2\relax
+%%  \rulewd=\rulewidth
+%%  \ruleht=\ruleheight
+%%  \noexpand\special{viewrule: \the\rulewd\space \the\ruleht}}
+
+\def\invisiblerule#1#2{\rlap{\rule{#1}{#2}}}
+
+%\providecommand{\invisibletext}[1]{%
+%  \special{color push rgb 0.7 0.7 0.7}%
+%  \noexpand\special{viewtext: #1}%
+%  \special{color pop}}
+
+\def\invisibletext#1{\special{color push rgb 0.7 0.7 0.7}%
+\rlap{#1}%
+\special{color pop}}
+
+\newdimen\textgluewidth
+\setlength{\textgluewidth}{0pc}
+
+\newlength{\pg@left}%
+\newlength{\pg@right}%
+\newlength{\pg@top}%
+\newlength{\pg@bottom}%
+\newlength{\pg@headtop}%
+\newlength{\pg@headbottom}%
+\newlength{\pg@foottop}%
+\newlength{\pg@footbottom}%
+\newlength{\pg@bls}
+\newcounter{pg@numlines}%
+\newlength{\pg@firstline}%
+\newcounter{pg@linenumber}
+
+% pad@double@digit - use leading zero if necessary
+\newcommand{\pad@double@digit}[1]{%
+  \ifnum\value{#1}>0
+    \ifnum\value{#1}<10
+     0%
+    \fi
+  \fi\arabic{#1}}
+
+\AtBeginDocument{\if@page@grid%
+  \setlength{\pg@bls}{\baselineskip}
+  \setlength{\unitlength}{1\p@}%
+  \setlength{\pg@headtop}{\paperheight-1in-\topmargin}%
+  \setlength{\pg@headbottom}{\pg@headtop-\headheight}%
+  \setlength{\pg@top}{\pg@headbottom-\headsep}%
+  \setlength{\pg@bottom}{\pg@top-\textheight}%
+  \setlength{\pg@footbottom}{\pg@bottom-\footskip}%
+  \setlength{\pg@foottop}{\pg@footbottom+\headheight}
+  \setcounter{pg@numlines}{\textheight/\pg@bls}
+  \addtocounter{pg@numlines}{1}%
+  \setlength{\pg@firstline}{\pg@top}
+  \addtolength{\pg@firstline}{-\topskip}%
+  \AddToShipoutPicture{%
+      \begingroup
+      \ifodd\arabic{page}%
+        \setlength{\pg@left}{\oddsidemargin+1in}%
+      \else
+        \setlength{\pg@left}{\evensidemargin+1in}%
+      \fi
+      \setlength{\pg@right}{\pg@left}%
+      \addtolength{\pg@right}{\textwidth+\textgluewidth}%
+      \special{color push rgb 0.93 0.93 0.93}%
+      \special{color push rgb 0 0.7 1}%
+      % Header top rule
+      \put(\strip@pt\pg@left,\strip@pt\pg@headtop){%
+        \invisiblerule{\textwidth+\textgluewidth}{0.1\p@}}%
+      % Header bottom rule
+      \put(\strip@pt\pg@left,\strip@pt\pg@headbottom){%
+        \invisiblerule{\textwidth+\textgluewidth}{0.1\p@}}%
+      % Header left grid rule
+      \put(\strip@pt\pg@left,\strip@pt\pg@headbottom){%
+        \invisiblerule{0.1\p@}{\headheight}}%
+      % Header right grid rule
+      \put(\strip@pt\pg@right,\strip@pt\pg@headbottom){%
+        \invisiblerule{0.1\p@}{\headheight}}%
+      % Top grid rule
+      \put(\strip@pt\pg@left,\strip@pt\pg@top){%
+        \invisiblerule{\textwidth+\textgluewidth}{0.1\p@}}%
+      % Left grid rule
+      \put(\strip@pt\pg@left,\strip@pt\pg@bottom){%
+        \invisiblerule{0.1\p@}{\textheight}}%
+      % Right grid rule
+      \put(\strip@pt\pg@right,\strip@pt\pg@bottom){%
+        \invisiblerule{0.1\p@}{\textheight}}%
+      \special{color pop}
+      % Text baseline rule
+      \setcounter{pg@linenumber}{1}
+      \ifodd\arabic{page}%
+        \multiput(\strip@pt\pg@left,\strip@pt\pg@firstline)%
+                 (0,-\strip@pt\pg@bls){\thepg@numlines}{%
+          \invisiblerule{\textwidth}{0.05\p@}%
+          \hspace{-1.5pc}\hspace{\textgluewidth}\hspace{4pt}\pg@numps
+	    \fontfamily{\default@family}%
+	    \fontseries{\default@series}%
+	    \fontshape{\default@shape}%
+            \selectfont
+            \rlap{\char32}%
+          {\invisibletext{\pad@double@digit{pg@linenumber}}}%
+          \stepcounter{pg@linenumber}}%
+      \else
+        \multiput(\strip@pt\pg@left,\strip@pt\pg@firstline)%
+                 (0,-\strip@pt\pg@bls){\thepg@numlines}{%
+          {\invisiblerule{\textwidth}{0.05\p@}}%
+          \hspace{-\textgluewidth}\hspace{4pt}\hspace{\textwidth}\pg@numps
+	    \fontfamily{\default@family}%
+	    \fontseries{\default@series}%
+	    \fontshape{\default@shape}%
+            \selectfont
+            \char32\invisibletext{\pad@double@digit{pg@linenumber}}%
+          \stepcounter{pg@linenumber}}%
+      \fi
+      % Bottom grid rule
+      \special{color push rgb 0 0.7 1}%
+      \put(\strip@pt\pg@left,\strip@pt\pg@bottom){%
+        \invisiblerule{\textwidth+\textgluewidth}{0.1\p@}}%
+      \ifdim\footskip>\z@
+      % Footer top rule
+      \put(\strip@pt\pg@left,\strip@pt\pg@foottop){%
+        \invisiblerule{\textwidth+\textgluewidth}{0.1\p@}}%
+      % Footer bottom rule
+      \put(\strip@pt\pg@left,\strip@pt\pg@footbottom){%
+        \invisiblerule{\textwidth+\textgluewidth}{0.1\p@}}%
+      % Footer left grid rule
+      \put(\strip@pt\pg@left,\strip@pt\pg@footbottom){%
+        \invisiblerule{0.1\p@}{\headheight}}%
+      % Footer right grid rule
+      \put(\strip@pt\pg@right,\strip@pt\pg@footbottom){%
+        \invisiblerule{0.1\p@}{\headheight}}%
+      \fi%
+      \special{color pop}%
+%%       \ifodd\arabic{page}%
+%%       \addtolength{\pg@left}{\textwidth+\marginparsep}
+%%       \addtolength{\pg@right}{\marginparsep+\marginparwidth}
+%%       \put(\strip@pt\pg@left,\strip@pt\pg@top){%
+%%         \invisiblerule{\marginparwidth}{0.1\p@}}%
+%%       \put(\strip@pt\pg@left,\strip@pt\pg@bottom){%
+%%         \invisiblerule{\marginparwidth}{0.1\p@}}%
+%%       \put(\strip@pt\pg@left,\strip@pt\pg@bottom){%
+%%         \invisiblerule{0.1\p@}{\textheight}}%
+%%       \put(\strip@pt\pg@right,\strip@pt\pg@bottom){%
+%%         \invisiblerule{0.1\p@}{\textheight}}%
+%%       \else
+%%       \addtolength{\pg@left}{-\marginparsep-\marginparwidth}
+%%       \addtolength{\pg@right}{-\marginparsep-\textwidth}
+%%       \put(\strip@pt\pg@left,\strip@pt\pg@top){%
+%%         \invisiblerule{\marginparwidth}{0.1\p@}}%
+%%       \put(\strip@pt\pg@left,\strip@pt\pg@bottom){%
+%%         \invisiblerule{\marginparwidth}{0.1\p@}}%
+%%       \put(\strip@pt\pg@left,\strip@pt\pg@bottom){%
+%%         \invisiblerule{0.1\p@}{\textheight}}%
+%%       \put(\strip@pt\pg@right,\strip@pt\pg@bottom){%
+%%         \invisiblerule{0.1\p@}{\textheight}}%
+%%       \fi
+      \special{color pop}%
+      \endgroup%
+    }%
+%% A Duplicate for other side
+  \AddToShipoutPicture{%
+      \begingroup
+      \ifodd\arabic{page}%
+        \setlength{\pg@left}{\oddsidemargin+1in-\textgluewidth+\minorcolumn}%
+      \else
+        \setlength{\pg@left}{\evensidemargin+1in-\textgluewidth-\minorcolumn}%
+      \fi
+      \setlength{\pg@right}{\pg@left}%
+      \addtolength{\pg@right}{\textwidth+\textgluewidth}%
+      \special{color push rgb 0.93 0.93 0.93}%
+      \special{color push rgb 0 0.7 1}%
+      \ifodd\arabic{page}%
+          % Header top rule
+          \put(\strip@pt\pg@left,\strip@pt\pg@headtop){%
+            \invisiblerule{\textwidth+\textgluewidth}{0.1\p@}}%
+          % Header bottom rule
+          \put(\strip@pt\pg@left,\strip@pt\pg@headbottom){%
+            \invisiblerule{\textwidth+\textgluewidth}{0.1\p@}}%
+          % Header right grid rule
+          \put(\strip@pt\pg@right,\strip@pt\pg@headbottom){%
+            \invisiblerule{0.1\p@}{\headheight}}%
+          % Top grid rule
+          \put(\strip@pt\pg@left,\strip@pt\pg@top){%
+            \invisiblerule{\textwidth+\textgluewidth}{0.1\p@}}%
+          % Right grid rule
+          \put(\strip@pt\pg@right,\strip@pt\pg@bottom){%
+            \invisiblerule{0.1\p@}{\textheight}}%
+      \else
+          \put(\strip@pt\pg@left,\strip@pt\pg@headtop){%
+            \invisiblerule{\textwidth+\textgluewidth}{0.1\p@}}%
+          % Header bottom rule
+          \put(\strip@pt\pg@left,\strip@pt\pg@headbottom){%
+            \invisiblerule{\textwidth+\textgluewidth}{0.1\p@}}%
+          % Header left grid rule
+          \put(\strip@pt\pg@left,\strip@pt\pg@headbottom){%
+            \invisiblerule{0.1\p@}{\headheight}}%
+          % Top grid rule
+          \put(\strip@pt\pg@left,\strip@pt\pg@top){%
+            \invisiblerule{\textwidth+\textgluewidth}{0.1\p@}}%
+          % Left grid rule
+          \put(\strip@pt\pg@left,\strip@pt\pg@bottom){%
+            \invisiblerule{0.1\p@}{\textheight}}%
+      \fi
+      \special{color pop}%
+      % Text baseline rule
+%%      \setcounter{pg@linenumber}{1}
+%%      \ifodd\arabic{page}%
+%%        \multiput(\strip@pt\pg@left,\strip@pt\pg@firstline)%
+%%                 (0,-\strip@pt\pg@bls){\thepg@numlines}{%
+%%          \invisiblerule{\textwidth+\textgluewidth}{0.05\p@}%
+%%          \hspace{\textwidth}\hspace{.5\textgluewidth}\hspace{9\p@}\pg@numps
+%%	    \fontfamily{\default@family}%
+%%	    \fontseries{\default@series}%
+%%	    \fontshape{\default@shape}%
+%%            \selectfont
+%%            \rlap{\char32}%
+%%          {\invisibletext{\pad@double@digit{pg@linenumber}}}%
+%%          \stepcounter{pg@linenumber}}%
+%%      \else
+%%        \multiput(\strip@pt\pg@left,\strip@pt\pg@firstline)%
+%%                 (0,-\strip@pt\pg@bls){\thepg@numlines}{%
+%%          {\invisiblerule{\textwidth+\textgluewidth}{0.05\p@}}%
+%%          \hspace*{-16.5\p@}\hspace{-.5\textgluewidth}\pg@numps
+%%	    \fontfamily{\default@family}%
+%%	    \fontseries{\default@series}%
+%%	    \fontshape{\default@shape}%
+%%            \selectfont
+%%            \char32\invisibletext{\pad@double@digit{pg@linenumber}}%
+%%          \stepcounter{pg@linenumber}}%
+%%      \fi
+      % Bottom grid rule
+      \special{color push rgb 0 0.7 1}%
+      \put(\strip@pt\pg@left,\strip@pt\pg@bottom){%
+        \invisiblerule{\textwidth+\textgluewidth}{0.1\p@}}%
+      \ifdim\footskip>\z@
+      % Footer top rule
+          \ifodd\arabic{page}%
+              \put(\strip@pt\pg@left,\strip@pt\pg@foottop){%
+                \invisiblerule{\textwidth+\textgluewidth}{0.1\p@}}%
+              % Footer bottom rule
+              \put(\strip@pt\pg@left,\strip@pt\pg@footbottom){%
+                \invisiblerule{\textwidth+\textgluewidth}{0.1\p@}}%
+              % Footer right grid rule
+              \put(\strip@pt\pg@right,\strip@pt\pg@footbottom){%
+                \invisiblerule{0.1\p@}{\headheight}}%
+          \else
+          \put(\strip@pt\pg@left,\strip@pt\pg@foottop){%
+            \invisiblerule{\textwidth+\textgluewidth}{0.1\p@}}%
+          % Footer bottom rule
+          \put(\strip@pt\pg@left,\strip@pt\pg@footbottom){%
+            \invisiblerule{\textwidth+\textgluewidth}{0.1\p@}}%
+          % Footer left grid rule
+          \put(\strip@pt\pg@left,\strip@pt\pg@footbottom){%
+            \invisiblerule{0.1\p@}{\headheight}}%
+          \fi
+      \fi%
+      \special{color pop}%
+%%       \ifodd\arabic{page}%
+%%       \addtolength{\pg@left}{\textwidth+\marginparsep}
+%%       \addtolength{\pg@right}{\marginparsep+\marginparwidth}
+%%       \put(\strip@pt\pg@left,\strip@pt\pg@top){%
+%%         \invisiblerule{\marginparwidth}{0.1\p@}}%
+%%       \put(\strip@pt\pg@left,\strip@pt\pg@bottom){%
+%%         \invisiblerule{\marginparwidth}{0.1\p@}}%
+%%       \put(\strip@pt\pg@left,\strip@pt\pg@bottom){%
+%%         \invisiblerule{0.1\p@}{\textheight}}%
+%%       \put(\strip@pt\pg@right,\strip@pt\pg@bottom){%
+%%         \invisiblerule{0.1\p@}{\textheight}}%
+%%       \else
+%%       \addtolength{\pg@left}{-\marginparsep-\marginparwidth}
+%%       \addtolength{\pg@right}{-\marginparsep-\textwidth}
+%%       \put(\strip@pt\pg@left,\strip@pt\pg@top){%
+%%         \invisiblerule{\marginparwidth}{0.1\p@}}%
+%%       \put(\strip@pt\pg@left,\strip@pt\pg@bottom){%
+%%         \invisiblerule{\marginparwidth}{0.1\p@}}%
+%%       \put(\strip@pt\pg@left,\strip@pt\pg@bottom){%
+%%         \invisiblerule{0.1\p@}{\textheight}}%
+%%       \put(\strip@pt\pg@right,\strip@pt\pg@bottom){%
+%%         \invisiblerule{0.1\p@}{\textheight}}%
+%%       \fi
+      \special{color pop}%
+      \endgroup%
+    }%
+\else\relax\fi}
+
+\endinput

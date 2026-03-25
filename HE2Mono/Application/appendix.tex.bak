@@ -1,0 +1,85 @@
+\chapter{Fusce mauris}
+\label{appa}
+
+\chaptermark{Fusce mauris}
+
+\lipsum[5]
+
+
+\addtocontents{toc}{\protect\setcounter{tocdepth}{0}}
+
+\vspace*{13pt}
+
+\section{Section Title}
+\label{appa:secA.1}
+
+\subsection{Sub section}
+\label{appa:secA.1.1}
+
+
+(This definition is justified by the following calculation, itself justified by the Yoneda lemma: if $x\in C$ is of the form $p(y)$, then $p(x)=p^2(y)=p(y)=x$.)
+
+\begin{lemma}\phantomsection\label{l:retr} Suppose that $p$ has an image. Then  is canonically a retract of $C$.
+\begin{equation}{\boldsymbol{\mathcal{D}}}\longleftrightarrow \text{\textit{$D_j$}}\left(\tilde{\boldsymbol x}_{\text{\textit{$g$}}}|\,\tilde{\boldsymbol x}_s;\text{\textit{$t$}}\right).\end{equation}
+\end{lemma}
+
+\begin{proof} By definition, we have a canonical morphism $p\to C$ equalising the~two arrows $1_X,p$. Conversely, the endomorphism $p:C\to C$ equalises these two arrows, and thus factors canonically through $p$. We immediately see that the composition
+\begin{equation*}\vspace*{-3pt}
+p\to C\to p\vspace*{-3pt}
+\end{equation*}
+is equal to the identity.
+\end{proof}
+
+
+\begin{definition}\label{appa:defA.4}
+\lipsum[5]
+\begin{equation}{\boldsymbol{\mathcal{D}}}\longleftrightarrow \text{\textit{$D_j$}}\left(\tilde{\boldsymbol x}_{\text{\textit{$g$}}}|\,\tilde{\boldsymbol x}_s;\text{\textit{$t$}}\right).\end{equation}
+\end{definition}
+
+\subsection{Sub section}
+\label{appa:secA.1.2}
+
+\begin{definition}\lipsum[5]
+\end{definition}
+
+\begin{theorem}\label{tA.2} A Karoubi envelope always exists: the functor $i$ is fully faithful and the functor  $($the Karoubi envelope of $)$ is an equivalence of categories.
+\end{theorem}
+
+\begin{proof}
+One may find two proofs in \cite{SGA4}: one in Exercise 7.5 of expos\'e IV and the other in Exercise 8.7.8 from expos\'e I. We give the first proof, which has the advantage of being constructive (the second, which uses ind-objects, is more conceptual).
+
+Define a category  whose objects are the pairs $(C,p)$ where $C\in $ and $p$ is a projector of $C$. For another object $(D,q)$, we define:
+\begin{equation*}
+((C,p),(D,q))=\{f\in (C,D)\mid f=qfp\}.
+\end{equation*}
+
+The composition of morphisms is induced by that of ; the identity of $(C,p)$ is $p$. The functor $i$ is defined by
+\begin{equation*}
+i(C)=(C,1_C)
+\end{equation*}
+and $i$ is the identity on morphisms. The universal property can be easily verified, which then implies the last statement.
+\end{proof}
+
+\subsection{Sub section}
+\label{appa:secA.1.3}
+
+\begin{lemma}\label{appa:proA.7}
+\lipsum[5]
+\end{lemma}
+
+\lipsum[5]
+
+\begin{proof}
+\lipsum[5]
+\end{proof}
+
+\subsection{Sub section}
+\label{appa:secA.1.4}
+
+\begin{definition}\lipsum[5]
+\end{definition}
+
+To be more precise, the endomorphisms of the identity functor of  have a natural ring structure. A homomorphism as above is the data, for all $\lambda\in F$ and all $A\in $, of an endomorphism $\lambda_A:A\to A$ which is natural in $A$, additive and multiplicative in $\lambda$. This amounts to giving the data of two-sided $F$-modules on the $(A,B)$, compatible with composition.
+
+\begin{lemma}\lipsum[5]
+\end{lemma}

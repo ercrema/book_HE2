@@ -1,0 +1,77 @@
+\contentsline {sschapter}{Introduction}{1}{chapter*.1}
+\contentsline {part}{\textcolor{scolor}{Part\ I\kern .5em Geometric Constructions}}{9}{part.1}
+\contentsline {chapter}{\numberline {\textcolor{scolor}{1}}Examples and Basic Folds}{11}{chapter.1}
+\contentsline {section}{\numberline {1.1}Constructing an Equilateral Triangle}{11}{section.1.1}
+\contentsline {section}{\numberline {1.2}Dividing a Segment into 1/\textit {n}ths}{13}{section.1.2}
+\contentsline {section}{\numberline {1.3}Trisecting an Angle}{16}{section.1.3}
+\contentsline {section}{\numberline {1.4}Folding a Regular Heptagon}{19}{section.1.4}
+\contentsline {section}{\numberline {1.5}The Basic Origami Operations}{23}{section.1.5}
+\contentsline {section}{\numberline {1.6}Historical Remarks}{29}{section.1.6}
+\contentsline {chapter}{\numberline {\textcolor{scolor}{2}}Solving Equations via Folding}{31}{chapter.2}
+\contentsline {section}{\numberline {2.1}Folding Conics}{31}{section.2.1}
+\contentsline {section}{\numberline {2.2}Solving Second Degree Equations}{36}{section.2.2}
+\contentsline {section}{\numberline {2.3}Solving Third Degree Equations}{38}{section.2.3}
+\contentsline {section}{\numberline {2.4}Cubic Curves and Beloch's Fold}{45}{section.2.4}
+\contentsline {section}{\numberline {2.5}Historical Remarks}{46}{section.2.5}
+\contentsline {chapter}{\numberline {\textcolor{scolor}{3}}Origami Algebra}{48}{chapter.3}
+\contentsline {section}{\numberline {3.1}Definitions and Origami Arithmetic}{48}{section.3.1}
+\contentsline {section}{\numberline {3.2}The Field of Origami Numbers}{50}{section.3.2}
+\contentsline {section}{\numberline {3.3}Other Characterizations of Origami Numbers}{55}{section.3.3}
+\contentsline {section}{\numberline {3.4}Other Work: Origami Rings}{57}{section.3.4}
+\contentsline {chapter}{\numberline {4}Beyond Classic Origami}{58}{chapter.4}
+\contentsline {section}{\numberline {4.1}Multifolds}{58}{section.4.1}
+\contentsline {section}{\numberline {4.2}Lang's Angle Quintisection}{60}{section.4.2}
+\contentsline {section}{\numberline {4.3}Describing Multifold Origami Operations}{63}{section.4.3}
+\contentsline {section}{\numberline {4.4}Solving Equations with Multifolds}{66}{section.4.4}
+\contentsline {section}{\numberline {4.5}Constructions with Curved Creases}{69}{section.4.5}
+\contentsline {section}{\numberline {4.6}Open Problems}{71}{section.4.6}
+\contentsline {part}{\textcolor{scolor}{Part\ II\kern .5em The Combinatorial Geometry of\nobreakspace {}Flat Origami}}{73}{part.2}
+\contentsline {chapter}{\numberline {\textcolor{scolor}{5}}Flat Vertex Folds: Local Properties}{75}{chapter.5}
+\contentsline {section}{\numberline {5.1}Definitions and Flat-Foldability}{75}{section.5.1}
+\contentsline {section}{\numberline {5.2}Mountain-Valley Parity}{81}{section.5.2}
+\contentsline {section}{\numberline {5.3}Necessary and Sufficient Conditions}{85}{section.5.3}
+\contentsline {section}{\numberline {5.4}Cone Folds}{88}{section.5.4}
+\contentsline {section}{\numberline {5.5}Counting Valid Mountain-Valley Assignments}{90}{section.5.5}
+\contentsline {section}{\numberline {5.6}The Configuration Space of Flat Vertex Folds}{96}{section.5.6}
+\contentsline {section}{\numberline {5.7}Matrix Model for Flat Vertex Folds}{104}{section.5.7}
+\contentsline {section}{\numberline {5.8}Open Problems}{105}{section.5.8}
+\contentsline {section}{\numberline {5.9}Historical Notes}{105}{section.5.9}
+\contentsline {chapter}{\numberline {\textcolor{scolor}{6}}Multiple-Vertex Flat Folds: Global Properties}{107}{chapter.6}
+\contentsline {section}{\numberline {6.1}Impossible Crease Patterns}{107}{section.6.1}
+\contentsline {section}{\numberline {6.2}Generalized Kawasaki: Necessary Conditions and the Folding Map}{110}{section.6.2}
+\contentsline {section}{\numberline {6.3}Generalized Maekawa}{112}{section.6.3}
+\contentsline {section}{\numberline {6.4}Justin's Theorem and Paper with Holes}{114}{section.6.4}
+\contentsline {section}{\numberline {6.5}Global Flat-Foldability}{119}{section.6.5}
+\contentsline {section}{\numberline {6.6}Flat-Foldability Is NP-Hard}{127}{section.6.6}
+\contentsline {section}{\numberline {6.7}Open Problems}{135}{section.6.7}
+\contentsline {chapter}{\numberline {\textcolor{scolor}{7}}Counting Flat Folds}{137}{chapter.7}
+\contentsline {section}{\numberline {7.1}Two-Colorable Crease Patterns}{137}{section.7.1}
+\contentsline {section}{\numberline {7.2}Phantom Folds of the Miura-ori}{139}{section.7.2}
+\contentsline {section}{\numberline {7.3}The Stamp-Folding Problem}{145}{section.7.3}
+\contentsline {section}{\numberline {7.4}Tethered Membrane Lattice Folding}{152}{section.7.4}
+\contentsline {section}{\numberline {7.5}Open Problems}{157}{section.7.5}
+\contentsline {chapter}{\numberline {\textcolor{scolor}{8}}Other Flat-Folding Problems}{159}{chapter.8}
+\contentsline {section}{\numberline {8.1}How Many Times Can We Fold a Sheet of Paper?}{159}{section.8.1}
+\contentsline {section}{\numberline {8.2}Can Any Shape Be Folded and Unfolded?}{161}{section.8.2}
+\contentsline {section}{\numberline {8.3}Origami Design}{165}{section.8.3}
+\contentsline {section}{\numberline {8.4}The Rumpled Ruble, or Margoulis Napkin Problem}{172}{section.8.4}
+\contentsline {section}{\numberline {8.5}The Fold-and-Cut Problem}{174}{section.8.5}
+\contentsline {part}{\textcolor{scolor}{Part\ III\kern .5em Algebra, Topology, and Analysis in Origami}}{179}{part.3}
+\contentsline {chapter}{\numberline {\textcolor{scolor}{9}}Origami Homomorphisms}{181}{chapter.9}
+\contentsline {section}{\numberline {9.1}Symmetry Groups of Flat Origami}{181}{section.9.1}
+\contentsline {section}{\numberline {9.2}Examples of Origami Homomorphisms}{184}{section.9.2}
+\contentsline {section}{\numberline {9.3}Applications to Origami Tessellations}{186}{section.9.3}
+\contentsline {section}{\numberline {9.4}Open Problems}{189}{section.9.4}
+\contentsline {chapter}{\numberline {\textcolor{scolor}{10}}Folding Manifolds}{191}{chapter.10}
+\contentsline {section}{\numberline {10.1}Isometric Foldings}{191}{section.10.1}
+\contentsline {section}{\numberline {10.2}The Local Structure of the Singular Set}{193}{section.10.2}
+\contentsline {section}{\numberline {10.3}Robertson's Theorem}{199}{section.10.3}
+\contentsline {section}{\numberline {10.4}The Angle Sum and Recovery Theorems}{203}{section.10.4}
+\contentsline {section}{\numberline {10.5}Maekawa and Kawasaki for Isometric Foldings}{205}{section.10.5}
+\contentsline {section}{\numberline {10.6}Open Problems}{215}{section.10.6}
+\contentsline {section}{\numberline {10.7}Historical Remarks}{215}{section.10.7}
+
+\vspace *{13pt}
+
+\contentsline {schapter}{References}{319}{chapter*.1}
+\contentsline {schapter}{Index}{330}{Doc-Start}

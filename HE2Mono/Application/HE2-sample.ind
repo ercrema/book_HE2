@@ -1,0 +1,131 @@
+\begin{theindex}
+
+  \item 2-D grid of receivers, \hyperpage{14}
+
+  \indexspace
+
+  \item acquisition, \hyperpage{14}
+  \item analysis methods related to design, \hyperpage{3}
+  \item angle
+    \subitem azimuthal, \hyperpage{14}
+  \item arc-swinging, \hyperpage{26}
+
+  \indexspace
+
+  \item balance examined, \hyperpage{3}, \hyperpage{9}, \hyperpage{13}
+  \item both sources and receivers, \hyperpage{14}
+
+  \indexspace
+
+  \item complete
+    \subitem data set requires, \hyperpage{14}
+  \item coordinates, \hyperpage{13}
+  \item cumulative     infiltration, \hyperpage{10}
+
+  \indexspace
+
+  \item data set
+    \subitem complete, \hyperpage{13}
+
+  \indexspace
+
+  \item either source or receiver, \hyperpage{14}
+  \item Either way, as one, \hyperpage{14}
+  \item elevation higher, \hyperpage{5}
+
+  \indexspace
+
+  \item far field, \hyperpage{16}
+  \item filter
+    \subitem half-derivative, \hyperpage{24}
+    \subitem half-integral, \hyperpage{24}
+
+  \indexspace
+
+  \item geometric     characteristics, \hyperpage{9}
+
+  \indexspace
+
+  \item high-frequency approximation, \hyperpage{23}, \hyperpage{27}
+
+  \indexspace
+
+  \item image function, \hyperpage{14}, \hyperpage{16}
+  \item infiltration capacity, \hyperpage{10}
+  \item interval
+    \subitem between source generation and signal, \hyperpage{14}
+
+  \indexspace
+
+  \item land area from which water tends, \hyperpage{5--9}
+  \item line should always, \hyperpage{4}
+
+  \indexspace
+
+  \item map     is superimposed, \hyperpage{9}
+  \item migration
+    \subitem data broadcast, \hyperpage{22}, \hyperpage{25}
+    \subitem geometrical, \hyperpage{20}, \hyperpage{22, 23}, 
+		\hyperpage{26}
+    \subitem hyperbolic sum, \hyperpage{19}, \hyperpage{22}
+    \subitem Kirchhoff, \hyperpage{19}, \hyperpage{23}, \hyperpage{26}
+    \subitem ray theoretical, \hyperpage{23}, \hyperpage{27}
+
+
+  \indexspace
+
+  \item parameters, \hyperpage{9}
+  \item probably approximately correct, \hyperpage{24}
+
+  \indexspace
+
+  \item quantities are simply complex, \hyperpage{18}, \hyperpage{22}
+
+  \indexspace
+
+  \item raypath, \hyperpage{19}, \hyperpage{23}, \hyperpage{26, 27}
+  \item reflections
+    \subitem specular, \hyperpage{24}
+  \item Riemann hypothesis
+    \subitem for curves, \hyperpage{10}, \hyperpage{25}
+
+  \indexspace
+
+  \item Snell's law, \hyperpage{24, 25}
+  \item sources and receivers immersed in water, \hyperpage{14}
+  \item superposition
+    \subitem principle of, \hyperpage{22, 23}, \hyperpage{26}
+
+  \indexspace
+
+  \item time coordinate, \hyperpage{13}
+  \item topographic map with a contour, \hyperpage{4}
+  \item traveltime
+    \subitem two way, \hyperpage{16}, \hyperpage{19, 20}
+
+  \indexspace
+
+  \item universe, \hyperpage{26}
+    \subitem approximately correct hypothesis, \hyperpage{27}
+    \subitem learnable, \hyperpage{26}
+  \item usually considered
+    \subitem  to be linear, \hyperpage{13}
+
+  \indexspace
+
+  \item vector quantities
+    \subitem in bold face, \hyperpage{13}
+  \item vertical bar separates source (input), \hyperpage{13}
+
+  \indexspace
+
+  \item Watershed and Water Balanc, \hyperpage{3}
+  \item wave equation, \hyperpage{14}
+
+  \indexspace
+
+  \item Zeta function
+    \subitem Dedekind, \hyperpage{10}, \hyperpage{25}
+    \subitem of an endomorphism, \hyperpage{6}
+
+\end{theindex}
